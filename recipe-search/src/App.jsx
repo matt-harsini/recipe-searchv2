@@ -1,23 +1,19 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/NavBar/Navigation";
+import RecipeForm from "./components/Recipe/RecipeForm";
+import Home from "./components/Home/Home";
 function App() {
-  const [count, setCount] = useState(0);
-  const [query, setQuery] = useState("chicken");
-  useEffect(() => {
-    fetchRecipeData();
-  }, []);
-  const fetchRecipeData = async () => {
-    const API_ID = "9c96dddd";
-    const API_KEY = "5ed5da612fdc934ee0dbfb39d541b822";
-    const response = await fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
-    );
-    const data = await response.json();
-    console.log(data);
-  };
-  return <div></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="/search-recipes" element={<RecipeForm />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
