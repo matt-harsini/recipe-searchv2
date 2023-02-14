@@ -5,7 +5,7 @@ function RecipeForm() {
   const [count, setCount] = useState(0);
   const [query, setQuery] = useState("chicken");
   useEffect(() => {
-    fetchRecipeData();
+    // fetchRecipeData();
   }, []);
   const fetchRecipeData = async () => {
     const API_ID = "9c96dddd";

@@ -1,0 +1,31 @@
+:root {
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: block;
+  box-shadow: var(--light-shadow);
+  z-index: 2;
+}
+
+.navCenter {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.linkContainer {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  color: #212529;
+}
