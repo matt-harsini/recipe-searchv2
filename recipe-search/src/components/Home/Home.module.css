@@ -1,5 +1,9 @@
 .header {
-  height: 100vh;
-  background-image: linear-gradient(rgba(42, 42, 42, 0.6), rgba(42, 42, 42, 0.6)), url("../assets/home.jpg");
+  height: calc(100vh - 52px);
+  background-image: linear-gradient(
+      rgba(42, 42, 42, 0.6),
+      rgba(42, 42, 42, 0.6)
+    ),
+    url("../assets/home.jpg");
   background-size: cover;
 }
