@@ -8,7 +8,10 @@ function NavBar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.navCenter}>
-        <div>Recipe Search</div>
+        <div className={styles.title}>Recipe Search</div>
+        <button className={styles.navToggle}>
+          <FaBars />
+        </button>
         <div className={styles.linkContainer}>
           {links.map(({ id, url, text }) => {
             return (
