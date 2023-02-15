@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   color: #212529;

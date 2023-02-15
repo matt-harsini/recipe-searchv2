@@ -1,9 +1,10 @@
 .header {
-  height: calc(100vh - 52px);
+  height: calc(100vh - 76.59px);
   background-image: linear-gradient(
-      rgba(42, 42, 42, 0.6),
-      rgba(42, 42, 42, 0.6)
+      rgba(42, 42, 42, 0.65),
+      rgba(42, 42, 42, 0.65)
     ),
     url("../assets/home.jpg");
   background-size: cover;
+  background-position: center;
 }
