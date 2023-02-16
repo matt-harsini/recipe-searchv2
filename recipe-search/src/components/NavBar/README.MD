@@ -1,7 +1,7 @@
 # Features 
 - Responsive on smaller screens
 
-- Developed from a dynamic perspective, everything is mapped from a data object which can make the code more future proof.
+- Dynamically engineered to be future proof, all the data for the navbar is mapped from an object. This can encourage reusability if I need the data elsewhere in another react component.
 
 ## Challenges faced during the development of responsive navbar
 - The biggest challenge was creating a dropdown menu on smaller screens with a hamburger icon to give a responsive look and feel.
