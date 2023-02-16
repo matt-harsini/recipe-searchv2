@@ -1,4 +1,9 @@
-# Challenges faced during the development of responsive navbar
+# Features 
+- Responsive on smaller screens
+
+- Developed from a dynamic perspective, everything is mapped from a data object which can make the code more future proof.
+
+## Challenges faced during the development of responsive navbar
 - The biggest challenge was creating a dropdown menu on smaller screens with a hamburger icon to give a responsive look and feel.
 
 - I achieved this creating two containers for the dropdown, with the outer container set with a height of 0 programmatically with useEffect, useState, and good old getBoundingClientRect (which served to get the height of all the link elements).
@@ -10,8 +15,3 @@
 - Then I ran into another issue, which was that the dropdown menu was causing all the content to push down,
 after a quick google search, I realized that `position: absolute` was the solution to fix this problem.
 I would apply this to the parent container containing the dropdown menu for the links and position it relative to the navbar.
-
-# Features 
-- Responsive on smaller screens
-
-- Developed from a dynamic perspective, everything is mapped from a data object which can make the code more future proof.
