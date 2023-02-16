@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
 import styles from "./NavBar.module.css";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { motion } from "framer-motion";
 import { links, socials } from "./data";
+
 function NavBar() {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
@@ -18,6 +20,7 @@ function NavBar() {
       linkContainer.current.style.height = "0px";
     }
   }, [showLinks]);
+
   return (
     <nav className={styles.nav}>
       <div className={styles.navCenter}>
@@ -27,29 +30,42 @@ function NavBar() {
             className={styles.navToggle}
             onClick={() => setShowLinks((prevState) => !prevState)}
           >
-            <FaBars />
+            <RxHamburgerMenu />
           </button>
         </div>
         <div className={styles.linkContainer} ref={linkContainer}>
           <div className={styles.links} ref={linksRef}>
             {links.map(({ id, url, text }) => {
               return (
-                <NavLink
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   key={id}
-                  to={url}
                   className={`${styles.navLink} ${
                     text === "Recipes" ? styles.recipeBtn : ""
                   }`}
                 >
-                  {text}
-                </NavLink>
+                  <NavLink
+                    to={url}
+                    onClick={() => setShowLinks((prevState) => !prevState)}
+                  >
+                    {text}
+                  </NavLink>
+                </motion.button>
               );
             })}
             {socials.map(({ id, url, icon }) => {
               return (
-                <a href={url} key={id} className={styles.iconLinks}>
-                  {icon}
-                </a>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  key={id}
+                  className={styles.iconLinks}
+                >
+                  <a href={url} key={id}>
+                    {icon}
+                  </a>
+                </motion.button>
               );
             })}
           </div>
