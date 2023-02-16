@@ -10,7 +10,7 @@
 
 - Whenever a user would click on the hamburger icon, I would set the state of showLinks. If showLinks is true, I would get the height of the parent container containing all the links and assign that to its parent container. If showLinks is false, this would manually set the parent container's height to be 0. If you do some digging into my CSS spaghetti code, you might realize why I needed this `height: auto !important` in the media query. 
 
-- Good CSS code is easily maintainable and modular, but in this case I needed the `!important` rule. I was applying an inline style of `height: 0` to the parent container in my useEffect logic, so whenever the website would go to a bigger screen from a smaller screen, the container would disappear because the height of the in-line style is 0. So whenever the screen would go over 800px wide, the <br/> `height: auto !important` attribute would take over the in-line style of `height: 0`.
+- Good CSS code is easily maintainable and modular, but in this case I needed the `!important` rule. I was applying an inline style of `height: 0` to the parent container in my useEffect logic, so whenever the website would go to a bigger screen from a smaller screen, the container would disappear because the height of the in-line style is 0. So whenever the screen would go over 800px wide, the `height: auto !important` attribute would take over the in-line style of `height: 0`.
 
 - Then I ran into another issue, which was that the dropdown menu was causing all the content to push down,
 after a quick google search, I realized that `position: absolute` was the solution to fix this problem.
