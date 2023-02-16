@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import styles from "./NavBar.module.css";
-import { links } from "./data";
+import { links, socials } from "./data";
 function NavBar() {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
@@ -46,15 +45,13 @@ function NavBar() {
                 </NavLink>
               );
             })}
-            <a href="https://github.com/mk975025" className={styles.iconLinks}>
-              <BsGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/matthew-kim-667392206/"
-              className={styles.iconLinks}
-            >
-              <BsLinkedin />
-            </a>
+            {socials.map(({ id, url, icon }) => {
+              return (
+                <a href={url} key={id} className={styles.iconLinks}>
+                  {icon}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

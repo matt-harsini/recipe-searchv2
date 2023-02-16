@@ -9,7 +9,7 @@
 .linkContainer {
   position: absolute;
   overflow: hidden;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-in-out;
   background-color: white;
   width: 100%;
 }
@@ -37,6 +37,7 @@
   padding: 20px;
   max-height: 80px;
 }
+
 .title {
   font-size: 1.5rem;
 }
@@ -50,6 +51,14 @@
   color: #212529;
   text-decoration: none;
   display: block;
+}
+
+.iconLinks {
+  display: none;
+}
+
+.links a {
+  padding: 16px;
 }
 @media screen and (min-width: 800px) {
   .title {
@@ -73,6 +82,7 @@
 
   .navHeader {
     padding: 0;
+    flex-basis: 100%;
   }
 
   .linkContainer {
@@ -83,6 +93,7 @@
 
   .links {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 30px;
   }
