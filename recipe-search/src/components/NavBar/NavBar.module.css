@@ -62,7 +62,6 @@
 
   .nav {
     display: block;
-    box-shadow: var(--light-shadow);
   }
 
   .navCenter {
