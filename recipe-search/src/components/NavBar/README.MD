@@ -11,3 +11,7 @@
 after a quick google search, I realized that `position: absolute` was the solution to fix this problem.
 I would apply this to the parent container containing the dropdown menu for the links and position it relative to the navbar.
 
+# Features 
+- Responsive on smaller screens
+
+- Developed from a dynamic perspective, everything is mapped from a data object which can make the code more future proof.
