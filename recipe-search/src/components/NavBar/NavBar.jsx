@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./NavBar.module.css";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from "framer-motion";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
+import styles from "./NavBar.module.css";
 
 function NavBar() {
   const [showLinks, setShowLinks] = useState(false);
