@@ -37,7 +37,6 @@
 }
 
 .nav {
-  box-shadow: var(--light-shadow);
   position: fixed;
   display: block;
   width: 100%;
