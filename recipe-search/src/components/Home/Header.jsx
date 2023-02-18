@@ -3,25 +3,12 @@ import styles from "./Header.module.css";
 import { motion } from "framer-motion";
 
 function Header() {
-  const cardVariants = {
-    offscreen: {
-      y: 300,
-    },
-    onscreen: {
-      y: 50,
-      rotate: -10,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      },
-    },
-  };
   return (
     <header className={styles.header}>
       <div className={styles.landing}>
         <motion.div
-          variants={cardVariants}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className={styles.info}
         >
@@ -29,7 +16,13 @@ function Header() {
           <p className={styles.p}>
             Indulge in a culinary journey with our recipe website
           </p>
-          <button className={styles.headerBtn}>Learn more</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={styles.headerBtn}
+          >
+            Learn more
+          </motion.button>
         </motion.div>
       </div>
     </header>

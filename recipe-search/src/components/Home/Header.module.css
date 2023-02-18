@@ -37,7 +37,7 @@
 /* 35.15rem max width
  11.71rem min width*/
 .h1 {
-  font-size: var(--font-size-xxxl);
+  font-size: var(--font-size-vvl);
   transition: font-size 0.15s ease-out;
 }
 
@@ -49,12 +49,13 @@
 }
 
 .p {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xxl);
   transition: font-size 0.15s ease-out;
   max-width: 85%;
 }
 
 .headerBtn {
+  font-size: var(--font-size-md);
   align-self: flex-start;
 }
 
