@@ -14,14 +14,21 @@
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(
-      to right,
-      rgba(42, 42, 42, 0.75),
+      to top,
+      rgba(33, 37, 41, 1),
       30%,
-      rgba(42, 42, 42, 0.1)
+      rgba(33, 37, 41, 0.001)
     ),
-    url("../../assets/home.jpg");
+    linear-gradient(
+      to right,
+      rgba(33, 37, 41, 0.1),
+      30%,
+      rgba(33, 37, 41, 0.1)
+    ),
+    url("../../assets/192887495_xl.jpg");
   background-size: cover;
   background-position: center;
+  background-color: #212529;
 }
 
 .landing {
@@ -74,8 +81,8 @@
   .header {
     background-image: radial-gradient(
         circle,
-        rgba(42, 42, 42, 0.6),
-        rgba(42, 42, 42, 0.05) 100%
+        rgba(33, 37, 41, 0.6),
+        rgba(33, 37, 41, 0.05) 100%
       ),
       url("../../assets/test.jpg");
   }

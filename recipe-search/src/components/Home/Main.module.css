@@ -1,0 +1,10 @@
+.main {
+  padding-top: 152px;
+  height: 100vh;
+  background-color: #212529;
+}
+
+.info {
+  max-width: 1500px;
+  margin: 0 auto;
+}
