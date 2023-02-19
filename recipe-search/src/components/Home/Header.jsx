@@ -2,25 +2,46 @@ import React, { useEffect } from "react";
 import styles from "./Header.module.css";
 import { motion, useAnimationControls } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
+const options = {
+  triggerOnce: true,
+};
+
+const variants = {
+  hover: { scale: 1.1 },
+  tap: { scale: 0.9 },
+};
+
 function Header() {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView(options);
   const control = useAnimationControls();
-  const boxVariant = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0, scale: 0 },
-  };
   useEffect(() => {
     if (inView) {
-      control.start("visible");
+      control.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+        opacity: 1,
+      });
     }
-  }, [control, inView]);
+    if (!inView) {
+      control.start({ x: "-100vw" });
+    }
+  }, [inView]);
+
   return (
     <header className={styles.header}>
       <div className={styles.landing}>
         <motion.div
           ref={ref}
           animate={control}
-          viewport={{ once: true }}
+          transition={{
+            opacity: { ease: "easeInOut", duration: 2 },
+          }}
+          initial={{ opacity: 0 }}
           className={styles.info}
         >
           <h1 className={styles.h1}>Recipe search</h1>
@@ -28,8 +49,9 @@ function Header() {
             Indulge in a culinary journey with our recipe website
           </p>
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            variants={variants}
+            whileHover="hover"
+            whileTap="tap"
             className={styles.headerBtn}
           >
             Learn more
