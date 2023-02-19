@@ -19,17 +19,17 @@ function Header() {
   useEffect(() => {
     if (inView) {
       control.start({
-        x: 0,
+        y: 0,
         transition: {
           type: "spring",
-          duration: 1,
+          duration: 1.5,
           bounce: 0.3,
         },
         opacity: 1,
       });
     }
     if (!inView) {
-      control.start({ x: "-100vw" });
+      control.start({ y: -10000 });
     }
   }, [inView]);
 

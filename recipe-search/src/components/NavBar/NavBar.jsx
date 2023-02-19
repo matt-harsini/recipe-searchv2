@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
 import styles from "./NavBar.module.css";
-
+import { GiChickenOven } from "react-icons/gi";
 function NavBar() {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
@@ -25,7 +25,9 @@ function NavBar() {
     <nav className={styles.nav}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <div className={styles.title}>Recipe Search</div>
+          <div className={styles.title}>
+            <GiChickenOven />
+          </div>
           <button
             className={styles.navToggle}
             onClick={() => setShowLinks((prevState) => !prevState)}
