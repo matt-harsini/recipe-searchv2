@@ -19,13 +19,8 @@
       30%,
       rgba(33, 37, 41, 0.001)
     ),
-    linear-gradient(
-      to right,
-      rgba(33, 37, 41, 0.1),
-      30%,
-      rgba(33, 37, 41, 0.1)
-    ),
-    url("../../assets/192887495_xl.jpg");
+    linear-gradient(to right, rgba(33, 37, 41, 0.1), 30%, rgba(33, 37, 41, 0.1)),
+    url("../../assets/home.jpg");
   background-size: cover;
   background-position: center;
   background-color: #212529;
@@ -44,7 +39,7 @@
 /* 35.15rem max width
  11.71rem min width*/
 .h1 {
-  font-size: var(--font-size-vvl);
+  font-size: var(--font-size-vl);
   transition: font-size 0.15s ease-out;
 }
 
@@ -53,17 +48,27 @@
   flex-direction: column;
   gap: 30px;
   color: white;
+  padding: 16px;
 }
 
 .p {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   transition: font-size 0.15s ease-out;
   max-width: 85%;
 }
 
 .headerBtn {
-  font-size: var(--font-size-md);
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: var(--font-size-lg);
   align-self: flex-start;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 @media screen and (max-width: 800px) {

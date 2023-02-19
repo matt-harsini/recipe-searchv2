@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Header.module.css";
-import { motion } from "framer-motion";
-
+import { motion, useAnimationControls } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 function Header() {
+  const [ref, inView] = useInView();
+  const control = useAnimationControls();
+  const boxVariant = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
   return (
     <header className={styles.header}>
       <div className={styles.landing}>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          ref={ref}
+          animate={control}
           viewport={{ once: true }}
           className={styles.info}
         >
