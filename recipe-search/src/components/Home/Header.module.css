@@ -20,7 +20,7 @@
       rgba(33, 37, 41, 0.001)
     ),
     linear-gradient(to right, rgba(33, 37, 41, 0.1), 30%, rgba(33, 37, 41, 0.1)),
-    url("../../assets/home.jpg");
+    url("../../assets/placeholder.jpg");
   background-size: cover;
   background-position: center;
   background-color: #212529;

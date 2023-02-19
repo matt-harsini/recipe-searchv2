@@ -15,6 +15,7 @@ const variants = {
 function Header() {
   const [ref, inView] = useInView(options);
   const control = useAnimationControls();
+
   useEffect(() => {
     if (inView) {
       control.start({
@@ -39,7 +40,7 @@ function Header() {
           ref={ref}
           animate={control}
           transition={{
-            opacity: { ease: "easeInOut", duration: 2 },
+            opacity: { ease: "easeInOut" },
           }}
           initial={{ opacity: 0 }}
           className={styles.info}
