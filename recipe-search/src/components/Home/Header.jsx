@@ -23,7 +23,7 @@ function Header() {
         transition: {
           type: "spring",
           duration: 1.5,
-          bounce: 0.3,
+          bounce: 0.4,
         },
         opacity: 1,
       });
@@ -39,6 +39,7 @@ function Header() {
         <motion.div
           ref={ref}
           animate={control}
+          layout="position"
           transition={{
             opacity: { ease: "easeInOut" },
           }}

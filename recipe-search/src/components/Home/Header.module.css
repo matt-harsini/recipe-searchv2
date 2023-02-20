@@ -13,12 +13,7 @@
 .header {
   height: 100vh;
   height: 100svh;
-  background-image: linear-gradient(
-      to top,
-      rgba(33, 37, 41, 1),
-      30%,
-      rgba(33, 37, 41, 0.001)
-    ),
+  background-image: 
     url("../../assets/placeholder.jpg");
   background-size: cover;
   background-position: center;
@@ -85,10 +80,10 @@
   .header {
     background-image: radial-gradient(
         circle,
-        rgba(33, 37, 41, 0.6),
-        rgba(33, 37, 41, 0.05) 100%
+        rgba(33, 37, 41, 0.99),
+        rgba(33, 37, 41, 0.01) 1%
       ),
-      url("../../assets/test.jpg");
+      url("../../assets/testv2.jpg");
   }
   .p {
     max-width: 85%;

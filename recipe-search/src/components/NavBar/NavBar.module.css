@@ -38,6 +38,7 @@
 
 .title {
   font-size: var(--font-size-lg);
+  color: black;
 }
 
 .nav {
@@ -45,6 +46,7 @@
   display: block;
   width: 100%;
   color: white;
+  z-index: 10;
 }
 
 .navLink {

@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { GiChickenOven } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
 import styles from "./NavBar.module.css";
-import { GiChickenOven } from "react-icons/gi";
-function NavBar() {
+
+function NavBar({ navBar, icon }) {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
   const linksRef = useRef(null);
@@ -22,10 +23,10 @@ function NavBar() {
   }, [showLinks]);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} ref={navBar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <div className={styles.title}>
+          <div className={styles.title} ref={icon}>
             <GiChickenOven />
           </div>
           <button
