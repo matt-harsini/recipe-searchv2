@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
 import styles from "./NavBar.module.css";
 
-function NavBar({ navBar, icon }) {
+function NavBar({ navBar, icon, hamburger }) {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
   const linksRef = useRef(null);
@@ -32,6 +32,7 @@ function NavBar({ navBar, icon }) {
           <button
             className={styles.navToggle}
             onClick={() => setShowLinks((prevState) => !prevState)}
+            ref={hamburger}
           >
             <RxHamburgerMenu />
           </button>
