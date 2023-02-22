@@ -13,10 +13,10 @@
 .header {
   height: 100vh;
   height: 100svh;
-  background-image: 
-    url("../../assets/placeholder.jpg");
+  background-image: url("../../assets/home.webp");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-color: #212529;
 }
 
