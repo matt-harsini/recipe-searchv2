@@ -55,7 +55,7 @@
   outline: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .landing {
     grid-template-columns: 1fr;
   }
@@ -68,12 +68,7 @@
     align-self: center;
   }
   .header {
-    background-image: radial-gradient(
-        circle,
-        rgba(33, 37, 41, 0.99),
-        rgba(33, 37, 41, 0.01) 1%
-      ),
-      url("../../assets/testv2.jpg");
+    background-image: url("../../assets/164254786_l.jpg");
   }
   .p {
     max-width: 85%;

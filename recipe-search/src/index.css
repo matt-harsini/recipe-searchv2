@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap");
 
 :root {
-  --step--2: clamp(0.69rem, 0.67rem + 0.14vw, 0.80rem);
-  --step--1: clamp(0.83rem, 0.79rem + 0.23vw, 1.00rem);
-  --step-0: clamp(1.00rem, 0.93rem + 0.34vw, 1.25rem);
-  --step-1: clamp(1.20rem, 1.10rem + 0.49vw, 1.56rem);
-  --step-2: clamp(1.44rem, 1.30rem + 0.70vw, 1.95rem);
-  --step-3: clamp(1.73rem, 1.53rem + 0.97vw, 2.44rem);
-  --step-4: clamp(2.07rem, 1.81rem + 1.33vw, 3.05rem);
-  --step-5: clamp(2.49rem, 2.13rem + 1.80vw, 3.82rem);
-  --step-6: clamp(2.99rem, 2.50rem + 2.42vw, 4.77rem);
-  --step-7: clamp(3.58rem, 2.94rem + 3.22vw, 5.96rem);
-  --step-8: clamp(4.30rem, 3.45rem + 4.27vw, 7.45rem);
-  --step-9: clamp(5.16rem, 4.03rem + 5.63vw, 9.31rem);
-  --step-10: clamp(6.19rem, 4.71rem + 7.39vw, 11.64rem);
+  --step--2: clamp(0.78rem, 0.78rem + 0.02vw, 0.8rem);
+  --step--1: clamp(0.94rem, 0.93rem + 0.06vw, 1rem);
+  --step-0: clamp(1.13rem, 1.1rem + 0.13vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.31rem + 0.21vw, 1.56rem);
+  --step-2: clamp(1.62rem, 1.55rem + 0.33vw, 1.95rem);
+  --step-3: clamp(1.94rem, 1.84rem + 0.5vw, 2.44rem);
+  --step-4: clamp(2.33rem, 2.19rem + 0.72vw, 3.05rem);
+  --step-5: clamp(2.8rem, 2.6rem + 1.02vw, 3.82rem);
+  --step-6: clamp(3.36rem, 3.08rem + 1.41vw, 4.77rem);
+  --step-7: clamp(4.03rem, 3.65rem + 1.93vw, 5.96rem);
+  --step-8: clamp(4.84rem, 4.31rem + 2.61vw, 7.45rem);
+  --step-9: clamp(5.81rem, 5.1rem + 3.51vw, 9.31rem);
+  --step-10: clamp(6.97rem, 6.03rem + 4.68vw, 11.64rem);
 }
 
 *,
