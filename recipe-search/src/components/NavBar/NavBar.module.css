@@ -1,14 +1,4 @@
-:root {
-  --font-size-sm: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-base: clamp(1.2rem, 0.41vw + 1.1rem, 1.43rem);
-  --font-size-md: clamp(1.44rem, 0.49vw + 1.32rem, 1.71rem);
-  --font-size-lg: clamp(1.73rem, 0.59vw + 1.58rem, 2.05rem);
-  --font-size-xl: clamp(2.07rem, 0.71vw + 1.9rem, 2.46rem);
-  --font-size-xxl: clamp(2.49rem, 0.85vw + 2.28rem, 2.95rem);
-  --font-size-xxxl: clamp(2.99rem, 1.02vw + 2.73rem, 3.55rem);
-  --font-size-vl: clamp(3.58rem, 1.22vw + 3.28rem, 4.26rem);
-  --font-size-vvl: clamp(4.3rem, 1.47vw + 3.93rem, 5.11rem);
-}
+@import '../../index.css';
 
 .linkContainer {
   position: absolute;

@@ -1,3 +1,5 @@
+@import "../../index.css";
+
 .main {
   padding-top: 152px;
   height: 100vh;
@@ -7,5 +9,35 @@
 .info {
   max-width: 1500px;
   display: grid;
-  
+  grid-template-columns: repeat(2, 1fr);
+  padding: 96px 0;
+  margin: 0 auto;
+}
+
+.subheading {
+  display: block;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  letter-spacing: 0.75px;
+}
+
+.heading {
+  font-size: var(--font-size-xxl);
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 96px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 32px;
+}
+
+.text {
+  font-size: var(--font-size-lg);
+  color: white;
 }
