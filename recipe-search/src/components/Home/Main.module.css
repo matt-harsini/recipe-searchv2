@@ -2,7 +2,7 @@
 
 .main {
   padding-top: 152px;
-  height: 100vh;
+  height: auto;
   background-color: #212529;
 }
 
@@ -10,13 +10,16 @@
   max-width: 1500px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 64px;
+  row-gap: 96px;
   padding: 96px 0;
   margin: 0 auto;
 }
 
 .subheading {
   display: block;
-  font-size: var(--font-size-md);
+  font-size: var(--step-2);
   font-weight: 500;
   color: white;
   text-transform: uppercase;
@@ -25,7 +28,7 @@
 }
 
 .heading {
-  font-size: var(--font-size-xxl);
+  font-size: var(--step-5);
   line-height: 1.1;
   color: white;
   margin-bottom: 96px;
@@ -38,6 +41,32 @@
 }
 
 .text {
-  font-size: var(--font-size-lg);
+  font-size: var(--step-2);
   color: white;
+  line-height: 1.8;
+}
+
+.stepImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 75%;
+  object-fit: cover;
+}
+
+.headingTertiary {
+  color: white;
+  font-size: var(--step-4);
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+.stepNum {
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 12px;
+  font-size: var(--step-8);
 }

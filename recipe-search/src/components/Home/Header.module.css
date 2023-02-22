@@ -1,14 +1,4 @@
-:root {
-  --font-size-sm: clamp(1rem, 0.27vw + 0.94rem, 1.19rem);
-  --font-size-base: clamp(1.2rem, 0.32vw + 1.13rem, 1.43rem);
-  --font-size-md: clamp(1.44rem, 0.38vw + 1.35rem, 1.71rem);
-  --font-size-lg: clamp(1.73rem, 0.46vw + 1.62rem, 2.05rem);
-  --font-size-xl: clamp(2.07rem, 0.55vw + 1.94rem, 2.46rem);
-  --font-size-xxl: clamp(2.49rem, 0.66vw + 2.33rem, 2.95rem);
-  --font-size-xxxl: clamp(2.99rem, 0.8vw + 2.8rem, 3.55rem);
-  --font-size-vl: clamp(3.58rem, 0.96vw + 3.36rem, 4.26rem);
-  --font-size-vvl: clamp(4.3rem, 1.15vw + 4.03rem, 5.11rem);
-}
+@import "../../index.css";
 
 .header {
   height: 100vh;
@@ -33,7 +23,7 @@
 /* 35.15rem max width
  11.71rem min width*/
 .h1 {
-  font-size: var(--font-size-vl);
+  font-size: var(--step-5);
   transition: font-size 0.15s ease-out;
 }
 
@@ -46,7 +36,7 @@
 }
 
 .p {
-  font-size: var(--font-size-xl);
+  font-size: var(--step-3);
   transition: font-size 0.15s ease-out;
   max-width: 85%;
 }
@@ -55,7 +45,7 @@
   color: white;
   text-decoration: underline;
   text-underline-offset: 4px;
-  font-size: var(--font-size-lg);
+  font-size: var(--step-3);
   align-self: flex-start;
   background-color: transparent;
   background-repeat: no-repeat;
