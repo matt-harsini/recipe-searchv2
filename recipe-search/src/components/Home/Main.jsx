@@ -26,8 +26,50 @@ function Main({ innerRef }) {
         <div className={styles.stepImg}>
           <img
             className={styles.img}
-            src="../../../src/assets/159041840_l.jpg"
+            src="../../../src/assets/159041840_l.webp"
             alt="Mushroom curry"
+            width="600"
+            height="500"
+          />
+        </div>
+        <div className={styles.stepImg}>
+          <img
+            className={styles.img}
+            src="../../../src/assets/169516589_l.jpg"
+            alt="Fish with spices"
+            width="600"
+            height="500"
+          />
+        </div>
+        <div>
+          <p className={styles.stepNum}>02</p>
+          <h3 className={styles.headingTertiary}>
+            Filter by diet or allergy restrictions
+          </h3>
+          <p className={styles.text}>
+            We developed over 80 diet and health filters for your use. Choose
+            and pick specific recipes that best work with your diet or health
+            conditions.
+          </p>
+        </div>
+        <div>
+          <p className={styles.stepNum}>03</p>
+          <h3 className={styles.headingTertiary}>
+            Full nutrition for each recipe
+          </h3>
+          <p className={styles.text}>
+            We have the most accurate automated nutrition analysis on the web.
+            You get detailed nutrition breakdown of each recipe with 25+
+            nutrients and appropriateness for all major diets.
+          </p>
+        </div>
+        <div className={styles.stepImg}>
+          <img
+            className={styles.img}
+            src="../../../src/assets/167974639_l.jpg"
+            alt="Plates with shrimp and pasta"
+            width="600"
+            height="500"
           />
         </div>
       </section>
