@@ -25,20 +25,18 @@ function Main({ innerRef }) {
         </div>
         <div className={styles.stepImg}>
           <img
+            loading="lazy"
             className={styles.img}
             src="../../../src/assets/159041840_l.webp"
             alt="Mushroom curry"
-            width="600"
-            height="500"
           />
         </div>
         <div className={styles.stepImg}>
           <img
+            loading="lazy"
             className={styles.img}
             src="../../../src/assets/169516589_l.jpg"
             alt="Fish with spices"
-            width="600"
-            height="500"
           />
         </div>
         <div>
@@ -60,16 +58,15 @@ function Main({ innerRef }) {
           <p className={styles.text}>
             We have the most accurate automated nutrition analysis on the web.
             You get detailed nutrition breakdown of each recipe with 25+
-            nutrients and appropriateness for all major diets.
+            nutrients and appropriateness for all major diets for free!
           </p>
         </div>
         <div className={styles.stepImg}>
           <img
+            loading="lazy"
             className={styles.img}
-            src="../../../src/assets/167974639_l.jpg"
+            src="../../../src/assets/167974639_l.webp"
             alt="Plates with shrimp and pasta"
-            width="600"
-            height="500"
           />
         </div>
       </section>

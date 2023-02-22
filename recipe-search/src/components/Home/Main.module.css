@@ -1,7 +1,7 @@
 @import "../../index.css";
 
 .main {
-  padding-top: 152px;
+  padding: 152px 0;
   height: auto;
   background-color: #212529;
 }
@@ -55,6 +55,7 @@
 .img {
   width: 100%;
   object-fit: cover;
+  max-height: 450px;
 }
 
 .headingTertiary {
