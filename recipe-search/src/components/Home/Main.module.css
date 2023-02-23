@@ -162,6 +162,7 @@
 
 .mealTitle {
   font-size: var(--step-3);
+  font-weight: 600;
   margin-bottom: 32px;
 }
 
@@ -170,6 +171,33 @@
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.mealIcon {
+  height: 24px;
+  width: 24px;
+}
+
+.servings {
+  display: block;
+  font-size: var(--step-1);
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.calories {
+  font-size: var(--step-2);
+}
+
+.nutritionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.protein::before {
+  font-size: var(--step-5);
+  color: #7aca25;
+  content: "•";
 }
 
 @media screen and (max-width: 900px) {

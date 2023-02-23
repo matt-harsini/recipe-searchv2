@@ -30,7 +30,7 @@ function Main({ innerRef }) {
             <img
               loading="lazy"
               className={styles.img}
-              src="../../../src/assets/159041840_l.webp"
+              src="../../../src/assets/pancakes.webp"
               alt="Mushroom curry"
             />
           </div>
@@ -68,7 +68,7 @@ function Main({ innerRef }) {
             <img
               loading="lazy"
               className={styles.img}
-              src="../../../src/assets/167974639_l.webp"
+              src="../../../src/assets/159041840_l.webp"
               alt="Plates with shrimp and pasta"
             />
           </div>
@@ -99,13 +99,25 @@ function Main({ innerRef }) {
                   Vegetarian
                 </span>
               </div>
-              <p className={styles.mealTitle}>Japanese Gyozas</p>
+              <p className={styles.mealTitle}>
+                Japanese Gyozas
+                <span className={styles.servings}>14 servings</span>
+              </p>
               <ul className={styles.mealAttributes}>
-                <li>
-                  <AiFillFire />
+                <li className={styles.mealAttribute}>
+                  <AiFillFire className={styles.mealIcon} />
+                  <span>
+                    <strong className={styles.calories}>354</strong> kcal
+                  </span>
                 </li>
-                <li></li>
-                <li></li>
+                <div className={styles.nutritionGrid}>
+                  <div className={styles.nutritionMacros}>
+                    <li className={styles.protein}>qweqwe</li>
+                    <li className={styles.fat}></li>
+                    <li className={styles.carb}></li>
+                  </div>
+                  <div className={styles.nutritionMicros}></div>
+                </div>
               </ul>
             </div>
           </div>
