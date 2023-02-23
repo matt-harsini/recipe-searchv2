@@ -28,7 +28,7 @@
 
 .title {
   font-size: var(--step-3);
-  color: black;
+  color: white;
 }
 
 .nav {
@@ -37,7 +37,7 @@
   width: 100%;
   color: white;
   z-index: 10;
-  transition: all 0.1s;
+  transition: all 0.15s;
 }
 
 .navLink {

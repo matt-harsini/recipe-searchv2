@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
 import styles from "./NavBar.module.css";
 
-function NavBar({ navBar, icon, hamburger }) {
+function NavBar({ navBar }) {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
   const linksRef = useRef(null);
@@ -26,13 +26,12 @@ function NavBar({ navBar, icon, hamburger }) {
     <nav className={styles.nav} ref={navBar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <div className={styles.title} ref={icon}>
+          <div className={styles.title}>
             <GiChickenOven />
           </div>
           <button
             className={styles.navToggle}
             onClick={() => setShowLinks((prevState) => !prevState)}
-            ref={hamburger}
           >
             <RxHamburgerMenu />
           </button>
