@@ -298,13 +298,37 @@
   padding: 16px;
 }
 
+.imgGallery img {
+  width: 100%;
+  display: block;
+  transition: all 0.4s;
+}
+
+.imgGallery img:hover {
+  transform: scale(1.1);
+}
+
+.imgItem {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1050px) {
   .testimonials {
     grid-template-columns: 1fr;
   }
 
+  .imgGallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   .testimonialsContainer {
     padding: 96px 32px;
+  }
+}
+
+@media screen and (1050px <= width <= 1350px) {
+  .imgGallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

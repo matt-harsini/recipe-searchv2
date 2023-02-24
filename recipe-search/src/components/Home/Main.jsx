@@ -248,18 +248,90 @@ function Main({ innerRef }) {
             </div>
           </div>
           <div className={styles.imgGallery}>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
+            <figure className={styles.imgItem}>
+              <img
+                src="../../../src/assets/gallery-1.jpg"
+                alt="Photo of beautifully arranged food"
+                loading="lazy"
+              />
+            </figure>
           </div>
         </div>
       </section>
