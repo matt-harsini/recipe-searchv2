@@ -263,7 +263,7 @@
 }
 
 .testimonialsContainer {
-  padding: 96px;
+  padding: 48px;
 }
 
 .testimonialImg {
@@ -298,17 +298,13 @@
   padding: 16px;
 }
 
-@media screen and (max-width: 900px) {
-  .info {
+@media screen and (max-width: 1050px) {
+  .testimonials {
     grid-template-columns: 1fr;
   }
 
-  .stepImg:nth-child(2) {
-    grid-row: 2;
-  }
-
-  .stepImg:nth-child(3) {
-    grid-row: 4;
+  .testimonialsContainer {
+    padding: 96px 32px;
   }
 }
 
@@ -332,6 +328,11 @@
 }
 
 @media screen and (max-width: 900px) {
+  .info {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   .infoRecipes {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -343,5 +344,13 @@
 
   .mealsImg {
     width: 100%;
+  }
+
+  .stepImg:nth-child(2) {
+    grid-row: 2;
+  }
+
+  .stepImg:nth-child(3) {
+    grid-row: 4;
   }
 }
