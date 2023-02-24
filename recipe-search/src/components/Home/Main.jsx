@@ -3,7 +3,6 @@ import styles from "./Main.module.css";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
 
-
 function Main({ innerRef }) {
   return (
     <main className={styles.main} ref={innerRef}>
@@ -87,7 +86,7 @@ function Main({ innerRef }) {
           </h2>
         </div>
         <div
-          className={`${styles.container} ${styles.info} ${styles.cardContainer}`}
+          className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
         >
           <div className={styles.meals}>
             <img

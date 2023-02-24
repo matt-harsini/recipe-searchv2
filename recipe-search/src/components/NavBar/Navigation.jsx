@@ -5,11 +5,12 @@ import { useInView } from "react-intersection-observer";
 
 function Navigation() {
   const [ref, inView] = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   });
   const navBar = useRef(null);
 
   useEffect(() => {
+    console.log(inView);
     if (!inView) {
       navBar.current.style.backgroundColor = "";
       return;

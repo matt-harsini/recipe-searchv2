@@ -17,6 +17,17 @@
   margin: 0 auto;
 }
 
+.infoRecipes {
+  max-width: 1500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 64px;
+  row-gap: 96px;
+  padding: 96px 0;
+  margin: 0 auto;
+}
+
 .subheading {
   display: block;
   font-size: var(--step-2);
@@ -158,6 +169,7 @@
 
 .mealContent {
   padding: 32px 48px 48px 48px;
+  flex-basis: 100%;
 }
 
 .mealAttributes {
@@ -222,14 +234,51 @@
   font-size: var(--step-4);
   color: #37b24d;
 }
+
 @media screen and (max-width: 900px) {
   .info {
     grid-template-columns: 1fr;
   }
+
   .stepImg:nth-child(2) {
     grid-row: 2;
   }
+
   .stepImg:nth-child(3) {
     grid-row: 4;
+  }
+}
+
+@media screen and (900px <= width <= 1300px) {
+  .infoRecipes {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .diet {
+    justify-self: center;
+  }
+
+  .meals {
+    display: flex;
+  }
+
+  .mealImg {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .infoRecipes {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  
+  .meals {  
+    display: block;
+  }
+
+  .mealsImg {
+    width: 100%;
   }
 }
