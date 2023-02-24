@@ -196,30 +196,54 @@ function Main({ innerRef }) {
               <figure>
                 <img
                   className={styles.testimonialImg}
-                  alt="Photo of customer Dave Bryson"
+                  alt="Photo of user Dave Bryson"
                   src="../../../src/assets/dave.jpg"
                   loading="lazy"
                 />
                 <blockquote className={styles.testimonialText}>
-                  Able to find great-tasting meals with a click of a button!
-                  Feeling healthier thanks to Recipe Search
+                  Finding vegan recipes has never been easier! Feeling healthier
+                  and energetic thanks to Recipe Search.
                 </blockquote>
                 <p className={styles.testimonialName}>— Dave Bryson</p>
               </figure>
               <figure>
-                <img className={styles.testimonialImg} alt="" />
-                <blockquote></blockquote>
-                <p></p>
+                <img
+                  className={styles.testimonialImg}
+                  alt="Photo of user Ben Hadley"
+                  src="../../../src/assets/ben.jpg"
+                  loading="lazy"
+                />
+                <blockquote className={styles.testimonialText}>
+                  The amount of recipe options is crazy good. The wife and kids
+                  are already impressed with my cooking repertoire.
+                </blockquote>
+                <p className={styles.testimonialName}>— Ben Hadley</p>
               </figure>
               <figure>
-                <img className={styles.testimonialImg} alt="" />
-                <blockquote></blockquote>
-                <p></p>
+                <img
+                  className={styles.testimonialImg}
+                  alt="Photo of user Steve Miller"
+                  src="../../../src/assets/steve.jpg"
+                  loading="lazy"
+                />
+                <blockquote className={styles.testimonialText}>
+                  Recipe Search is a life saver! I am impressed with the amount
+                  of Gluten-Free options.
+                </blockquote>
+                <p className={styles.testimonialName}>— Steve Miller</p>
               </figure>
               <figure>
-                <img className={styles.testimonialImg} alt="" />
-                <blockquote></blockquote>
-                <p></p>
+                <img
+                  className={styles.testimonialImg}
+                  alt="Photo of user Hannah Smith"
+                  src="../../../src/assets/hannah.jpg"
+                  loading="lazy"
+                />
+                <blockquote className={styles.testimonialText}>
+                  Having an array of healthy options is helping me achieve my
+                  fitness goals!
+                </blockquote>
+                <p className={styles.testimonialName}>— Hannah Smith</p>
               </figure>
             </div>
           </div>
