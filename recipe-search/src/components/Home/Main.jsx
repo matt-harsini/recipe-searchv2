@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Main.module.css";
 import { AiFillFire } from "react-icons/ai";
+import { IoCheckmarkOutline } from "react-icons/io5";
+
+
 function Main({ innerRef }) {
   return (
     <main className={styles.main} ref={innerRef}>
@@ -106,20 +109,74 @@ function Main({ innerRef }) {
               <ul className={styles.mealAttributes}>
                 <li className={styles.mealAttribute}>
                   <AiFillFire className={styles.mealIcon} />
-                  <span>
-                    <strong className={styles.calories}>354</strong> kcal
-                  </span>
                 </li>
-                <div className={styles.nutritionGrid}>
-                  <div className={styles.nutritionMacros}>
-                    <li className={styles.protein}>qweqwe</li>
-                    <li className={styles.fat}></li>
-                    <li className={styles.carb}></li>
-                  </div>
-                  <div className={styles.nutritionMicros}></div>
-                </div>
               </ul>
             </div>
+          </div>
+          <div className={styles.meals}>
+            <img
+              className={styles.mealImg}
+              src="../../../src/assets/meal-1.jpg"
+              alt="Japanese Gyozas"
+              loading="lazy"
+            />
+            <div className={styles.mealContent}>
+              <div className={styles.mealTag}>
+                <span className={`${styles.tag} ${styles.tagVegetarian}`}>
+                  Vegetarian
+                </span>
+              </div>
+              <p className={styles.mealTitle}>
+                Japanese Gyozas
+                <span className={styles.servings}>14 servings</span>
+              </p>
+              <ul className={styles.mealAttributes}>
+                <li className={styles.mealAttribute}>
+                  <AiFillFire className={styles.mealIcon} />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.diet}>
+            <h3 className={styles.headingDiet}>Works with any diet:</h3>
+            <ul className={styles.list}>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Vegetarian</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Vegan</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Pescetarian</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Gluten-Free</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Dairy-Free</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Keto-Friendly</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Paleo</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>FODMAP-Free</span>
+              </li>
+              <li className={styles.listItem}>
+                <IoCheckmarkOutline className={styles.checkmark} />
+                <span>Kidney-Friendly</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

@@ -82,6 +82,13 @@
   line-height: 1.2;
 }
 
+.headingDiet {
+  color: #212529;
+  font-size: var(--step-4);
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
 .stepNum {
   font-weight: 600;
   color: #ddd;
@@ -176,6 +183,7 @@
 .mealIcon {
   height: 24px;
   width: 24px;
+  color: #f03e3e;
 }
 
 .servings {
@@ -189,17 +197,31 @@
   font-size: var(--step-2);
 }
 
-.nutritionGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
 }
 
-.protein::before {
-  font-size: var(--step-5);
-  color: #7aca25;
-  content: "•";
+.listItem {
+  font-size: var(--step-2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.2;
 }
 
+.diet {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkmark {
+  font-size: var(--step-4);
+  color: #37b24d;
+}
 @media screen and (max-width: 900px) {
   .info {
     grid-template-columns: 1fr;
