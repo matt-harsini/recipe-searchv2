@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Main.module.css";
+import { Link } from "react-router-dom";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
 
@@ -176,6 +177,51 @@ function Main({ innerRef }) {
                 <span>Kidney-Friendly</span>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className={styles.center}>
+          <Link to="/search-recipes" className={styles.startSearchingBtn}>
+            See all recipes →
+          </Link>
+        </div>
+      </section>
+      <section>
+        <div className={styles.testimonials}>
+          <div className={styles.testimonialsContainer}>
+            <span className={styles.subheading}>Testimonials</span>
+            <h2 className={styles.heading}>
+              Once you try it, you can't go back
+            </h2>
+            <div className={styles.quotes}>
+              <figure>
+                <img
+                  className={styles.testimonialImg}
+                  alt="Photo of customer Dave Bryson"
+                  src="../../../src/assets/dave.jpg"
+                  loading="lazy"
+                />
+                <blockquote className={styles.testimonialText}>
+                  Able to find great-tasting meals with a click of a button!
+                  Feeling healthier thanks to Recipe Search
+                </blockquote>
+                <p className={styles.testimonialName}>— Dave Bryson</p>
+              </figure>
+              <figure>
+                <img className={styles.testimonialImg} alt="" />
+                <blockquote></blockquote>
+                <p></p>
+              </figure>
+              <figure>
+                <img className={styles.testimonialImg} alt="" />
+                <blockquote></blockquote>
+                <p></p>
+              </figure>
+              <figure>
+                <img className={styles.testimonialImg} alt="" />
+                <blockquote></blockquote>
+                <p></p>
+              </figure>
+            </div>
           </div>
         </div>
       </section>

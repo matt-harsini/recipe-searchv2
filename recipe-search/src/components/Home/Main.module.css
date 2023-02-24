@@ -169,7 +169,6 @@
 
 .mealContent {
   padding: 32px 48px 48px 48px;
-  flex-basis: 100%;
 }
 
 .mealAttributes {
@@ -235,6 +234,63 @@
   color: #37b24d;
 }
 
+.startSearchingBtn {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: var(--step-2);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  display: inline-block;
+  padding-top: 24px;
+}
+
+.center {
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 96px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+}
+
+.testimonialsContainer {
+  padding: 96px;
+}
+
+.testimonialImg {
+  width: 64px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.testimonialText {
+  font-size: var(--step-2);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.testimonialName {
+  font-size: var(--step-1);
+  color: white;
+}
+
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 48px;
+  column-gap: 80px;
+}
+
 @media screen and (max-width: 900px) {
   .info {
     grid-template-columns: 1fr;
@@ -273,8 +329,8 @@
     grid-template-columns: 1fr;
     justify-items: center;
   }
-  
-  .meals {  
+
+  .meals {
     display: block;
   }
 
