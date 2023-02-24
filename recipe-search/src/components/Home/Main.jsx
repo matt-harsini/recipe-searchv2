@@ -247,6 +247,20 @@ function Main({ innerRef }) {
               </figure>
             </div>
           </div>
+          <div className={styles.imgGallery}>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+          </div>
         </div>
       </section>
     </main>

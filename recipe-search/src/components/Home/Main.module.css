@@ -291,6 +291,13 @@
   column-gap: 48px;
 }
 
+.imgGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
 @media screen and (max-width: 900px) {
   .info {
     grid-template-columns: 1fr;
