@@ -26,7 +26,7 @@ function NavBar({ navBar }) {
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
           <div className={styles.title}>
-            <GiChickenOven />
+            <GiChickenOven style={{ width: "19.5px", height: "19.5px" }} />
           </div>
           <button
             className={styles.navToggle}
@@ -39,18 +39,18 @@ function NavBar({ navBar }) {
           <div className={styles.links} ref={linksRef}>
             {links.map(({ id, url, text }) => {
               return (
-                <motion.button key={id} className={styles.motionButton}>
-                  <div className={styles.buttonContainer}>
-                    <NavLink
-                      to={url}
-                      onClick={() => setShowLinks((prevState) => !prevState)}
-                      style={{ textDecoration: "none" }}
-                      className={styles.buttonNav}
-                    >
-                      {text}
-                    </NavLink>
-                  </div>
-                </motion.button>
+                <div className={styles.buttonContainer} key={id}>
+                  <NavLink
+                    to={url}
+                    onClick={() => setShowLinks((prevState) => !prevState)}
+                    style={{ textDecoration: "none" }}
+                    className={`${
+                      text === "Home" ? styles.homeBtn : styles.buttonNav
+                    }`}
+                  >
+                    {text}
+                  </NavLink>
+                </div>
               );
             })}
 

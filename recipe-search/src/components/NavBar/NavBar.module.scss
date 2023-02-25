@@ -50,12 +50,11 @@ $action-color: $green;
   display: block;
 }
 
-.iconLinks {
-  display: none;
-}
-
 .motionButton {
   background-color: transparent;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .buttonContainer {
@@ -63,14 +62,13 @@ $action-color: $green;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  justify-content: center;
 }
 
 .buttonNav {
-  padding: 12px 16px;
+  padding: 16px 24px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
-  background: #f03e3e;
+  background: #fff;
   text-decoration: none;
   color: #212529;
   font-size: var(--step-1);
@@ -79,7 +77,7 @@ $action-color: $green;
   position: relative;
   transition: background-color 0.6s ease;
   overflow: hidden;
-  font-weight: 600;
+  font-weight: 500;
   &:after {
     content: "";
     position: absolute;
@@ -105,6 +103,19 @@ $action-color: $green;
       height: 300px;
     }
   }
+}
+
+.homeBtn {
+  line-height: 1.25;
+  text-decoration: none;
+  color: #fff;
+  font-size: var(--step-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 0.6s ease;
+  overflow: hidden;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 800px) {
@@ -136,7 +147,7 @@ $action-color: $green;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 64px;
   }
 
   .navLink {
@@ -151,7 +162,7 @@ $action-color: $green;
   }
 
   .iconLinks > svg {
-    fill: #f03e3e;
+    fill: white;
     font-size: var(--step-1);
   }
   .iconLinks:visited {
