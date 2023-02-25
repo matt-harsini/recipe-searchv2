@@ -305,7 +305,28 @@ function Main({ innerRef }) {
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/gallery-11.jpg"
+                  src="../../../src/assets/pexels-lina-kivaka-1813504.jpg"
+                  alt="Photo of beautifully arranged food"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className={styles.imgItem}>
+                <img
+                  src="../../../src/assets/pexels-alisha-mishra-1346345.jpg"
+                  alt="Photo of beautifully arranged food"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className={styles.imgItem}>
+                <img
+                  src="../../../src/assets/pexels-bp-2739250.jpg"
+                  alt="Photo of beautifully arranged food"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className={styles.imgItem}>
+                <img
+                  src="../../../src/assets/pexels-mario-k-12755998.jpg"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
@@ -316,14 +337,14 @@ function Main({ innerRef }) {
       </main>
       <footer className={styles.footer}>
         <div className={`${styles.container} ${styles.footerGrid}`}>
-          <div className={styles.logoCol}>
+          <div className={styles.footerCol}>
             <a href="#" className={styles.footerLogo}>
               Recipe Search
             </a>
             <ul className={styles.footerLinks}>
               {socials.map((socials) => {
                 return (
-                  <li>
+                  <li key={socials.id}>
                     <a href={socials.url} className={styles.footerLink}>
                       <div>{socials.icon}</div>
                     </a>
@@ -335,18 +356,90 @@ function Main({ innerRef }) {
               Copyright © 2023 by Recipe Search, Inc. All rights reserved.
             </p>
           </div>
-          <div className={styles.addressCol}>
+          <div className={styles.footerCol}>
             <p className={styles.footerHeading}>Contact us</p>
             <address className={styles.contacts}>
               623 Harrison St., 2nd Floor, San Francisco, CA 94107
             </address>
-            <p className={styles.contacts}>
+            <div className={`${styles.marginTop} ${styles.contacts}`}>
               123-123-1234
-              <div>recipesearchsupport@gmail.com</div>
-            </p>
+            </div>
+            <p className={styles.contacts}>recipesearchsupport@gmail.com</p>
           </div>
-          <nav className={styles.navCol}>
+          <nav className={styles.footerCol}>
             <p className={styles.footerHeading}>Account</p>
+            <ul className={styles.navCol}>
+              <li>
+                <a className={styles.footerink} href="#">
+                  Create account
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  Sign in
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  iOS app
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  Android app
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav className={styles.footerCol}>
+            <p className={styles.footerHeading}>Company</p>
+            <ul className={styles.navCol}>
+              <li>
+                <a className={styles.footerink} href="#">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  For Business
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  Cooking partners
+                </a>
+              </li>
+              <li>
+                <a className={styles.footerink} href="#">
+                  Careers
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav className={styles.footerCol}>
+            <p className={styles.footerHeading}>Resources</p>
+            <ul className={styles.navCol}>
+              <li>
+                <a className="footer-link" href="#">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="#">
+                  Recipe directory
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="#">
+                  Help center
+                </a>
+              </li>
+              <li>
+                <a className="footer-link" href="#">
+                  Privacy & terms
+                </a>
+              </li>
+            </ul>
           </nav>
         </div>
       </footer>
