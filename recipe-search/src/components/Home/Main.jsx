@@ -3,7 +3,7 @@ import styles from "./Main.module.css";
 import { Link } from "react-router-dom";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
-
+import { socials } from "../NavBar/data";
 function Main({ innerRef }) {
   return (
     <>
@@ -190,9 +190,7 @@ function Main({ innerRef }) {
           <div className={styles.testimonials}>
             <div className={styles.testimonialsContainer}>
               <span className={styles.subheading}>Testimonials</span>
-              <h2 className={styles.heading}>
-                Once you try it, you can't go back
-              </h2>
+              <h2 className={styles.heading}>Hear from our users</h2>
               <div className={styles.quotes}>
                 <figure>
                   <img
@@ -300,20 +298,6 @@ function Main({ innerRef }) {
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/gallery-9.jpg"
-                  alt="Photo of beautifully arranged food"
-                  loading="lazy"
-                />
-              </figure>
-              <figure className={styles.imgItem}>
-                <img
-                  src="../../../src/assets/gallery-11.jpg"
-                  alt="Photo of beautifully arranged food"
-                  loading="lazy"
-                />
-              </figure>
-              <figure className={styles.imgItem}>
-                <img
                   src="../../../src/assets/gallery-12.jpg"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
@@ -321,14 +305,7 @@ function Main({ innerRef }) {
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/pexels-alisha-mishra-1346381.jpg"
-                  alt="Photo of beautifully arranged food"
-                  loading="lazy"
-                />
-              </figure>
-              <figure className={styles.imgItem}>
-                <img
-                  src="../../../src/assets/pexels-nishant-aneja-2955819.jpg"
+                  src="../../../src/assets/gallery-11.jpg"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
@@ -343,9 +320,34 @@ function Main({ innerRef }) {
             <a href="#" className={styles.footerLogo}>
               Recipe Search
             </a>
+            <ul className={styles.footerLinks}>
+              {socials.map((socials) => {
+                return (
+                  <li>
+                    <a href={socials.url} className={styles.footerLink}>
+                      <div>{socials.icon}</div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <p className={styles.copyright}>
+              Copyright © 2023 by Recipe Search, Inc. All rights reserved.
+            </p>
           </div>
-          <div className={styles.addressCol}></div>
-          <nav className={styles.navCol}></nav>
+          <div className={styles.addressCol}>
+            <p className={styles.footerHeading}>Contact us</p>
+            <address className={styles.contacts}>
+              623 Harrison St., 2nd Floor, San Francisco, CA 94107
+            </address>
+            <p className={styles.contacts}>
+              123-123-1234
+              <div>recipesearchsupport@gmail.com</div>
+            </p>
+          </div>
+          <nav className={styles.navCol}>
+            <p className={styles.footerHeading}>Account</p>
+          </nav>
         </div>
       </footer>
     </>

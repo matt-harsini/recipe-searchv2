@@ -260,9 +260,12 @@
   display: grid;
   grid-template-columns: 55fr 45fr;
   align-items: center;
+  box-sizing: content-box;
+  padding-top: 152px;
 }
 
 .testimonialsContainer {
+  box-sizing: border-box;
   padding: 48px;
 }
 
@@ -292,6 +295,7 @@
 }
 
 .imgGallery {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -320,7 +324,7 @@
 
 .footerGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1.5fr) repeat(3, 1fr);
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
   column-gap: 64px;
   row-gap: 96px;
 }
@@ -328,13 +332,50 @@
 .logoCol {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .footerLogo {
   text-decoration: none;
-  font-size: var(--step-3);
+  font-weight: 500;
+  font-size: var(--step-2);
   color: #212529;
-  margin-bottom: 3.2rem;
+  margin-bottom: 40px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  text-decoration: none;
+  font-size: var(--step-2);
+  color: #212529;
+  transition: all 0.3s;
+}
+
+.copyright {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: #767676;
+  margin-top: 64px;
+}
+
+.footerHeading {
+  font-size: var(--step-2);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: var(--step-1);
+  line-height: 1.6;
+}
+
+.addressCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1050px) {
   .testimonials {
