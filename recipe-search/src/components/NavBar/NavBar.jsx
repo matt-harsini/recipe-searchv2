@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { GiChickenOven } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { links, socials } from "./data";
-import styles from "./NavBar.module.css";
+import styles from "./NavBar.module.scss";
 
 function NavBar({ navBar }) {
   const [showLinks, setShowLinks] = useState(false);
@@ -39,33 +39,30 @@ function NavBar({ navBar }) {
           <div className={styles.links} ref={linksRef}>
             {links.map(({ id, url, text }) => {
               return (
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  key={id}
-                  className={`${`${styles.btn} ${styles.navLink}`} ${
-                    text === "Recipes" ? styles.recipeBtn : ""
-                  }`}
-                >
-                  <NavLink
-                    to={url}
-                    onClick={() => setShowLinks((prevState) => !prevState)}
-                    style={{ textDecoration: "none" }}
-                  >
-                    {text}
-                  </NavLink>
+                <motion.button key={id} className={styles.motionButton}>
+                  <div className={styles.buttonContainer}>
+                    <NavLink
+                      to={url}
+                      onClick={() => setShowLinks((prevState) => !prevState)}
+                      style={{ textDecoration: "none" }}
+                      className={styles.buttonNav}
+                    >
+                      {text}
+                    </NavLink>
+                  </div>
                 </motion.button>
               );
             })}
+
             {socials.map(({ id, url, icon }) => {
               return (
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   key={id}
-                  className={styles.iconLinks}
+                  className={styles.motionButton}
                 >
-                  <a href={url} key={id}>
+                  <a href={url} key={id} className={styles.iconLinks}>
                     {icon}
                   </a>
                 </motion.button>
