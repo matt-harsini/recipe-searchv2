@@ -443,7 +443,7 @@
 
 @media screen and (900px <= width <= 1250px) {
   .footerGrid {
-    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 @media screen and (max-width: 900px) {
@@ -479,7 +479,7 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .footerGrid {
     grid-template-columns: 1fr;
   }
