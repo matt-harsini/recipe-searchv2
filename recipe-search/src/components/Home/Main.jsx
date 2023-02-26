@@ -359,83 +359,84 @@ function Main({ innerRef }) {
           <div className={styles.footerCol}>
             <p className={styles.footerHeading}>Contact us</p>
             <address className={styles.contacts}>
-              623 Harrison St., 2nd Floor, San Francisco, CA 94107
+              623 Harrison St., 2nd Floor, <br />
+              San Francisco, CA 94107
             </address>
-            <div className={`${styles.marginTop} ${styles.contacts}`}>
-              123-123-1234
-            </div>
-            <p className={styles.contacts}>recipesearchsupport@gmail.com</p>
+            <p className={styles.contacts}>
+              123-123-1234 <br />
+              recipesearchsupport@gmail.com
+            </p>
           </div>
-          <nav className={styles.footerCol}>
+          <nav className={`${styles.footerCol}`}>
             <p className={styles.footerHeading}>Account</p>
             <ul className={styles.navCol}>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   Create account
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   Sign in
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   iOS app
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   Android app
                 </a>
               </li>
             </ul>
           </nav>
-          <nav className={styles.footerCol}>
+          <nav className={`${styles.footerCol}`}>
             <p className={styles.footerHeading}>Company</p>
             <ul className={styles.navCol}>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   About
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   For Business
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   Cooking partners
                 </a>
               </li>
               <li>
-                <a className={styles.footerink} href="#">
+                <a className={styles.footerLink} href="#">
                   Careers
                 </a>
               </li>
             </ul>
           </nav>
-          <nav className={styles.footerCol}>
+          <nav className={`${styles.footerCol}`}>
             <p className={styles.footerHeading}>Resources</p>
             <ul className={styles.navCol}>
               <li>
-                <a className="footer-link" href="#">
+                <a className={styles.footerLink} href="#">
                   FAQ
                 </a>
               </li>
               <li>
-                <a className="footer-link" href="#">
+                <a className={styles.footerLink} href="#">
                   Recipe directory
                 </a>
               </li>
               <li>
-                <a className="footer-link" href="#">
+                <a className={styles.footerLink} href="#">
                   Help center
                 </a>
               </li>
               <li>
-                <a className="footer-link" href="#">
+                <a className={styles.footerLink} href="#">
                   Privacy & terms
                 </a>
               </li>

@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 function Navigation() {
   const [ref, inView] = useInView({
-    threshold: 0.1,
+    threshold: 0.05,
   });
   const navBar = useRef(null);
 

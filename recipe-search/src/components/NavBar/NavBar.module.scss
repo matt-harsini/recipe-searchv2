@@ -30,9 +30,9 @@ $action-color: $green;
   padding: 0 40px;
 }
 
-.title {
-  font-size: var(--step-3);
+.icon {
   color: white;
+  font-size: var(--step-5);
 }
 
 .nav {
@@ -48,13 +48,6 @@ $action-color: $green;
   color: #212529;
   text-decoration: none;
   display: block;
-}
-
-.motionButton {
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  background: none;
 }
 
 .buttonContainer {
@@ -95,7 +88,7 @@ $action-color: $green;
   }
   &:focus,
   &:hover {
-    background: darken(#fc6e51, 7%);
+    background: darken(#ff3f34, 7%);
   }
   &:active {
     &:after {
@@ -147,18 +140,12 @@ $action-color: $green;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 64px;
+    gap: 32px;
   }
 
   .navLink {
     color: #212529;
     text-decoration: none;
-  }
-
-  .iconLinks {
-    display: inline-block;
-    line-height: 0;
-    height: auto;
   }
 
   .iconLinks > svg {
