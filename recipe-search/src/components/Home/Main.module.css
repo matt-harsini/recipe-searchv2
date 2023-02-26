@@ -474,12 +474,12 @@
   }
 }
 
-@media screen and (500 < width < 900) {
+@media screen and (max-width: 900px) {
   .footerGrid {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .footerGrid {
     grid-template-columns: 1fr;
   }
