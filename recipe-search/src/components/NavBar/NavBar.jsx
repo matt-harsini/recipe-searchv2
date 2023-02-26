@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 import { GiMeatCleaver } from "react-icons/gi";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import { links, socials } from "./data";
+import { links} from "./data";
 import styles from "./NavBar.module.scss";
 
 function NavBar({ navBar }) {

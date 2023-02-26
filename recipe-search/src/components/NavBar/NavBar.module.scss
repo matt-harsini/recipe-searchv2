@@ -70,7 +70,7 @@ $action-color: $green;
   position: relative;
   transition: background-color 0.6s ease;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 600;
   &:after {
     content: "";
     position: absolute;
@@ -108,7 +108,7 @@ $action-color: $green;
   position: relative;
   transition: background-color 0.6s ease;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 800px) {
@@ -140,7 +140,7 @@ $action-color: $green;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 32px;
+    gap: 64px;
   }
 
   .navLink {

@@ -1,16 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Main.module.css";
 import { Link } from "react-router-dom";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { socials } from "../NavBar/data";
+import { motion, useAnimationControls } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const options = {
+  triggerOnce: true,
+  threshold: 0.1,
+};
+
 function Main({ innerRef }) {
+  const [keyFeatures, kfInView] = useInView(options);
+  const [h2, inView] = useInView(options);
+  const spanControl = useAnimationControls();
+
+  useEffect(() => {
+    if (inView) {
+      spanControl.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1.1,
+          bounce: 0.4,
+        },
+        opacity: 1,
+      });
+    }
+    if (!inView) {
+      spanControl.start({ x: -500 });
+    }
+  }, [kfInView]);
+
   return (
     <>
       <main className={styles.main} ref={innerRef}>
         <section>
           <div className={`${styles.container}`}>
-            <span className={styles.subheading}>Three key features</span>
+            <motion.div
+              className={styles.subheading}
+              ref={keyFeatures}
+              animate={spanControl}
+              initial={{ opacity: 0 }}
+            >
+              Three key features
+            </motion.div>
             <h2 className={styles.heading}>
               Search a recipe database of over 2.3 million recipes
             </h2>
