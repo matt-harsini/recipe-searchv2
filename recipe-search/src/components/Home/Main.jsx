@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Main.module.css";
 import { Link } from "react-router-dom";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { socials } from "../NavBar/data";
-import { motion, useAnimationControls } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useAnimateOnView } from "./useAnimateOnView";
 
 const options = {
   triggerOnce: true,
@@ -13,43 +13,28 @@ const options = {
 };
 
 function Main({ innerRef }) {
-  const [keyFeatures, kfInView] = useInView(options);
-  const [h2, inView] = useInView(options);
-  const spanControl = useAnimationControls();
-
-  useEffect(() => {
-    if (inView) {
-      spanControl.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 1.1,
-          bounce: 0.4,
-        },
-        opacity: 1,
-      });
-    }
-    if (!inView) {
-      spanControl.start({ x: -500 });
-    }
-  }, [kfInView]);
-
+  const { ref: s1SubHeading, controls: s1Control } = useAnimateOnView();
+  const { ref: s1Heading, controls: h1Control } = useAnimateOnView();
   return (
     <>
       <main className={styles.main} ref={innerRef}>
         <section>
           <div className={`${styles.container}`}>
-            <motion.div
+            <motion.span
               className={styles.subheading}
-              ref={keyFeatures}
-              animate={spanControl}
+              ref={s1SubHeading}
+              animate={s1Control}
               initial={{ opacity: 0 }}
             >
               Three key features
-            </motion.div>
-            <h2 className={styles.heading}>
+            </motion.span>
+            <motion.h2
+              ref={s1Heading}
+              animate={h1Control}
+              className={styles.heading}
+            >
               Search a recipe database of over 2.3 million recipes
-            </h2>
+            </motion.h2>
           </div>
           <div
             className={`${styles.container} ${styles.info} ${styles.paddingBottom}`}
