@@ -21,6 +21,5 @@ export const useAnimateOnView = (
     }
   }, [inView]);
 
-  console.log(inView);
   return { ref, controls };
 };

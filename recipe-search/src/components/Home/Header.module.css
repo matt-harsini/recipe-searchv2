@@ -42,6 +42,15 @@
 }
 
 .headerBtn {
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+}
+
+.learnMoreBtn {
+  text-decoration: none;
+  color: #fff;
+  font-size: var(--step-1);
   color: white;
   text-decoration: underline;
   text-underline-offset: 4px;

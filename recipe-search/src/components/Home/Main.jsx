@@ -25,6 +25,7 @@ function Main({ innerRef }) {
               ref={s1SubHeading}
               animate={s1Control}
               initial={{ opacity: 0 }}
+              id="section1"
             >
               Three key features
             </motion.span>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { GiMeatCleaver } from "react-icons/gi";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import { links} from "./data";
+import { links } from "./data";
 import styles from "./NavBar.module.scss";
 
 function NavBar({ navBar }) {
@@ -15,7 +15,6 @@ function NavBar({ navBar }) {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
       linkContainer.current.style.height = `${linksHeight}px`;
-      console.log(linkContainer.current.style.height);
     } else {
       linkContainer.current.style.height = "0px";
     }
