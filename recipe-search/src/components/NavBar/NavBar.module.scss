@@ -59,7 +59,6 @@ $action-color: $green;
 
 .buttonNav {
   padding: 16px 24px;
-  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
   background: #fff;
   text-decoration: none;
@@ -72,29 +71,11 @@ $action-color: $green;
   overflow: hidden;
   font-weight: 600;
   &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-    top: var(--mouse-y);
-    left: var(--mouse-x);
-    transform-style: flat;
-    transform: translate3d(-50%, -50%, 0);
     background: rgba(white, 0.1);
-    border-radius: 100%;
     transition: width 0.3s ease, height 0.3s ease;
   }
-  &:focus,
-  &:hover {
-    background: darken(#ff3f34, 7%);
-  }
   &:active {
-    &:after {
-      width: 300px;
-      height: 300px;
-    }
+    background: darken(#ff3f34, 7%);
   }
 }
 
