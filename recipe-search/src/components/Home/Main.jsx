@@ -53,7 +53,6 @@ function Main({ innerRef }) {
       transition: {
         type: "spring",
         duration: 1.2,
-        delay: 0.3,
       },
       opacity: 1,
     },
@@ -63,6 +62,14 @@ function Main({ innerRef }) {
     transition: {
       type: "spring",
       duration: 1.2,
+    },
+    opacity: 1,
+  });
+  const { ref: c1, controls: c1Control } = useAnimateOnView();
+  const { ref: c2, controls: c2Control } = useAnimateOnView({
+    transition: {
+      type: "spring",
+      delay: 0.3,
     },
     opacity: 1,
   });
@@ -148,8 +155,8 @@ function Main({ innerRef }) {
               </motion.p>
               <motion.h3
                 className={styles.headingTertiary}
-                animate={ f5Control }
-                ref={ f5 }
+                animate={f5Control}
+                ref={f5}
                 initial={{ opacity: 0 }}
               >
                 Full nutrition for each recipe
@@ -187,7 +194,12 @@ function Main({ innerRef }) {
           <div
             className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
           >
-            <div className={styles.meals}>
+            <motion.div
+              className={styles.meals}
+              animate={c1Control}
+              ref={c1}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.mealImg}
                 src="../../../src/assets/meal-1.jpg"
@@ -210,8 +222,13 @@ function Main({ innerRef }) {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className={styles.meals}>
+            </motion.div>
+            <motion.div
+              className={styles.meals}
+              animate={c2Control}
+              ref={c2}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.mealImg}
                 src="../../../src/assets/meal-1.jpg"
@@ -234,7 +251,7 @@ function Main({ innerRef }) {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
             <div className={styles.diet}>
               <h3 className={styles.headingDiet}>Works with any diet:</h3>
               <ul className={styles.list}>
