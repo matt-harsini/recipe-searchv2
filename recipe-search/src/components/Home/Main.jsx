@@ -29,14 +29,44 @@ function Main({ innerRef }) {
       transition: {
         type: "spring",
         duration: 1.2,
-        bounce: 0.4,
       },
       opacity: 1,
     },
     { x: 300 },
     { threshold: 0.9, triggerOnce: true }
   );
-  const { ref: f3, controls: f3Control } = useAnimateOnView();
+  const { ref: f3, controls: f3Control } = useAnimateOnView(
+    {
+      y: 0,
+      transition: {
+        type: "spring",
+        duration: 1.2,
+        delay: 1,
+      },
+      opacity: 1,
+    },
+    { y: -150 }
+  );
+  const { ref: f4, controls: f4Control } = useAnimateOnView(
+    {
+      y: 0,
+      transition: {
+        type: "spring",
+        duration: 1.2,
+        delay: 0.3,
+      },
+      opacity: 1,
+    },
+    { y: 200 }
+  );
+  const { ref: f5, controls: f5Control } = useAnimateOnView({
+    transition: {
+      type: "spring",
+      duration: 1.2,
+    },
+    opacity: 1,
+  });
+
   return (
     <>
       <main className={styles.main} ref={innerRef}>
@@ -108,15 +138,32 @@ function Main({ innerRef }) {
               </p>
             </motion.div>
             <div>
-              <p className={styles.stepNum}>03</p>
-              <h3 className={styles.headingTertiary}>
+              <motion.p
+                className={styles.stepNum}
+                animate={f3Control}
+                ref={f3}
+                initial={{ opacity: 0 }}
+              >
+                03
+              </motion.p>
+              <motion.h3
+                className={styles.headingTertiary}
+                animate={ f5Control }
+                ref={ f5 }
+                initial={{ opacity: 0 }}
+              >
                 Full nutrition for each recipe
-              </h3>
-              <p className={styles.text}>
+              </motion.h3>
+              <motion.p
+                className={styles.text}
+                animate={f4Control}
+                ref={f4}
+                initial={{ opacity: 0 }}
+              >
                 We have the most accurate automated nutrition analysis on the
                 web. You get detailed nutrition breakdown of each recipe with
                 25+ nutrients and appropriateness for all major diets for free!
-              </p>
+              </motion.p>
             </div>
             <div className={styles.stepImg}>
               <img

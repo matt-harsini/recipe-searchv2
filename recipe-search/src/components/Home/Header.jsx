@@ -11,6 +11,7 @@ function Header() {
   const { ref: header, controls: control } = useAnimateOnView(
     {
       transition: {
+        type: "spring",
         duration: 0.8,
       },
       opacity: 1,

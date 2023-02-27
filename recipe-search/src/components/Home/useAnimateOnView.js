@@ -19,6 +19,9 @@ export const useAnimateOnView = (
     if (!inView) {
       controls.start(hidden);
     }
+    return () => {
+      controls.stop();
+    };
   }, [inView]);
 
   return { ref, controls };
