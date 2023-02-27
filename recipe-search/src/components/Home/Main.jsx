@@ -7,14 +7,36 @@ import { socials } from "../NavBar/data";
 import { motion } from "framer-motion";
 import { useAnimateOnView } from "./useAnimateOnView";
 
-const options = {
-  triggerOnce: true,
-  threshold: 0.1,
-};
-
 function Main({ innerRef }) {
-  const { ref: s1SubHeading, controls: s1Control } = useAnimateOnView();
+  const { ref: s1SubHeading, controls: s1Control } = useAnimateOnView(
+    {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        delay: 0.8,
+        duration: 1,
+        bounce: 0.1,
+      },
+    },
+    { y: -100 }
+  );
   const { ref: s1Heading, controls: h1Control } = useAnimateOnView();
+  const { ref: f1, controls: f1Control } = useAnimateOnView();
+  const { ref: f2, controls: f2Control } = useAnimateOnView(
+    {
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 1.2,
+        bounce: 0.4,
+      },
+      opacity: 1,
+    },
+    { x: 300 },
+    { threshold: 0.9, triggerOnce: true }
+  );
+  const { ref: f3, controls: f3Control } = useAnimateOnView();
   return (
     <>
       <main className={styles.main} ref={innerRef}>
@@ -32,6 +54,7 @@ function Main({ innerRef }) {
             <motion.h2
               ref={s1Heading}
               animate={h1Control}
+              initial={{ opacity: 0 }}
               className={styles.heading}
             >
               Search a recipe database of over 2.3 million recipes
@@ -40,7 +63,7 @@ function Main({ innerRef }) {
           <div
             className={`${styles.container} ${styles.info} ${styles.paddingBottom}`}
           >
-            <div>
+            <motion.div ref={f1} animate={f1Control} initial={{ opacity: 0 }}>
               <p className={styles.stepNum}>01</p>
               <h3 className={styles.headingTertiary}>
                 500+ top web recipe sources
@@ -51,7 +74,7 @@ function Main({ innerRef }) {
                 recipes by their cookability and quality, so you can always
                 count on getting the best recipes!
               </p>
-            </div>
+            </motion.div>
             <div className={styles.stepImg}>
               <img
                 loading="lazy"
@@ -68,7 +91,12 @@ function Main({ innerRef }) {
                 alt="Fish on a cutting board with salt and lemon"
               />
             </div>
-            <div>
+            <motion.div
+              animate={f2Control}
+              initial={{ opacity: 0 }}
+              ref={f2}
+              transition={{ delay: 0.2 }}
+            >
               <p className={styles.stepNum}>02</p>
               <h3 className={styles.headingTertiary}>
                 Filter by diet or allergy restrictions
@@ -78,7 +106,7 @@ function Main({ innerRef }) {
                 Choose and pick specific recipes that best work with your diet
                 or health conditions.
               </p>
-            </div>
+            </motion.div>
             <div>
               <p className={styles.stepNum}>03</p>
               <h3 className={styles.headingTertiary}>

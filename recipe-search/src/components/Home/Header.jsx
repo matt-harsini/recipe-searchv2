@@ -10,15 +10,11 @@ const options = {
 function Header() {
   const { ref: header, controls: control } = useAnimateOnView(
     {
-      y: 0,
       transition: {
-        type: "spring",
-        duration: 1.2,
-        bounce: 0.4,
+        duration: 0.8,
       },
       opacity: 1,
     },
-    { y: -2000 },
     options
   );
 

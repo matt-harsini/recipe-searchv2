@@ -7,7 +7,7 @@ export const useAnimateOnView = (
   hidden = { opacity: 0 },
   options = {
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.9,
   }
 ) => {
   const controls = useAnimationControls();
