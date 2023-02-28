@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useAnimateOnView } from "./useAnimateOnView";
 
 function Main({ innerRef }) {
-  const { ref: s1SubHeading, controls: s1Control } = useAnimateOnView(
+  const { ref: s1Heading, controls: s1Control } = useAnimateOnView(
     {
       y: 0,
       opacity: 1,
@@ -21,7 +21,7 @@ function Main({ innerRef }) {
     },
     { y: -100 }
   );
-  const { ref: s1Heading, controls: h1Control } = useAnimateOnView();
+  const { ref: h1Heading, controls: h1Control } = useAnimateOnView();
   const { ref: f1, controls: f1Control } = useAnimateOnView();
   const { ref: f2, controls: f2Control } = useAnimateOnView(
     {
@@ -40,8 +40,9 @@ function Main({ innerRef }) {
       y: 0,
       transition: {
         type: "spring",
-        duration: 1.2,
-        delay: 1,
+        duration: 1,
+        delay: 0.5,
+        bounce: 0.3,
       },
       opacity: 1,
     },
@@ -52,7 +53,8 @@ function Main({ innerRef }) {
       y: 0,
       transition: {
         type: "spring",
-        duration: 1.2,
+        duration: 1,
+        bounce: 0.3,
       },
       opacity: 1,
     },
@@ -62,6 +64,7 @@ function Main({ innerRef }) {
     transition: {
       type: "spring",
       duration: 1.2,
+      delay: 0.3,
     },
     opacity: 1,
   });
@@ -73,7 +76,33 @@ function Main({ innerRef }) {
     },
     opacity: 1,
   });
-
+  const { ref: s2Heading, controls: s2Control } = useAnimateOnView(
+    {
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 1.2,
+        delay: 0.5,
+      },
+      opacity: 1,
+    },
+    { x: 350 },
+    { threshold: 0.9, triggerOnce: true }
+  );
+  const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
+    {
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 1,
+        delay: 0.8,
+        bounce: 0.5,
+      },
+      opacity: 1,
+    },
+    { x: -350 },
+    { threshold: 0.9, triggerOnce: true }
+  );
   return (
     <>
       <main className={styles.main} ref={innerRef}>
@@ -81,7 +110,7 @@ function Main({ innerRef }) {
           <div className={`${styles.container}`}>
             <motion.span
               className={styles.subheading}
-              ref={s1SubHeading}
+              ref={s1Heading}
               animate={s1Control}
               initial={{ opacity: 0 }}
               id="section1"
@@ -89,7 +118,7 @@ function Main({ innerRef }) {
               Three key features
             </motion.span>
             <motion.h2
-              ref={s1Heading}
+              ref={h1Heading}
               animate={h1Control}
               initial={{ opacity: 0 }}
               className={styles.heading}
@@ -186,10 +215,22 @@ function Main({ innerRef }) {
           <div
             className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText}`}
           >
-            <span className={styles.subheadingRecipe}>Recipes</span>
-            <h2 className={styles.headingRecipe}>
+            <motion.span
+              className={styles.subheadingRecipe}
+              animate={s2Control}
+              ref={s2Heading}
+              initial={{ opacity: 0 }}
+            >
+              Recipes
+            </motion.span>
+            <motion.h2
+              className={styles.headingRecipe}
+              animate={h2Control}
+              ref={h2Heading}
+              initial={{ opacity: 0 }}
+            >
               Find your next favorite recipe in seconds
-            </h2>
+            </motion.h2>
           </div>
           <div
             className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
