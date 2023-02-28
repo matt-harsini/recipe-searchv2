@@ -14,7 +14,7 @@ function Main({ innerRef }) {
       opacity: 1,
       transition: {
         type: "spring",
-        delay: 0.8,
+        delay: 0.5,
         duration: 1,
         bounce: 0.1,
       },
@@ -124,7 +124,7 @@ function Main({ innerRef }) {
               <img
                 loading="lazy"
                 className={styles.img}
-                src="../../../src/assets/169516589_l.jpg"
+                src="../../../src/assets/169516589_l.webp"
                 alt="Fish on a cutting board with salt and lemon"
               />
             </div>
@@ -419,28 +419,28 @@ function Main({ innerRef }) {
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/pexels-lina-kivaka-1813504.jpg"
+                  src="../../../src/assets/pexels-lina-kivaka-1813504.webp"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/pexels-alisha-mishra-1346345.jpg"
+                  src="../../../src/assets/pexels-alisha-mishra-1346345.webp"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/pexels-bp-2739250.jpg"
+                  src="../../../src/assets/pexels-bp-2739250.webp"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
               </figure>
               <figure className={styles.imgItem}>
                 <img
-                  src="../../../src/assets/pexels-mario-k-12755998.jpg"
+                  src="../../../src/assets/pexels-mario-k-12755998.webp"
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />
