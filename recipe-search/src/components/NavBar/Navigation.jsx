@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
 import { useInView } from "react-intersection-observer";
@@ -8,7 +8,6 @@ function Navigation() {
     threshold: 0.1,
   });
   const navBar = useRef(null);
-
   useEffect(() => {
     const navigationHeight = navBar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
@@ -16,7 +15,6 @@ function Navigation() {
       navigationHeight + "px"
     );
   }, []);
-
   useEffect(() => {
     if (!inView) {
       navBar.current.style.backgroundColor = "";
@@ -25,11 +23,12 @@ function Navigation() {
     navBar.current.style.backgroundColor = "#212529";
     return;
   }, [inView]);
-
   return (
     <div>
       <NavBar navBar={navBar} />
-      <Outlet context={ref} />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Outlet context={ref} />
+      </Suspense>
     </div>
   );
 }

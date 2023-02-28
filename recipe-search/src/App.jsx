@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/NavBar/Navigation";
-import RecipeForm from "./components/Recipe/RecipeForm";
-import Home from "./components/Home/Home";
+
+const Home = lazy(() => import("./components/Home/Home"));
+const RecipeForm = lazy(() => import("./components/Recipe/RecipeForm"));
+
 function App() {
   return (
     <BrowserRouter>
