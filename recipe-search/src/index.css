@@ -29,7 +29,6 @@ html {
   font-size: 62.5%;
   scroll-padding-top: var(--scroll-padding, 50px);
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {

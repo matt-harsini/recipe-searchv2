@@ -23,51 +23,14 @@ function Features() {
     transition: { delay: 0.1 },
   });
   const { ref: f1, controls: f1Control } = useAnimateOnView();
-  const { ref: f2, controls: f2Control } = useAnimateOnView(
-    {
-      x: 0,
-      transition: {
-        type: "spring",
-        duration: 1.2,
-      },
-      opacity: 1,
-    },
-    { x: 300 },
-    { threshold: 0.9, triggerOnce: true }
-  );
-  const { ref: f3, controls: f3Control } = useAnimateOnView(
-    {
-      y: 0,
-      transition: {
-        type: "spring",
-        duration: 1,
-        delay: 0.5,
-        bounce: 0.3,
-      },
-      opacity: 1,
-    },
-    { y: -150 }
-  );
-  const { ref: f4, controls: f4Control } = useAnimateOnView(
-    {
-      y: 0,
-      transition: {
-        type: "spring",
-        duration: 1,
-        bounce: 0.3,
-      },
-      opacity: 1,
-    },
-    { y: 200 }
-  );
-  const { ref: f5, controls: f5Control } = useAnimateOnView({
-    transition: {
-      type: "spring",
-      duration: 1.2,
-      delay: 0.3,
-    },
-    opacity: 1,
-  });
+  const { ref: f2, controls: f2Control } = useAnimateOnView();
+  const { ref: f3, controls: f3Control } = useAnimateOnView();
+  const { ref: f4, controls: f4Control } = useAnimateOnView();
+  const { ref: f5, controls: f5Control } = useAnimateOnView();
+  const { ref: img1, controls: img1Control } = useAnimateOnView();
+  const { ref: img2, controls: img2Control } = useAnimateOnView();
+  const { ref: img3, controls: img3Control } = useAnimateOnView();
+
   return (
     <section ref={ref}>
       <div className={`${styles.container}`}>
@@ -104,28 +67,33 @@ function Features() {
             the best recipes!
           </p>
         </motion.div>
-        <div className={styles.stepImg}>
+        <motion.div
+          className={styles.stepImg}
+          ref={img1}
+          animate={img1Control}
+          initial={{ opacity: 0 }}
+        >
           <img
             loading="lazy"
             className={styles.img}
             src="../../../src/assets/pancakes.webp"
             alt="Pancakes topped with fruit and coffee on the side"
           />
-        </div>
-        <div className={styles.stepImg}>
+        </motion.div>
+        <motion.div
+          className={styles.stepImg}
+          ref={img2}
+          animate={img2Control}
+          initial={{ opacity: 0 }}
+        >
           <img
             loading="lazy"
             className={styles.img}
-            src="../../../src/assets/169516589_l.webp"
+            src="../../../src/assets/fish.webp"
             alt="Fish on a cutting board with salt and lemon"
           />
-        </div>
-        <motion.div
-          animate={f2Control}
-          initial={{ opacity: 0 }}
-          ref={f2}
-          transition={{ delay: 0.2 }}
-        >
+        </motion.div>
+        <motion.div animate={f2Control} initial={{ opacity: 0 }} ref={f2}>
           <p className={styles.stepNum}>02</p>
           <h3 className={styles.headingTertiary}>
             Filter by diet or allergy restrictions
@@ -164,14 +132,19 @@ function Features() {
             nutrients and appropriateness for all major diets for free!
           </motion.p>
         </div>
-        <div className={styles.stepImg}>
+        <motion.div
+          className={styles.stepImg}
+          ref={img3}
+          animate={img3Control}
+          initial={{ opacity: 0 }}
+        >
           <img
             loading="lazy"
             className={styles.img}
-            src="../../../src/assets/159041840_l.webp"
+            src="../../../src/assets/mushroom_stew.webp"
             alt="Bowl of mushroom curry"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
