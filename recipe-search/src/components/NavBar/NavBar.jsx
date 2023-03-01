@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { GiMeatCleaver } from "react-icons/gi";
-
 import { RxHamburgerMenu } from "react-icons/rx";
 import { links } from "../../data/data";
 import styles from "./NavBar.module.scss";

@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./Home.module.css";
 import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
-import { useOutletContext } from "react-router-dom";
 function Features() {
-  const ref = useOutletContext();
   const { ref: s1Heading, controls: s1Control } = useAnimateOnView(
     {
       y: 0,
@@ -32,7 +30,7 @@ function Features() {
   const { ref: img3, controls: img3Control } = useAnimateOnView();
 
   return (
-    <section ref={ref} id="features">
+    <section id="features">
       <div className={`${styles.container}`}>
         <motion.span
           className={styles.subheading}

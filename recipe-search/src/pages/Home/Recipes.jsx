@@ -45,11 +45,14 @@ function Recipes() {
     <section className={`${styles.recipes}`}>
       <div
         className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText}`}
+        ref={(node) => {
+          s2Heading(node);
+          h2Heading(node);
+        }}
       >
         <motion.span
           className={styles.subheadingRecipe}
           animate={s2Control}
-          ref={s2Heading}
           initial={{ opacity: 0 }}
         >
           Recipes
@@ -57,7 +60,6 @@ function Recipes() {
         <motion.h2
           className={styles.headingRecipe}
           animate={h2Control}
-          ref={h2Heading}
           initial={{ opacity: 0 }}
         >
           Find your next favorite recipe in seconds
