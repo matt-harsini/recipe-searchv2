@@ -19,12 +19,12 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1.2,
+        duration: 1,
         delay: 0.7,
       },
       opacity: 1,
     },
-    { x: 350 },
+    { x: 250 },
     { threshold: 0.9, triggerOnce: true }
   );
   const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
@@ -32,13 +32,13 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1,
+        duration: 1.4,
         delay: 1,
         bounce: 0.5,
       },
       opacity: 1,
     },
-    { x: -350 },
+    { x: -250 },
     { threshold: 0.9, triggerOnce: true }
   );
   return (
