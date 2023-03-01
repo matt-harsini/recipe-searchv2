@@ -4,11 +4,10 @@ import { useOutletContext } from "react-router-dom";
 import Features from "./Features";
 import Recipes from "./Recipes";
 import Testimonials from "./Testimonials";
-import Footer from "./Footer";
 function Main() {
-  const ref = useOutletContext();
+  // Track intersection of Features and Navbar to turn background color to black
   return (
-    <main className={styles.main} ref={ref}>
+    <main className={styles.main}>
       <Features />
       <Recipes />
       <Testimonials />

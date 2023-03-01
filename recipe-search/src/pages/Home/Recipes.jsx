@@ -32,13 +32,13 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1.4,
-        delay: 1,
-        bounce: 0.5,
+        duration: 1,
+        delay: 0.6,
+        bounce: 0.4,
       },
       opacity: 1,
     },
-    { x: -250 },
+    { x: -300 },
     { threshold: 0.9, triggerOnce: true }
   );
   return (

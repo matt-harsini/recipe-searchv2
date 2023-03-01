@@ -2,7 +2,9 @@ import React from "react";
 import styles from "./Home.module.css";
 import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
+import { useOutletContext } from "react-router-dom";
 function Features() {
+  const ref = useOutletContext();
   const { ref: s1Heading, controls: s1Control } = useAnimateOnView(
     {
       y: 0,
@@ -16,7 +18,10 @@ function Features() {
     },
     { y: -100 }
   );
-  const { ref: h1Heading, controls: h1Control } = useAnimateOnView();
+  const { ref: h1Heading, controls: h1Control } = useAnimateOnView({
+    opacity: 1,
+    transition: { delay: 0.1 },
+  });
   const { ref: f1, controls: f1Control } = useAnimateOnView();
   const { ref: f2, controls: f2Control } = useAnimateOnView(
     {
@@ -64,7 +69,7 @@ function Features() {
     opacity: 1,
   });
   return (
-    <section>
+    <section ref={ref}>
       <div className={`${styles.container}`}>
         <motion.span
           className={styles.subheading}
