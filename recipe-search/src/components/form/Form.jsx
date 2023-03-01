@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import Recipes from "./Recipes";
 function RecipeForm() {
   const [count, setCount] = useState(0);
   const [query, setQuery] = useState("chicken");
@@ -16,12 +15,7 @@ function RecipeForm() {
     const data = await response.json();
     console.log(data);
   };
-  return (
-    <div>
-      RecipeForm
-      <Recipes />
-    </div>
-  );
+  return <div>RecipeForm</div>;
 }
 
 export default RecipeForm;

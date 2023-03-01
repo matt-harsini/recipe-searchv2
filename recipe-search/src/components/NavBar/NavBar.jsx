@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import { GiMeatCleaver } from "react-icons/gi";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import { links } from "./data";
+import { links } from "../../data/data";
 import styles from "./NavBar.module.scss";
 
-function NavBar({ navBar }) {
+function Navbar({ navbar }) {
   const [showLinks, setShowLinks] = useState(false);
   const linkContainer = useRef(null);
   const linksRef = useRef(null);
@@ -21,7 +21,7 @@ function NavBar({ navBar }) {
   }, [showLinks]);
 
   return (
-    <nav className={styles.nav} ref={navBar}>
+    <nav className={styles.nav} ref={navbar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
           <div>
@@ -59,4 +59,4 @@ function NavBar({ navBar }) {
   );
 }
 
-export default NavBar;
+export default Navbar;

@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "./NavBar";
+import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
 
-function Navigation() {
+function NavbarOutlet() {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
-  const navBar = useRef(null);
+  const navbar = useRef(null);
   useEffect(() => {
-    const navigationHeight = navBar.current.getBoundingClientRect().height;
+    const navigationHeight = navbar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
       "--scroll-padding",
       navigationHeight + "px"
@@ -17,15 +17,15 @@ function Navigation() {
   }, []);
   useEffect(() => {
     if (!inView) {
-      navBar.current.style.backgroundColor = "";
+      navbar.current.style.backgroundColor = "";
       return;
     }
-    navBar.current.style.backgroundColor = "#212529";
+    navbar.current.style.backgroundColor = "#212529";
     return;
   }, [inView]);
   return (
     <div>
-      <NavBar navBar={navBar} />
+      <Navbar navbar={navbar} />
       <Suspense fallback={<h1>Loading...</h1>}>
         <Outlet context={ref} />
       </Suspense>
@@ -33,4 +33,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default NavbarOutlet;

@@ -1,24 +1,10 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { motion, useAnimationControls } from "framer-motion";
-import { useAnimateOnView } from "./useAnimateOnView";
-
-const options = {
-  triggerOnce: true,
-};
+import { motion } from "framer-motion";
+import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 
 function Header() {
-  const { ref: header, controls: control } = useAnimateOnView(
-    {
-      transition: {
-        type: "spring",
-        duration: 0.8,
-      },
-      opacity: 1,
-    },
-    options
-  );
-
+  const { ref: header, controls: control } = useAnimateOnView();
   return (
     <header className={styles.header}>
       <div className={styles.landing}>
