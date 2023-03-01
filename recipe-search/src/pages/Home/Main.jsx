@@ -8,14 +8,11 @@ import Footer from "./Footer";
 function Main() {
   const ref = useOutletContext();
   return (
-    <>
-      <main className={styles.main} ref={ref}>
-        <Features />
-        <Recipes />
-        <Testimonials />
-      </main>
-      <Footer />
-    </>
+    <main className={styles.main} ref={ref}>
+      <Features />
+      <Recipes />
+      <Testimonials />
+    </main>
   );
 }
 
