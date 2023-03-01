@@ -26,7 +26,7 @@ function Header() {
             whileTap={{ scale: 0.9 }}
             className={styles.headerBtn}
           >
-            <a href="#section1" className={styles.learnMoreBtn}>
+            <a href="#section1" id="scroll" className={styles.learnMoreBtn}>
               Learn more
             </a>
           </motion.button>

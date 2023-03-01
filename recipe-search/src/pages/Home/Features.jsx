@@ -32,7 +32,7 @@ function Features() {
   const { ref: img3, controls: img3Control } = useAnimateOnView();
 
   return (
-    <section ref={ref}>
+    <section ref={ref} id="features">
       <div className={`${styles.container}`}>
         <motion.span
           className={styles.subheading}
