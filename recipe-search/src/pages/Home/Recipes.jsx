@@ -25,35 +25,33 @@ function Recipes() {
       opacity: 1,
     },
     { x: 250 },
-    { threshold: 0.9, triggerOnce: true }
+    { threshold: 0.3, triggerOnce: true }
   );
   const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
     {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1.5,
+        duration: 1,
         delay: 0.3,
         bounce: 0.3,
       },
       opacity: 1,
     },
     { x: -300 },
-    { threshold: 0.9, triggerOnce: true }
+    { threshold: 0.3, triggerOnce: true }
   );
   return (
     <section className={`${styles.recipes}`}>
       <div
         className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText}`}
-        ref={(node) => {
-          s2Heading(node);
-          h2Heading(node);
-        }}
+        ref={s2Heading}
       >
         <motion.span
           className={styles.subheadingRecipe}
           animate={s2Control}
           initial={{ opacity: 0 }}
+          ref={h2Heading}
         >
           Recipes
         </motion.span>

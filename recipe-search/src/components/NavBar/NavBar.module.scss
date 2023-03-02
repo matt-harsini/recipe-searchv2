@@ -1,137 +1,87 @@
 @import "../../index.css";
 
-$dark-blue: #222;
-$green: #90feb5;
-$action-color: $green;
-
-.linkContainer {
+.nav {
   position: absolute;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-.navToggle {
-  font-size: 3rem;
-  padding: 16px;
-  color: white;
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+}
+
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   background: transparent;
-  border-color: transparent;
-  transition: all 0.15s ease-in-out;
+}
+
+.ul,
+.li {
+  margin: 0;
+  padding: 0;
+}
+
+.ul {
+  padding: 25px;
+  position: absolute;
+  top: 100px;
+  width: 230px;
+}
+
+.li {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.navHeader {
-  position: relative;
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: 40px 0;
+  margin-right: 20px;
+}
+
+.text-placeholder {
+  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+  flex: 1;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 80px;
-  padding: 0 40px;
+  cursor: pointer;
 }
 
-.icon {
-  color: white;
-  font-size: var(--step-5);
-}
-
-.nav {
-  position: fixed;
-  display: block;
+.btnContainer {
+  display: flex;
   width: 100%;
-  color: white;
-  z-index: 10;
-  transition: all 0.2s;
-}
-
-.navLink {
-  color: #212529;
-  text-decoration: none;
-  display: block;
-}
-
-.buttonContainer {
-  font-family: "Rubik", sans-serif;
-  display: flex;
-  align-items: center;
-}
-
-.buttonNav {
-  padding: 16px 24px;
-  line-height: 1.25;
-  background: #fff;
-  text-decoration: none;
-  color: #212529;
-  font-size: var(--step-1);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  position: relative;
-  transition: background-color 0.6s ease;
-  overflow: hidden;
-  font-weight: 400;
-
-  &:active {
-    background: darken(#ff3f34, 7%);
-  }
-}
-
-.homeBtn {
-  line-height: 1.25;
-  text-decoration: none;
-  color: #fff;
-  font-size: var(--step-1);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  position: relative;
-  transition: background-color 0.6s ease;
-  overflow: hidden;
-  font-weight: 400;
-}
-
-@media screen and (min-width: 800px) {
-  .nav {
-    display: block;
-  }
-
-  .navCenter {
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-  }
-
-  .navHeader {
-    padding: 0;
-  }
-
-  .linkContainer {
-    position: static;
-    display: block;
-    height: auto !important;
-  }
-
-  .links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 48px;
-  }
-
-  .navLink {
-    color: #212529;
-    text-decoration: none;
-  }
-
-  .iconLinks > svg {
-    fill: white;
-    font-size: var(--step-1);
-  }
-  .iconLinks:visited {
-    color: #212529;
-  }
-
-  .navToggle {
-    display: none;
-  }
 }

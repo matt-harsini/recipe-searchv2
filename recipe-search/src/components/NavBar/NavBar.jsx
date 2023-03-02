@@ -3,58 +3,51 @@ import { NavLink } from "react-router-dom";
 import { GiMeatCleaver } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { links } from "../../data/data";
-import styles from "./NavBar.module.scss";
+import { motion, useCycle } from "framer-motion";
+import styles from "./Navbar.module.scss";
+import { useDimensions } from "../../hooks/useDimensions";
+import { MenuToggle } from "./MenuToggle";
+import { Navigation } from "./Navigation";
 
-function Navbar({ navbar }) {
-  const [showLinks, setShowLinks] = useState(false);
-  const linkContainer = useRef(null);
-  const linksRef = useRef(null);
+const navbar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at -40px -40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(30px at 440px 40px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
 
-  useEffect(() => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height;
-    if (showLinks) {
-      linkContainer.current.style.height = `${linksHeight}px`;
-    } else {
-      linkContainer.current.style.height = "0px";
-    }
-  }, [showLinks]);
-
+function Navbar() {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
   return (
-    <nav className={styles.nav} ref={navbar}>
-      <div className={styles.navCenter}>
-        <div className={styles.navHeader}>
-          <div>
-            <GiMeatCleaver className={styles.icon} />
-          </div>
-          <button
-            className={styles.navToggle}
-            onClick={() => setShowLinks((prevState) => !prevState)}
-          >
-            <RxHamburgerMenu />
-          </button>
-        </div>
-        <div className={styles.linkContainer} ref={linkContainer}>
-          <div className={styles.links} ref={linksRef}>
-            {links.map(({ id, url, text }) => {
-              return (
-                <div className={styles.buttonContainer} key={id}>
-                  <NavLink
-                    to={url}
-                    onClick={() => setShowLinks((prevState) => !prevState)}
-                    style={{ textDecoration: "none" }}
-                    className={`${
-                      text === "Home" ? styles.homeBtn : styles.buttonNav
-                    }`}
-                  >
-                    {text}
-                  </NavLink>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+    <motion.nav
+      className={styles.nav}
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      custom={height}
+      ref={containerRef}
+      motion
+    >
+      <div className={styles.btnContainer}>
+        <motion.div className={styles.background} variants={navbar} />
+        <Navigation />
+        <MenuToggle toggle={() => toggleOpen()} />
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
