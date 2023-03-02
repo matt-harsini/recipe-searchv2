@@ -44,7 +44,7 @@ function Recipes() {
   return (
     <section className={`${styles.recipes}`}>
       <div
-        className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText}`}
+        className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText} ${styles.overflowAuto}`}
         ref={s2Heading}
       >
         <motion.span
