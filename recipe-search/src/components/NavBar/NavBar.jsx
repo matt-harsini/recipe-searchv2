@@ -8,7 +8,7 @@ import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 
-export const NavbarContext = createContext();
+export const NavbarContext = React.createContext();
 
 const navbar = {
   open: (height = 1000) => ({
@@ -45,11 +45,7 @@ function Navbar({ innerRef }) {
         motion
       >
         <motion.div className={styles.background} variants={navbar}>
-          <NavbarContext.Provider
-            value={() => {
-              toggleOpen();
-            }}
-          >
+          <NavbarContext.Provider value={() => toggleOpen()}>
             <Navigation />
           </NavbarContext.Provider>
         </motion.div>
