@@ -29,7 +29,7 @@ export const MenuItem = ({ i, url, text }) => {
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.1, originX: 0 }}
       whileTap={{ scale: 0.95 }}
     >
       <button
@@ -38,11 +38,12 @@ export const MenuItem = ({ i, url, text }) => {
         }}
       >
         <NavLink to={url} className={styles.navLink}>
-          {text}
+          <div className={styles.textPlaceholder} style={style}>
+            {text}
+          </div>
         </NavLink>
       </button>
       {/* <div className={styles.iconPlaceholder} style={style}></div> */}
-      {/* <div className={styles.textPlaceholder} style={style} /> */}
     </motion.li>
   );
 };

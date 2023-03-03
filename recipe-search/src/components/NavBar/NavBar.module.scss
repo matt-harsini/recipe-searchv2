@@ -1,7 +1,14 @@
 @import "../../index.css";
 
-.nav {
+.navContainer {
   position: fixed;
+  display: flex;
+  width: 100%;
+  height: 80px;
+}
+
+.nav {
+  display: block;
   width: 100%;
 }
 
@@ -13,6 +20,7 @@
   background: #212529;
   width: 100%;
   height: 100vh;
+  z-index: 10;
 }
 
 .button {
@@ -26,6 +34,7 @@
   height: 50px;
   border-radius: 50%;
   background: transparent;
+  z-index: 15;
 }
 
 .ul,
@@ -65,7 +74,7 @@
   flex: 40px 0;
 }
 
-.text-placeholder {
+.textPlaceholder {
   border-radius: 5px;
   width: 200px;
   height: 20px;
@@ -85,13 +94,6 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.navContainer {
-  position: fixed;
-  display: flex;
-  width: 100%;
-  height: 80px;
 }
 
 .svg {

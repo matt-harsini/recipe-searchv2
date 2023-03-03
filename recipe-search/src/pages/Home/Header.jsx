@@ -4,19 +4,10 @@ import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 
 function Header() {
-  const { ref: header, controls: control } = useAnimateOnView();
   return (
     <header className={styles.header}>
       <div className={styles.landing}>
-        <motion.div
-          ref={header}
-          animate={control}
-          transition={{
-            opacity: { ease: "easeInOut" },
-          }}
-          initial={{ opacity: 0 }}
-          className={styles.info}
-        >
+        <div className={styles.info}>
           <h1 className={styles.h1}>Recipe search</h1>
           <p className={styles.p}>
             Indulge in a culinary journey with our recipe website
@@ -30,7 +21,7 @@ function Header() {
               Learn more
             </a>
           </motion.button>
-        </motion.div>
+        </div>
       </div>
     </header>
   );
