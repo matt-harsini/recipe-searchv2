@@ -1,10 +1,7 @@
 @import "../../index.css";
 
 .nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
   width: 100%;
 }
 
@@ -13,8 +10,9 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background: #fff;
+  background: #212529;
   width: 100%;
+  height: 100vh;
 }
 
 .button {
@@ -37,10 +35,19 @@
 }
 
 .ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
   padding: 25px;
   position: absolute;
-  top: 100px;
-  width: 230px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 75%;
+  max-width: 50%;
+  margin: auto;
 }
 
 .li {
@@ -51,12 +58,11 @@
   cursor: pointer;
 }
 
-.icon-placeholder {
+.iconPlaceholder {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   flex: 40px 0;
-  margin-right: 20px;
 }
 
 .text-placeholder {
@@ -81,7 +87,17 @@
   cursor: pointer;
 }
 
-.btnContainer {
+.navContainer {
+  position: fixed;
   display: flex;
   width: 100%;
+  height: 80px;
+}
+
+.svg {
+  fill: "#ed6866" !important;
+}
+
+.navLink {
+  color: white;
 }

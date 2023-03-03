@@ -1,8 +1,9 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styles from "./Navbar.module.scss";
-
+import { links } from "../../data/data";
+import { NavbarContext } from "./NavBar";
 const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
@@ -12,12 +13,17 @@ const variants = {
   },
 };
 
-export const Navigation = () => (
-  <motion.ul variants={variants} className={styles.ul}>
-    {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
-    ))}
-  </motion.ul>
-);
+export const Navigation = () => {
+  const toggle = useContext(NavbarContext);
+  console.log(NavbarContext);
+  console.log(toggle);
+  return (
+    <motion.ul variants={variants} className={styles.ul}>
+      {links.map(({ id, url, text }, index) => (
+        <MenuItem i={index} url={url} text={text} key={id} toggle={toggle} />
+      ))}
+    </motion.ul>
+  );
+};
 
 const itemIds = [0, 1, 2, 3, 4];

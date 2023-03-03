@@ -1,6 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Navbar.module.scss";
+import { NavLink } from "react-router-dom";
+
 const variants = {
   open: {
     y: 0,
@@ -20,15 +22,21 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-export const MenuItem = ({ i }) => {
+export const MenuItem = ({ i, url, text, toggle }) => {
   const style = { border: `2px solid ${colors[i]}` };
+  console.log(toggle);
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className={styles.iconPlaceholder} style={style} />
+      <button onClick={toggle}>
+        <NavLink to={url} className={styles.navLink}>
+          {text}
+        </NavLink>
+      </button>
+      {/* <div className={styles.iconPlaceholder} style={style}></div> */}
       <div className={styles.textPlaceholder} style={style} />
     </motion.li>
   );

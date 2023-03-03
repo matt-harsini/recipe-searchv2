@@ -1,13 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, createContext } from "react";
 import { NavLink } from "react-router-dom";
 import { GiMeatCleaver } from "react-icons/gi";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { links } from "../../data/data";
 import { motion, useCycle } from "framer-motion";
 import styles from "./Navbar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
+
+export const NavbarContext = createContext();
 
 const navbar = {
   open: (height = 1000) => ({
@@ -29,25 +30,32 @@ const navbar = {
   },
 };
 
-function Navbar() {
+function Navbar({ innerRef }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   return (
-    <motion.nav
-      className={styles.nav}
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-      motion
-    >
-      <div className={styles.btnContainer}>
-        <motion.div className={styles.background} variants={navbar} />
-        <Navigation />
+    <div className={styles.navContainer} ref={innerRef}>
+      <motion.nav
+        className={styles.nav}
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+        motion
+      >
+        <motion.div className={styles.background} variants={navbar}>
+          <NavbarContext.Provider
+            value={() => {
+              toggleOpen();
+            }}
+          >
+            <Navigation />
+          </NavbarContext.Provider>
+        </motion.div>
         <MenuToggle toggle={() => toggleOpen()} />
-      </div>
-    </motion.nav>
+      </motion.nav>
+    </div>
   );
 }
 

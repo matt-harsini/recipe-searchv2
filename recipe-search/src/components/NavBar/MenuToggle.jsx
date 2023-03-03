@@ -4,9 +4,9 @@ import styles from "./Navbar.module.scss";
 
 const Path = (props) => (
   <motion.path
-    fill="transparent"
+    fill="white"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke="white"
     strokeLinecap="round"
     {...props}
   />
