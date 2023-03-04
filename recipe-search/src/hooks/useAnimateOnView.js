@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useAnimationControls } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export const useAnimateOnView = (
+export function useAnimateOnView(
   visible = { opacity: 1 },
   hidden = { opacity: 0 },
   options = {
     triggerOnce: true,
     threshold: 0.9,
   }
-) => {
+) {
   const controls = useAnimationControls();
   const { ref, inView } = useInView(options);
   useEffect(() => {
@@ -25,4 +25,4 @@ export const useAnimateOnView = (
   }, [inView]);
 
   return { ref, controls };
-};
+}

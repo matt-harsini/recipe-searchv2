@@ -22,9 +22,8 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-export const MenuItem = ({ i, url, text }) => {
+export function MenuItem({ i, url, text }) {
   const toggleOpen = useContext(NavbarContext);
-  console.log(toggleOpen);
   const style = { border: `2px solid ${colors[i]}` };
   return (
     <motion.li
@@ -46,4 +45,4 @@ export const MenuItem = ({ i, url, text }) => {
       {/* <div className={styles.iconPlaceholder} style={style}></div> */}
     </motion.li>
   );
-};
+}

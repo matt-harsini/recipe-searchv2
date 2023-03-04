@@ -12,7 +12,7 @@ const variants = {
   },
 };
 
-export const Navigation = () => {
+export function Navigation() {
   return (
     <motion.ul variants={variants} className={styles.ul}>
       {links.map(({ id, url, text }, index) => (
@@ -20,6 +20,6 @@ export const Navigation = () => {
       ))}
     </motion.ul>
   );
-};
+}
 
 const itemIds = [0, 1, 2, 3, 4];
