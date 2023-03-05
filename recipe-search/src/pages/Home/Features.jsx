@@ -10,11 +10,10 @@ function Features() {
       transition: {
         type: "spring",
         delay: 0.5,
-        duration: 1,
         bounce: 0.1,
       },
     },
-    { y: -100 }
+    { y: -50 }
   );
   const { ref: h1Heading, controls: h1Control } = useAnimateOnView({
     opacity: 1,

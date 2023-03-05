@@ -26,7 +26,6 @@
 
 html {
   overflow-y: scroll;
-  scroll-behavior: smooth;
   font-size: 62.5%;
   scroll-padding-top: var(--scroll-padding, 50px);
   box-sizing: border-box;

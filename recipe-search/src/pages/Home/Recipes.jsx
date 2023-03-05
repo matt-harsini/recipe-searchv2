@@ -24,7 +24,7 @@ function Recipes() {
       },
       opacity: 1,
     },
-    { x: 250 },
+    { x: 150 },
     { threshold: 0.3, triggerOnce: true }
   );
   const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
@@ -38,7 +38,7 @@ function Recipes() {
       },
       opacity: 1,
     },
-    { x: -300 },
+    { x: -200 },
     { threshold: 0.3, triggerOnce: true }
   );
   return (
