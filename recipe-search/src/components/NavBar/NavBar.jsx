@@ -20,7 +20,7 @@ export const NavbarContext = React.createContext();
 const navbar = {
   open: (height = 1000) => {
     return {
-      clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
+      clipPath: `circle(${height * 2 + 200}px at 100% -10%)`,
       transition: {
         type: "spring",
         stiffness: 20,
@@ -29,7 +29,7 @@ const navbar = {
     };
   },
   closed: {
-    clipPath: "circle(30px at 100% 0)",
+    clipPath: "circle(30px at 100% -10%)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -39,12 +39,11 @@ const navbar = {
   },
 };
 
-function Navbar({ innerRef, clipPath }) {
+function Navbar({ innerRef }) {
   const btn = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-  console.log(clipPath);
   return (
     <div className={styles.navContainer} ref={innerRef}>
       <motion.nav
@@ -58,7 +57,6 @@ function Navbar({ innerRef, clipPath }) {
         <motion.div
           className={`${styles.background} ${styles.clipPath}`}
           variants={navbar}
-          ref={clipPath}
         >
           <NavbarContext.Provider value={() => toggleOpen()}>
             <Navigation />
