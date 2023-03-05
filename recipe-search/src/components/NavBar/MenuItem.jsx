@@ -26,7 +26,7 @@ export function MenuItem({ i, url, text }) {
   const toggleOpen = useContext(NavbarContext);
   const style = {
     borderBottom: `2.5px solid ${colors[i]}`,
-    width: "100%",
+    display: "block",
     outline: "none",
   };
   return (
