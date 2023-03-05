@@ -20,11 +20,15 @@ const variants = {
   },
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const colors = ["#e03131", "#e8590c", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export function MenuItem({ i, url, text }) {
   const toggleOpen = useContext(NavbarContext);
-  const style = { border: `2px solid ${colors[i]}` };
+  const style = {
+    borderBottom: `2.5px solid ${colors[i]}`,
+    width: "100%",
+    outline: "none",
+  };
   return (
     <motion.li
       variants={variants}
@@ -35,14 +39,13 @@ export function MenuItem({ i, url, text }) {
         onClick={() => {
           toggleOpen();
         }}
+        className={styles.btn}
       >
         <NavLink to={url} className={styles.navLink}>
-          <div className={styles.textPlaceholder} style={style}>
-            {text}
-          </div>
+          {text}
         </NavLink>
+        <div className={styles.textPlaceholder} style={style} />
       </button>
-      {/* <div className={styles.iconPlaceholder} style={style}></div> */}
     </motion.li>
   );
 }

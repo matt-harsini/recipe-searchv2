@@ -31,7 +31,7 @@ const navbar = {
   closed: {
     clipPath: "circle(30px at 100% -10%)",
     transition: {
-      delay: 0.5,
+      delay: 0.25,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -58,6 +58,7 @@ function Navbar({ innerRef }) {
           className={`${styles.background} ${styles.clipPath}`}
           variants={navbar}
         >
+          <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
           <NavbarContext.Provider value={() => toggleOpen()}>
             <Navigation />
           </NavbarContext.Provider>
