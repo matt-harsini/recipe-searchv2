@@ -14,7 +14,7 @@ const Path = (props) => (
 
 export function MenuToggle({ toggle, btn }) {
   return (
-    <button onClick={toggle} className={styles.button} ref={btn}>
+    <button onClick={toggle} className={styles.button} ref={btn} id="hamburger">
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           variants={{

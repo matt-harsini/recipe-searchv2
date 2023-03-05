@@ -18,9 +18,9 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 export const NavbarContext = React.createContext();
 
 const navbar = {
-  open: ({ height, x, y }) => {
+  open: (height = 1000) => {
     return {
-      clipPath: `circle(${height * 2 + 200}px at ${x}px ${y}px)`,
+      clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
       transition: {
         type: "spring",
         stiffness: 20,
@@ -39,21 +39,12 @@ const navbar = {
   },
 };
 
-function Navbar({ innerRef }) {
-  const size = useWindowSize();
+function Navbar({ innerRef, clipPath }) {
   const btn = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-  useLayoutEffect(() => {
-    let x, y;
-    const btnDimensions = btn.current.getBoundingClientRect();
-    x = btnDimensions.x;
-    y = btnDimensions.y;
-    navbar.open.clipPath = `circle(${height * 2 + 200}px at ${x}px ${y}px)`;
-    console.log(x, y);
-  }, [size]);
-
+  console.log(clipPath);
   return (
     <div className={styles.navContainer} ref={innerRef}>
       <motion.nav
@@ -64,7 +55,11 @@ function Navbar({ innerRef }) {
         ref={containerRef}
         motion
       >
-        <motion.div className={styles.background} variants={navbar}>
+        <motion.div
+          className={`${styles.background} ${styles.clipPath}`}
+          variants={navbar}
+          ref={clipPath}
+        >
           <NavbarContext.Provider value={() => toggleOpen()}>
             <Navigation />
           </NavbarContext.Provider>
