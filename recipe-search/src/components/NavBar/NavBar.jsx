@@ -20,7 +20,7 @@ export const NavbarContext = React.createContext();
 const navbar = {
   open: (height = 1000) => {
     return {
-      clipPath: `circle(${height * 2 + 200}px at 100% -10%)`,
+      clipPath: `circle(${height * 2 + 500}px at 100% -10%)`,
       transition: {
         type: "spring",
         stiffness: 20,

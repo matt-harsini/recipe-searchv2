@@ -1,0 +1,10 @@
+.meals {
+  box-shadow: 0 24px 48px rgba(0 0 0 / 8%);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.meals:hover {
+  transform: translateY(-12px);
+}

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
 function RecipeForm() {
-  const [count, setCount] = useState(0);
   const [query, setQuery] = useState("chicken");
   useEffect(() => {
     // fetchRecipeData();

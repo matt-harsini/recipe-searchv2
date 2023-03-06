@@ -5,6 +5,8 @@ import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Card from "../../components/ui/Card";
+import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
   const { ref: c1, controls: c1Control } = useAnimateOnView();
   const { ref: c2, controls: c2Control } = useAnimateOnView({
@@ -41,6 +43,9 @@ function Recipes() {
     { x: -200 },
     { threshold: 0.3, triggerOnce: true }
   );
+  // const { data: japaneseGyoza } = useFetchRecipe("Japanese Gyoza");
+  // console.log(japaneseGyoza);
+  console.log(123);
   return (
     <section className={`${styles.recipes}`}>
       <div
@@ -66,12 +71,35 @@ function Recipes() {
       <div
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
-        <motion.div
-          className={styles.meals}
-          animate={c1Control}
-          ref={c1}
-          initial={{ opacity: 0 }}
-        >
+        <Card animate={c1Control} innerRef={c1} initial={{ opacity: 0 }}>
+          <img
+            className={styles.mealImg}
+            src="../../../src/assets/meal-1.jpg"
+            alt="Japanese Gyozas"
+            loading="lazy"
+          />
+          <div className={styles.mealContent}>
+            <div className={styles.mealTag}>
+              <span className={`${styles.tag} ${styles.tagVegetarian}`}>
+                Vegetarian
+              </span>
+            </div>
+            <p className={styles.mealTitle}>
+              Japanese Gyozas
+              <span className={styles.servings}>14 servings</span>
+            </p>
+            <ul className={styles.mealAttributes}>
+              <li className={styles.mealAttribute}>
+                <AiFillFire className={styles.mealIcon} />
+                <span className={styles.calories}>
+                  <strong>650 </strong>
+                  calories
+                </span>
+              </li>
+            </ul>
+          </div>
+        </Card>
+        <Card animate={c2Control} innerRef={c2} initial={{ opacity: 0 }}>
           <img
             className={styles.mealImg}
             src="../../../src/assets/meal-1.jpg"
@@ -94,36 +122,7 @@ function Recipes() {
               </li>
             </ul>
           </div>
-        </motion.div>
-        <motion.div
-          className={styles.meals}
-          animate={c2Control}
-          ref={c2}
-          initial={{ opacity: 0 }}
-        >
-          <img
-            className={styles.mealImg}
-            src="../../../src/assets/meal-1.jpg"
-            alt="Japanese Gyozas"
-            loading="lazy"
-          />
-          <div className={styles.mealContent}>
-            <div className={styles.mealTag}>
-              <span className={`${styles.tag} ${styles.tagVegetarian}`}>
-                Vegetarian
-              </span>
-            </div>
-            <p className={styles.mealTitle}>
-              Japanese Gyozas
-              <span className={styles.servings}>14 servings</span>
-            </p>
-            <ul className={styles.mealAttributes}>
-              <li className={styles.mealAttribute}>
-                <AiFillFire className={styles.mealIcon} />
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+        </Card>
         <div className={styles.diet}>
           <h3 className={styles.headingDiet}>Works with any diet:</h3>
           <ul className={styles.list}>
