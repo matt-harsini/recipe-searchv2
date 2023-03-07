@@ -4,15 +4,18 @@ import Features from "./Features";
 import Recipes from "./Recipes";
 import Testimonials from "./Testimonials";
 import { useOutletContext } from "react-router-dom";
-
+import Footer from "./Footer";
 function Main() {
   const ref = useOutletContext();
   return (
-    <main className={styles.main} ref={ref}>
-      <Features />
-      <Recipes />
-      <Testimonials />
-    </main>
+    <div ref={ref}>
+      <main className={styles.main}>
+        <Features />
+        <Recipes />
+        <Testimonials />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

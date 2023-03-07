@@ -9,7 +9,7 @@ function Testimonials() {
           <span className={styles.subheading}>Testimonials</span>
           <h2 className={styles.heading}>Hear from our users</h2>
           <div className={styles.quotes}>
-            <figure>
+            <figure className={styles.figure}>
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Dave Bryson"
@@ -22,7 +22,7 @@ function Testimonials() {
               </blockquote>
               <p className={styles.testimonialName}>— Dave Bryson</p>
             </figure>
-            <figure>
+            <figure className={styles.figure}>
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Ben Hadley"
@@ -35,7 +35,7 @@ function Testimonials() {
               </blockquote>
               <p className={styles.testimonialName}>— Ben Hadley</p>
             </figure>
-            <figure>
+            <figure className={styles.figure}>
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Steve Miller"
@@ -48,7 +48,7 @@ function Testimonials() {
               </blockquote>
               <p className={styles.testimonialName}>— Steve Miller</p>
             </figure>
-            <figure>
+            <figure className={styles.figure}>
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Hannah Smith"

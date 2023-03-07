@@ -3,8 +3,10 @@
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
+  height: 100%;
 }
 
 .meals:hover {
   transform: translateY(-12px);
+  cursor: pointer;
 }

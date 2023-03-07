@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { AiFillFire } from "react-icons/ai";
 import { IoCheckmarkOutline } from "react-icons/io5";
+import { RxDotFilled } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
@@ -21,8 +22,7 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1,
-        delay: 0.7,
+        delay: 0.2,
       },
       opacity: 1,
     },
@@ -34,17 +34,14 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        duration: 1,
-        delay: 0.3,
-        bounce: 0.3,
+        delay: 0.5,
+        bounce: 0.2,
       },
       opacity: 1,
     },
-    { x: -200 },
+    { x: -250 },
     { threshold: 0.3, triggerOnce: true }
   );
-  // const { data: japaneseGyoza } = useFetchRecipe("Japanese Gyoza");
-  // console.log(japaneseGyoza);
   console.log(123);
   return (
     <section className={`${styles.recipes}`}>
@@ -95,6 +92,12 @@ function Recipes() {
                   <strong>650 </strong>
                   calories
                 </span>
+              </li>
+              <li className={styles.mealAttribute}>
+                <RxDotFilled
+                  className={`${styles.mealProtein}  ${styles.listItem}`}
+                />
+                <span className={styles.protein}>Protein</span>
               </li>
             </ul>
           </div>
