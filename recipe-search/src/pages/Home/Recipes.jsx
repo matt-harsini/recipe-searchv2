@@ -22,11 +22,12 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        delay: 0.2,
+        delay: 1,
+        duration: 1,
       },
       opacity: 1,
     },
-    { x: 150 },
+    { x: 200 },
     { threshold: 0.3, triggerOnce: true }
   );
   const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
@@ -35,14 +36,15 @@ function Recipes() {
       transition: {
         type: "spring",
         delay: 0.5,
-        bounce: 0.2,
+        duration: 0.5,
+        bounce: 0.3,
       },
       opacity: 1,
     },
-    { x: -250 },
+    { x: -300 },
     { threshold: 0.3, triggerOnce: true }
   );
-  console.log(123);
+
   return (
     <section className={`${styles.recipes}`}>
       <div
@@ -93,11 +95,39 @@ function Recipes() {
                   calories
                 </span>
               </li>
-              <li className={styles.mealAttribute}>
-                <RxDotFilled
-                  className={`${styles.mealProtein}  ${styles.listItem}`}
-                />
-                <span className={styles.protein}>Protein</span>
+              <li>
+                <ul className={styles.mealMacros}>
+                  <li className={styles.mealAttribute}>
+                    <div className={styles.label}>
+                      <RxDotFilled
+                        className={styles.mealProtein}
+                        viewBox="2.75 2.5 10 10"
+                      />
+                      <span className={styles.protein}>Protein</span>
+                    </div>
+                    <span className={styles.mealGrams}>42g</span>
+                  </li>
+                  <li className={styles.mealAttribute}>
+                    <div className={styles.label}>
+                      <RxDotFilled
+                        className={styles.mealFat}
+                        viewBox="2.75 2.5 10 10"
+                      />
+                      <span className={styles.protein}>Fat</span>
+                    </div>
+                    <span className={styles.mealGrams}>42g</span>
+                  </li>
+                  <li className={styles.mealAttribute}>
+                    <div className={styles.label}>
+                      <RxDotFilled
+                        className={styles.mealCarbs}
+                        viewBox="2.75 2.5 10 10"
+                      />
+                      <span className={styles.protein}>Carbs</span>
+                    </div>
+                    <span className={styles.mealGrams}>42g</span>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

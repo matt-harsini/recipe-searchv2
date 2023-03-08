@@ -177,21 +177,43 @@
   font-size: var(--step-2);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
 }
 
 .mealIcon {
-  height: 24px;
   width: 24px;
+  height: 24px;
   color: #f03e3e;
 }
 
 .mealProtein {
-  height: 24px;
   width: 24px;
-  color: #51cf66;
+  height: 24px;
+  color: #f03e3e;
 }
 
+.mealFat {
+  width: 24px;
+  height: 24px;
+  color: #fab005;
+}
+
+.mealCarbs {
+  width: 24px;
+  height: 24px;
+  color: #74b816;
+}
+
+.mealMacros {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mealGrams {
+  font-size: var(--step-1);
+}
 .servings {
   display: block;
   font-size: var(--step-1);
@@ -232,9 +254,16 @@
 }
 
 .protein {
+  align-self: center;
   text-transform: uppercase;
   font-size: var(--step-1);
   font-weight: 500;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .startSearchingBtn {
