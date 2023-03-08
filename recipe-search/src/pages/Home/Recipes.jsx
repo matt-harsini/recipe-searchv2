@@ -67,7 +67,12 @@ function Recipes() {
       <div
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
-        <Card animate={c1Control} innerRef={c1} initial={{ opacity: 0 }}>
+        <motion.div
+          animate={c1Control}
+          ref={c1}
+          initial={{ opacity: 0 }}
+          className={styles.meals}
+        >
           <img
             className={styles.mealImg}
             src="../../../src/assets/meal-1.jpg"
@@ -156,8 +161,13 @@ function Recipes() {
               </li>
             </ul>
           </div>
-        </Card>
-        <Card animate={c2Control} innerRef={c2} initial={{ opacity: 0 }}>
+        </motion.div>
+        <motion.div
+          animate={c2Control}
+          ref={c2}
+          initial={{ opacity: 0 }}
+          className={styles.meals}
+        >
           <img
             className={styles.mealImg}
             src="../../../src/assets/meal-1.jpg"
@@ -180,7 +190,7 @@ function Recipes() {
               </li>
             </ul>
           </div>
-        </Card>
+        </motion.div>
         <div className={styles.diet}>
           <h3 className={styles.headingDiet}>Works with any diet:</h3>
           <ul className={styles.list}>

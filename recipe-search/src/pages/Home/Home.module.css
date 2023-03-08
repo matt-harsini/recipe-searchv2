@@ -150,6 +150,19 @@
   background-color: #51cf66;
 }
 
+.meals {
+  box-shadow: 0 24px 48px rgba(0 0 0 / 8%);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+  height: 100%;
+}
+
+.meals:hover {
+  transform: translateY(-12px);
+  cursor: pointer;
+}
+
 .mealImg {
   width: 100%;
   object-fit: cover;
@@ -185,7 +198,6 @@
   align-self: center;
   font-size: var(--step-2);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 16px;
 }
@@ -283,7 +295,7 @@
 }
 
 .newGridRow2 {
-  align-self: center;
+  align-self: end;
   grid-row: 1 / 3;
 }
 
@@ -524,6 +536,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 900px) {
   .info {
     grid-template-columns: 1fr;
@@ -533,10 +546,6 @@
   .infoRecipes {
     grid-template-columns: 1fr;
     justify-items: center;
-  }
-
-  .meals {
-    display: block;
   }
 
   .mealsImg {

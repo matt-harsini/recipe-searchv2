@@ -1,0 +1,473 @@
+export const recipe_data = {
+  from: 1,
+  to: 20,
+  count: 43,
+  _links: {
+    next: {
+      href: "https://api.edamam.com/api/recipes/v2?q=Japanese%20Gyoza&app_key=5ed5da612fdc934ee0dbfb39d541b822&_cont=CHcWQT1OcV9xBB8VADQWVhFCPwoxXVZEITQeVDcBaR4-SQ%3D%3D&type=public&app_id=9c96dddd",
+      title: "Next page",
+    },
+  },
+  hits: [
+    {
+      recipe: {
+        uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_ea55bdacb4d8e4930d4b5b1f44edc7f7",
+        label: "Homemade Rayu From 'Japanese Soul Cooking'",
+        image:
+          "https://edamam-product-images.s3.amazonaws.com/web-img/1c0/1c09d46683ae9b8b8b452412ccfcec81.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDQto17EUx3VH3S6Rj1b%2BILibOmhTJ3SidcAbT%2F1Y3MwgIhAJlIcDreZSzNJWjYeL%2B7WU8jLEfHvRs%2FqZUQbVzakTdHKrgFCE4QABoMMTg3MDE3MTUwOTg2IgxYYvZzTbfvar1TO4cqlQVJP853w%2FIGp57N5mrVM6i%2FL3SXTuw61EeEioMYsG0rxzCStxk%2FJ43a7HERDDM9L8Tx3aPyOd4i6zoBvf9RgK1asLZtlSX7Y0Yv7WGoZJwAkKbAvgAftyfzC3Sazewsaz9R1mmRsznoATNjEXTqxF88uPfx6eSUo1MV3RfDtIU2%2BYju3fg7%2FNeBgApu36UQeWE2P%2BfRp6IwgTy1uHE7WwNtcpTpARwZ2fS1iAWZvVUYWc0%2BSYfrZKmShs1grmRmYmuqTuPa%2BbXW9%2B3D9JsaU16ErlgfFufaPC6AYUyxwY3IjmHR0Ig3aeqpmnj%2Fdyv7BSoDj%2FF9ivi8f%2FCdZHfUVliyXIVPt%2FAXLiziU0oytDm8mrB7uq1eiFIMNX1QSEkuVi8YjA5KbRJhbsBOCupFUrZnzkQkchsP%2FuoHouKg3AsAaeavAY2iwVE1T9WYjsIIUmxJ3yvZKI1QArmGtfFvKZqSakaYKb%2FwZAh9S4IZS6vbxVwPTA7Tw2SIhKEPHT8HmGi0XVlcPBt0nCagtcdnDYKEfcD7rRCi7aif7ZY%2BWp2pJmQpkgM3a8vf%2FSoZho19mZtvh46EWIv4gJ4Se5hsOd3xyD0E1e4fAfYOiNsFY5thQElmaq0Fp3zwqL%2BkTdXKQV62t8PGLFlc5MKbxBeVyJOIJCLWz6y%2BhAcQaUQb6tu69IyE8uAZshRX3CfRxhKSJC58P6TnRR4sT2g9kEYoU8%2FEHNY5iE8yR8TozRDw%2BKnIa7rUY5LM%2Ff5QBBbF1NxZvKvvRaP0ECD1bqWpa6jBPAHMZ%2FdnrvgWXrG3SIV7aUdtWgV3lIbPPG1piuZx1VnUxFdxCph1Imk%2FxojH%2FOKhJNo6XS68SmFvLKwf%2FEG2z0qHhpu3dathMObio6AGOrABXu3jrvCJm9RWv2ZMdR54bo3q%2FiAKxzzekjXmuZ2C2eVd7%2FU7cyCaQmHqujUW1I57Ud9NcJkBg4URqv5gO9gS2W24FgaYxqAQ8NrNZ%2FmxeNehD97mWoutdEFn04NGyokTfwY6OA7WvmPF5l4otlko0mSg5I21xrJc%2B8i0QPo3WKb7fFcH5ZvgPlRaltzSOZFEDuhMEF3uGtzPOyn17Sv8wdTcIK22QnEaQLrIoqkf6Zw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230308T210757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFMX2UBMJF%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0fbe0ac2a1dfbc4a58cfbb3ed59897ab7f6fd03e69bf267dc46f0ec7950ef8e2",
+        images: {
+          THUMBNAIL: {
+            url: "https://edamam-product-images.s3.amazonaws.com/web-img/1c0/1c09d46683ae9b8b8b452412ccfcec81-s.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDQto17EUx3VH3S6Rj1b%2BILibOmhTJ3SidcAbT%2F1Y3MwgIhAJlIcDreZSzNJWjYeL%2B7WU8jLEfHvRs%2FqZUQbVzakTdHKrgFCE4QABoMMTg3MDE3MTUwOTg2IgxYYvZzTbfvar1TO4cqlQVJP853w%2FIGp57N5mrVM6i%2FL3SXTuw61EeEioMYsG0rxzCStxk%2FJ43a7HERDDM9L8Tx3aPyOd4i6zoBvf9RgK1asLZtlSX7Y0Yv7WGoZJwAkKbAvgAftyfzC3Sazewsaz9R1mmRsznoATNjEXTqxF88uPfx6eSUo1MV3RfDtIU2%2BYju3fg7%2FNeBgApu36UQeWE2P%2BfRp6IwgTy1uHE7WwNtcpTpARwZ2fS1iAWZvVUYWc0%2BSYfrZKmShs1grmRmYmuqTuPa%2BbXW9%2B3D9JsaU16ErlgfFufaPC6AYUyxwY3IjmHR0Ig3aeqpmnj%2Fdyv7BSoDj%2FF9ivi8f%2FCdZHfUVliyXIVPt%2FAXLiziU0oytDm8mrB7uq1eiFIMNX1QSEkuVi8YjA5KbRJhbsBOCupFUrZnzkQkchsP%2FuoHouKg3AsAaeavAY2iwVE1T9WYjsIIUmxJ3yvZKI1QArmGtfFvKZqSakaYKb%2FwZAh9S4IZS6vbxVwPTA7Tw2SIhKEPHT8HmGi0XVlcPBt0nCagtcdnDYKEfcD7rRCi7aif7ZY%2BWp2pJmQpkgM3a8vf%2FSoZho19mZtvh46EWIv4gJ4Se5hsOd3xyD0E1e4fAfYOiNsFY5thQElmaq0Fp3zwqL%2BkTdXKQV62t8PGLFlc5MKbxBeVyJOIJCLWz6y%2BhAcQaUQb6tu69IyE8uAZshRX3CfRxhKSJC58P6TnRR4sT2g9kEYoU8%2FEHNY5iE8yR8TozRDw%2BKnIa7rUY5LM%2Ff5QBBbF1NxZvKvvRaP0ECD1bqWpa6jBPAHMZ%2FdnrvgWXrG3SIV7aUdtWgV3lIbPPG1piuZx1VnUxFdxCph1Imk%2FxojH%2FOKhJNo6XS68SmFvLKwf%2FEG2z0qHhpu3dathMObio6AGOrABXu3jrvCJm9RWv2ZMdR54bo3q%2FiAKxzzekjXmuZ2C2eVd7%2FU7cyCaQmHqujUW1I57Ud9NcJkBg4URqv5gO9gS2W24FgaYxqAQ8NrNZ%2FmxeNehD97mWoutdEFn04NGyokTfwY6OA7WvmPF5l4otlko0mSg5I21xrJc%2B8i0QPo3WKb7fFcH5ZvgPlRaltzSOZFEDuhMEF3uGtzPOyn17Sv8wdTcIK22QnEaQLrIoqkf6Zw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230308T210757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFMX2UBMJF%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e3dae962ee7c56cbf1911a2b06dd64a15154ffc0fc754f4e3a78dde4db37ffec",
+            width: 100,
+            height: 100,
+          },
+          SMALL: {
+            url: "https://edamam-product-images.s3.amazonaws.com/web-img/1c0/1c09d46683ae9b8b8b452412ccfcec81-m.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDQto17EUx3VH3S6Rj1b%2BILibOmhTJ3SidcAbT%2F1Y3MwgIhAJlIcDreZSzNJWjYeL%2B7WU8jLEfHvRs%2FqZUQbVzakTdHKrgFCE4QABoMMTg3MDE3MTUwOTg2IgxYYvZzTbfvar1TO4cqlQVJP853w%2FIGp57N5mrVM6i%2FL3SXTuw61EeEioMYsG0rxzCStxk%2FJ43a7HERDDM9L8Tx3aPyOd4i6zoBvf9RgK1asLZtlSX7Y0Yv7WGoZJwAkKbAvgAftyfzC3Sazewsaz9R1mmRsznoATNjEXTqxF88uPfx6eSUo1MV3RfDtIU2%2BYju3fg7%2FNeBgApu36UQeWE2P%2BfRp6IwgTy1uHE7WwNtcpTpARwZ2fS1iAWZvVUYWc0%2BSYfrZKmShs1grmRmYmuqTuPa%2BbXW9%2B3D9JsaU16ErlgfFufaPC6AYUyxwY3IjmHR0Ig3aeqpmnj%2Fdyv7BSoDj%2FF9ivi8f%2FCdZHfUVliyXIVPt%2FAXLiziU0oytDm8mrB7uq1eiFIMNX1QSEkuVi8YjA5KbRJhbsBOCupFUrZnzkQkchsP%2FuoHouKg3AsAaeavAY2iwVE1T9WYjsIIUmxJ3yvZKI1QArmGtfFvKZqSakaYKb%2FwZAh9S4IZS6vbxVwPTA7Tw2SIhKEPHT8HmGi0XVlcPBt0nCagtcdnDYKEfcD7rRCi7aif7ZY%2BWp2pJmQpkgM3a8vf%2FSoZho19mZtvh46EWIv4gJ4Se5hsOd3xyD0E1e4fAfYOiNsFY5thQElmaq0Fp3zwqL%2BkTdXKQV62t8PGLFlc5MKbxBeVyJOIJCLWz6y%2BhAcQaUQb6tu69IyE8uAZshRX3CfRxhKSJC58P6TnRR4sT2g9kEYoU8%2FEHNY5iE8yR8TozRDw%2BKnIa7rUY5LM%2Ff5QBBbF1NxZvKvvRaP0ECD1bqWpa6jBPAHMZ%2FdnrvgWXrG3SIV7aUdtWgV3lIbPPG1piuZx1VnUxFdxCph1Imk%2FxojH%2FOKhJNo6XS68SmFvLKwf%2FEG2z0qHhpu3dathMObio6AGOrABXu3jrvCJm9RWv2ZMdR54bo3q%2FiAKxzzekjXmuZ2C2eVd7%2FU7cyCaQmHqujUW1I57Ud9NcJkBg4URqv5gO9gS2W24FgaYxqAQ8NrNZ%2FmxeNehD97mWoutdEFn04NGyokTfwY6OA7WvmPF5l4otlko0mSg5I21xrJc%2B8i0QPo3WKb7fFcH5ZvgPlRaltzSOZFEDuhMEF3uGtzPOyn17Sv8wdTcIK22QnEaQLrIoqkf6Zw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230308T210757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFMX2UBMJF%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=db0f017d391c3ea3b875045977fe42e9e50ef293d6d4efd21effcb5b961b91cd",
+            width: 200,
+            height: 200,
+          },
+          REGULAR: {
+            url: "https://edamam-product-images.s3.amazonaws.com/web-img/1c0/1c09d46683ae9b8b8b452412ccfcec81.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDQto17EUx3VH3S6Rj1b%2BILibOmhTJ3SidcAbT%2F1Y3MwgIhAJlIcDreZSzNJWjYeL%2B7WU8jLEfHvRs%2FqZUQbVzakTdHKrgFCE4QABoMMTg3MDE3MTUwOTg2IgxYYvZzTbfvar1TO4cqlQVJP853w%2FIGp57N5mrVM6i%2FL3SXTuw61EeEioMYsG0rxzCStxk%2FJ43a7HERDDM9L8Tx3aPyOd4i6zoBvf9RgK1asLZtlSX7Y0Yv7WGoZJwAkKbAvgAftyfzC3Sazewsaz9R1mmRsznoATNjEXTqxF88uPfx6eSUo1MV3RfDtIU2%2BYju3fg7%2FNeBgApu36UQeWE2P%2BfRp6IwgTy1uHE7WwNtcpTpARwZ2fS1iAWZvVUYWc0%2BSYfrZKmShs1grmRmYmuqTuPa%2BbXW9%2B3D9JsaU16ErlgfFufaPC6AYUyxwY3IjmHR0Ig3aeqpmnj%2Fdyv7BSoDj%2FF9ivi8f%2FCdZHfUVliyXIVPt%2FAXLiziU0oytDm8mrB7uq1eiFIMNX1QSEkuVi8YjA5KbRJhbsBOCupFUrZnzkQkchsP%2FuoHouKg3AsAaeavAY2iwVE1T9WYjsIIUmxJ3yvZKI1QArmGtfFvKZqSakaYKb%2FwZAh9S4IZS6vbxVwPTA7Tw2SIhKEPHT8HmGi0XVlcPBt0nCagtcdnDYKEfcD7rRCi7aif7ZY%2BWp2pJmQpkgM3a8vf%2FSoZho19mZtvh46EWIv4gJ4Se5hsOd3xyD0E1e4fAfYOiNsFY5thQElmaq0Fp3zwqL%2BkTdXKQV62t8PGLFlc5MKbxBeVyJOIJCLWz6y%2BhAcQaUQb6tu69IyE8uAZshRX3CfRxhKSJC58P6TnRR4sT2g9kEYoU8%2FEHNY5iE8yR8TozRDw%2BKnIa7rUY5LM%2Ff5QBBbF1NxZvKvvRaP0ECD1bqWpa6jBPAHMZ%2FdnrvgWXrG3SIV7aUdtWgV3lIbPPG1piuZx1VnUxFdxCph1Imk%2FxojH%2FOKhJNo6XS68SmFvLKwf%2FEG2z0qHhpu3dathMObio6AGOrABXu3jrvCJm9RWv2ZMdR54bo3q%2FiAKxzzekjXmuZ2C2eVd7%2FU7cyCaQmHqujUW1I57Ud9NcJkBg4URqv5gO9gS2W24FgaYxqAQ8NrNZ%2FmxeNehD97mWoutdEFn04NGyokTfwY6OA7WvmPF5l4otlko0mSg5I21xrJc%2B8i0QPo3WKb7fFcH5ZvgPlRaltzSOZFEDuhMEF3uGtzPOyn17Sv8wdTcIK22QnEaQLrIoqkf6Zw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230308T210757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFMX2UBMJF%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0fbe0ac2a1dfbc4a58cfbb3ed59897ab7f6fd03e69bf267dc46f0ec7950ef8e2",
+            width: 300,
+            height: 300,
+          },
+          LARGE: {
+            url: "https://edamam-product-images.s3.amazonaws.com/web-img/1c0/1c09d46683ae9b8b8b452412ccfcec81-l.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDQto17EUx3VH3S6Rj1b%2BILibOmhTJ3SidcAbT%2F1Y3MwgIhAJlIcDreZSzNJWjYeL%2B7WU8jLEfHvRs%2FqZUQbVzakTdHKrgFCE4QABoMMTg3MDE3MTUwOTg2IgxYYvZzTbfvar1TO4cqlQVJP853w%2FIGp57N5mrVM6i%2FL3SXTuw61EeEioMYsG0rxzCStxk%2FJ43a7HERDDM9L8Tx3aPyOd4i6zoBvf9RgK1asLZtlSX7Y0Yv7WGoZJwAkKbAvgAftyfzC3Sazewsaz9R1mmRsznoATNjEXTqxF88uPfx6eSUo1MV3RfDtIU2%2BYju3fg7%2FNeBgApu36UQeWE2P%2BfRp6IwgTy1uHE7WwNtcpTpARwZ2fS1iAWZvVUYWc0%2BSYfrZKmShs1grmRmYmuqTuPa%2BbXW9%2B3D9JsaU16ErlgfFufaPC6AYUyxwY3IjmHR0Ig3aeqpmnj%2Fdyv7BSoDj%2FF9ivi8f%2FCdZHfUVliyXIVPt%2FAXLiziU0oytDm8mrB7uq1eiFIMNX1QSEkuVi8YjA5KbRJhbsBOCupFUrZnzkQkchsP%2FuoHouKg3AsAaeavAY2iwVE1T9WYjsIIUmxJ3yvZKI1QArmGtfFvKZqSakaYKb%2FwZAh9S4IZS6vbxVwPTA7Tw2SIhKEPHT8HmGi0XVlcPBt0nCagtcdnDYKEfcD7rRCi7aif7ZY%2BWp2pJmQpkgM3a8vf%2FSoZho19mZtvh46EWIv4gJ4Se5hsOd3xyD0E1e4fAfYOiNsFY5thQElmaq0Fp3zwqL%2BkTdXKQV62t8PGLFlc5MKbxBeVyJOIJCLWz6y%2BhAcQaUQb6tu69IyE8uAZshRX3CfRxhKSJC58P6TnRR4sT2g9kEYoU8%2FEHNY5iE8yR8TozRDw%2BKnIa7rUY5LM%2Ff5QBBbF1NxZvKvvRaP0ECD1bqWpa6jBPAHMZ%2FdnrvgWXrG3SIV7aUdtWgV3lIbPPG1piuZx1VnUxFdxCph1Imk%2FxojH%2FOKhJNo6XS68SmFvLKwf%2FEG2z0qHhpu3dathMObio6AGOrABXu3jrvCJm9RWv2ZMdR54bo3q%2FiAKxzzekjXmuZ2C2eVd7%2FU7cyCaQmHqujUW1I57Ud9NcJkBg4URqv5gO9gS2W24FgaYxqAQ8NrNZ%2FmxeNehD97mWoutdEFn04NGyokTfwY6OA7WvmPF5l4otlko0mSg5I21xrJc%2B8i0QPo3WKb7fFcH5ZvgPlRaltzSOZFEDuhMEF3uGtzPOyn17Sv8wdTcIK22QnEaQLrIoqkf6Zw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230308T210757Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFMX2UBMJF%2F20230308%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0c63789ef855350c77466c3cc169f8e4a2921ac4e9ead15f5a0648a865a27a82",
+            width: 600,
+            height: 600,
+          },
+        },
+        source: "Serious Eats",
+        url: "http://www.seriouseats.com/recipes/2013/12/homemade-rayu-from-japanese-soul-cooking-cookbook.html",
+        shareAs:
+          "http://www.edamam.com/recipe/homemade-rayu-from-japanese-soul-cooking-ea55bdacb4d8e4930d4b5b1f44edc7f7/japanese+gyoza",
+        yield: 4,
+        dietLabels: ["Low-Carb", "Low-Sodium"],
+        healthLabels: [
+          "Sugar-Conscious",
+          "Low Potassium",
+          "Kidney-Friendly",
+          "Keto-Friendly",
+          "Vegan",
+          "Vegetarian",
+          "Pescatarian",
+          "Paleo",
+          "Dairy-Free",
+          "Gluten-Free",
+          "Wheat-Free",
+          "Egg-Free",
+          "Peanut-Free",
+          "Tree-Nut-Free",
+          "Soy-Free",
+          "Fish-Free",
+          "Shellfish-Free",
+          "Pork-Free",
+          "Red-Meat-Free",
+          "Crustacean-Free",
+          "Celery-Free",
+          "Mustard-Free",
+          "Lupine-Free",
+          "Mollusk-Free",
+          "Alcohol-Free",
+          "Sulfite-Free",
+          "Kosher",
+          "Immuno-Supportive",
+        ],
+        cautions: [],
+        ingredientLines: [
+          "1 tablespoon finely chopped ginger",
+          "1 tablespoon finely chopped garlic",
+          "1 tablespoon finely chopped scallion, white parts only",
+          "1/2 cup toasted sesame oil",
+          "1 tablespoon ichimi togarashi or ground ground Chinese red pepper",
+          "1 tablespoon coarse Chinese red pepper flakes",
+        ],
+        ingredients: [
+          {
+            text: "1 tablespoon finely chopped ginger",
+            quantity: 1,
+            measure: "tablespoon",
+            food: "ginger",
+            weight: 5.99999999989856,
+            foodCategory: "vegetables",
+            foodId: "food_bi2ki2xb5zmmvbaiwf7ztbgktzp6",
+            image:
+              "https://www.edamam.com/food-img/b9c/b9c06ef451ef29513880af0a53ebbaa6.jpg",
+          },
+          {
+            text: "1 tablespoon finely chopped garlic",
+            quantity: 1,
+            measure: "tablespoon",
+            food: "garlic",
+            weight: 8.499999999856291,
+            foodCategory: "vegetables",
+            foodId: "food_avtcmx6bgjv1jvay6s6stan8dnyp",
+            image:
+              "https://www.edamam.com/food-img/6ee/6ee142951f48aaf94f4312409f8d133d.jpg",
+          },
+          {
+            text: "1 tablespoon finely chopped scallion, white parts only",
+            quantity: 1,
+            measure: "tablespoon",
+            food: "scallion",
+            weight: 6,
+            foodCategory: "vegetables",
+            foodId: "food_bknlkyzbuzo27pb11whr4bttkuy6",
+            image:
+              "https://www.edamam.com/food-img/b89/b89986ed6aa466285bdd99bac34b3c46.jpg",
+          },
+          {
+            text: "1/2 cup toasted sesame oil",
+            quantity: 0.5,
+            measure: "cup",
+            food: "toasted sesame oil",
+            weight: 109,
+            foodCategory: "Oils",
+            foodId: "food_b2id9opa0l5afvbw2do5xa1fnz4q",
+            image:
+              "https://www.edamam.com/food-img/b87/b874ddcfb6770adc7a155355a902ffb8.jpg",
+          },
+          {
+            text: "1 tablespoon ichimi togarashi or ground ground Chinese red pepper",
+            quantity: 1,
+            measure: "tablespoon",
+            food: "red pepper",
+            weight: 9.3,
+            foodCategory: "vegetables",
+            foodId: "food_a8g63g7ak6bnmvbu7agxibp4a0dy",
+            image:
+              "https://www.edamam.com/food-img/4dc/4dc48b1a506d334b4ab6671b9d56a18f.jpeg",
+          },
+          {
+            text: "1 tablespoon coarse Chinese red pepper flakes",
+            quantity: 1,
+            measure: "tablespoon",
+            food: "red pepper flakes",
+            weight: 2.312499999960903,
+            foodCategory: "vegetables",
+            foodId: "food_bispmxiaijcuxcagex14mbhk2o48",
+            image:
+              "https://www.edamam.com/food-img/6cb/6cb8e4510251a322178f6e191b3a7b1b.jpeg",
+          },
+        ],
+        calories: 993.3204999995781,
+        totalWeight: 141.11249999971577,
+        totalTime: 20,
+        cuisineType: ["japanese"],
+        mealType: ["lunch/dinner"],
+        dishType: ["starter"],
+        totalNutrients: {
+          ENERC_KCAL: {
+            label: "Energy",
+            quantity: 993.3204999995781,
+            unit: "kcal",
+          },
+          FAT: {
+            label: "Fat",
+            quantity: 109.26115624999626,
+            unit: "g",
+          },
+          FASAT: {
+            label: "Saturated",
+            quantity: 15.52097662499935,
+            unit: "g",
+          },
+          FATRN: {
+            label: "Trans",
+            quantity: 0,
+            unit: "g",
+          },
+          FAMS: {
+            label: "Monounsaturated",
+            quantity: 43.29589649999965,
+            unit: "g",
+          },
+          FAPU: {
+            label: "Polyunsaturated",
+            quantity: 45.565556874998286,
+            unit: "g",
+          },
+          CHOCDF: {
+            label: "Carbs",
+            quantity: 6.493002499907151,
+            unit: "g",
+          },
+          "CHOCDF.net": {
+            label: "Carbohydrates (net)",
+            quantity: 5.179514999923418,
+            unit: "g",
+          },
+          FIBTG: {
+            label: "Fiber",
+            quantity: 1.3134874999837325,
+            unit: "g",
+          },
+          SUGAR: {
+            label: "Sugars",
+            quantity: 1.6669124999807852,
+            unit: "g",
+          },
+          "SUGAR.added": {
+            label: "Sugars, added",
+            quantity: 0,
+            unit: "g",
+          },
+          PROCNT: {
+            label: "Protein",
+            quantity: 1.0963324999848774,
+            unit: "g",
+          },
+          CHOLE: {
+            label: "Cholesterol",
+            quantity: 0,
+            unit: "mg",
+          },
+          NA: {
+            label: "Sodium",
+            quantity: 5.661374999926803,
+            unit: "mg",
+          },
+          CA: {
+            label: "Calcium",
+            quantity: 22.35662499970606,
+            unit: "mg",
+          },
+          MG: {
+            label: "Magnesium",
+            quantity: 9.055999999886048,
+            unit: "mg",
+          },
+          K: {
+            label: "Potassium",
+            quantity: 138.41174999827163,
+            unit: "mg",
+          },
+          FE: {
+            label: "Iron",
+            quantity: 0.44896499999458683,
+            unit: "mg",
+          },
+          ZN: {
+            label: "Zinc",
+            quantity: 0.1892374999975893,
+            unit: "mg",
+          },
+          P: {
+            label: "Phosphorus",
+            quantity: 23.35987499968347,
+            unit: "mg",
+          },
+          VITA_RAE: {
+            label: "Vitamin A",
+            quantity: 48.218499999482354,
+            unit: "µg",
+          },
+          VITC: {
+            label: "Vitamin C",
+            quantity: 16.68222499993782,
+            unit: "mg",
+          },
+          THIA: {
+            label: "Thiamin (B1)",
+            quantity: 0.02869512499965555,
+            unit: "mg",
+          },
+          RIBF: {
+            label: "Riboflavin (B2)",
+            quantity: 0.05196062499933631,
+            unit: "mg",
+          },
+          NIA: {
+            label: "Niacin (B3)",
+            quantity: 0.4275176249948439,
+            unit: "mg",
+          },
+          VITB6A: {
+            label: "Vitamin B6",
+            quantity: 0.1640292499977462,
+            unit: "mg",
+          },
+          FOLDFE: {
+            label: "Folate equivalent (total)",
+            quantity: 10.212374999964592,
+            unit: "µg",
+          },
+          FOLFD: {
+            label: "Folate (food)",
+            quantity: 10.212374999964592,
+            unit: "µg",
+          },
+          FOLAC: {
+            label: "Folic acid",
+            quantity: 0,
+            unit: "µg",
+          },
+          VITB12: {
+            label: "Vitamin B12",
+            quantity: 0,
+            unit: "µg",
+          },
+          VITD: {
+            label: "Vitamin D",
+            quantity: 0,
+            unit: "µg",
+          },
+          TOCPHA: {
+            label: "Vitamin E",
+            quantity: 1.8009524999983937,
+            unit: "mg",
+          },
+          VITK1: {
+            label: "Vitamin K",
+            quantity: 30.352324999955155,
+            unit: "µg",
+          },
+          "Sugar.alcohol": {
+            label: "Sugar alcohol",
+            quantity: 0,
+            unit: "g",
+          },
+          WATER: {
+            label: "Water",
+            quantity: 23.843373749832992,
+            unit: "g",
+          },
+        },
+        totalDaily: {
+          ENERC_KCAL: {
+            label: "Energy",
+            quantity: 49.66602499997891,
+            unit: "%",
+          },
+          FAT: {
+            label: "Fat",
+            quantity: 168.09408653845577,
+            unit: "%",
+          },
+          FASAT: {
+            label: "Saturated",
+            quantity: 77.60488312499675,
+            unit: "%",
+          },
+          CHOCDF: {
+            label: "Carbs",
+            quantity: 2.164334166635717,
+            unit: "%",
+          },
+          FIBTG: {
+            label: "Fiber",
+            quantity: 5.25394999993493,
+            unit: "%",
+          },
+          PROCNT: {
+            label: "Protein",
+            quantity: 2.1926649999697547,
+            unit: "%",
+          },
+          CHOLE: {
+            label: "Cholesterol",
+            quantity: 0,
+            unit: "%",
+          },
+          NA: {
+            label: "Sodium",
+            quantity: 0.23589062499695013,
+            unit: "%",
+          },
+          CA: {
+            label: "Calcium",
+            quantity: 2.235662499970606,
+            unit: "%",
+          },
+          MG: {
+            label: "Magnesium",
+            quantity: 2.156190476163345,
+            unit: "%",
+          },
+          K: {
+            label: "Potassium",
+            quantity: 2.9449308510270558,
+            unit: "%",
+          },
+          FE: {
+            label: "Iron",
+            quantity: 2.494249999969927,
+            unit: "%",
+          },
+          ZN: {
+            label: "Zinc",
+            quantity: 1.7203409090689936,
+            unit: "%",
+          },
+          P: {
+            label: "Phosphorus",
+            quantity: 3.3371249999547814,
+            unit: "%",
+          },
+          VITA_RAE: {
+            label: "Vitamin A",
+            quantity: 5.357611111053595,
+            unit: "%",
+          },
+          VITC: {
+            label: "Vitamin C",
+            quantity: 18.535805555486466,
+            unit: "%",
+          },
+          THIA: {
+            label: "Thiamin (B1)",
+            quantity: 2.3912604166379627,
+            unit: "%",
+          },
+          RIBF: {
+            label: "Riboflavin (B2)",
+            quantity: 3.9969711537951005,
+            unit: "%",
+          },
+          NIA: {
+            label: "Niacin (B3)",
+            quantity: 2.6719851562177745,
+            unit: "%",
+          },
+          VITB6A: {
+            label: "Vitamin B6",
+            quantity: 12.617634615211244,
+            unit: "%",
+          },
+          FOLDFE: {
+            label: "Folate equivalent (total)",
+            quantity: 2.553093749991148,
+            unit: "%",
+          },
+          VITB12: {
+            label: "Vitamin B12",
+            quantity: 0,
+            unit: "%",
+          },
+          VITD: {
+            label: "Vitamin D",
+            quantity: 0,
+            unit: "%",
+          },
+          TOCPHA: {
+            label: "Vitamin E",
+            quantity: 12.006349999989292,
+            unit: "%",
+          },
+          VITK1: {
+            label: "Vitamin K",
+            quantity: 25.293604166629294,
+            unit: "%",
+          },
+        },
+        digest: [],
+      },
+      _links: {
+        self: {
+          title: "Self",
+          href: "https://api.edamam.com/api/recipes/v2/ea55bdacb4d8e4930d4b5b1f44edc7f7?type=public&app_id=9c96dddd&app_key=5ed5da612fdc934ee0dbfb39d541b822",
+        },
+      },
+    },
+  ],
+};
