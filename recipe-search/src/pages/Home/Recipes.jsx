@@ -21,9 +21,8 @@ function Recipes() {
     {
       x: 0,
       transition: {
-        type: "spring",
         delay: 1,
-        duration: 1,
+        type: "spring",
       },
       opacity: 1,
     },
@@ -35,8 +34,6 @@ function Recipes() {
       x: 0,
       transition: {
         type: "spring",
-        delay: 0.5,
-        duration: 0.5,
         bounce: 0.3,
       },
       opacity: 1,
@@ -88,14 +85,14 @@ function Recipes() {
               <span className={styles.servings}>14 servings</span>
             </p>
             <ul className={styles.mealAttributes}>
-              <li className={styles.mealAttribute}>
+              <li className={styles.mealCalories}>
                 <AiFillFire className={styles.mealIcon} />
                 <span className={styles.calories}>
                   <strong>650 </strong>
                   calories
                 </span>
               </li>
-              <li>
+              <li className={styles.newGridRow}>
                 <ul className={styles.mealMacros}>
                   <li className={styles.mealAttribute}>
                     <div className={styles.label}>
@@ -103,7 +100,7 @@ function Recipes() {
                         className={styles.mealProtein}
                         viewBox="2.75 2.5 10 10"
                       />
-                      <span className={styles.protein}>Protein</span>
+                      <span className={styles.macroLabel}>Protein</span>
                     </div>
                     <span className={styles.mealGrams}>42g</span>
                   </li>
@@ -113,7 +110,7 @@ function Recipes() {
                         className={styles.mealFat}
                         viewBox="2.75 2.5 10 10"
                       />
-                      <span className={styles.protein}>Fat</span>
+                      <span className={styles.macroLabel}>Fat</span>
                     </div>
                     <span className={styles.mealGrams}>42g</span>
                   </li>
@@ -123,9 +120,37 @@ function Recipes() {
                         className={styles.mealCarbs}
                         viewBox="2.75 2.5 10 10"
                       />
-                      <span className={styles.protein}>Carbs</span>
+                      <span className={styles.macroLabel}>Carbs</span>
                     </div>
                     <span className={styles.mealGrams}>42g</span>
+                  </li>
+                </ul>
+              </li>
+              <li className={styles.newGridRow2}>
+                <ul className={styles.mealMicros}>
+                  <li className={styles.justifyContent}>
+                    <span>Cholesterol</span>
+                    <span className={styles.mealMicroGrams}>25mg</span>
+                  </li>
+                  <li className={styles.justifyContent}>
+                    <span>Sodium</span>
+                    <span className={styles.mealMicroGrams}>625mg</span>
+                  </li>
+                  <li className={styles.justifyContent}>
+                    <span>Calcium</span>
+                    <span className={styles.mealMicroGrams}>44mg</span>
+                  </li>
+                  <li className={styles.justifyContent}>
+                    <span>Magnesium</span>
+                    <span className={styles.mealMicroGrams}>34mg</span>
+                  </li>
+                  <li className={styles.justifyContent}>
+                    <span>Potassium</span>
+                    <span className={styles.mealMicroGrams}>172mg</span>
+                  </li>
+                  <li className={styles.justifyContent}>
+                    <span>Iron</span>
+                    <span className={styles.mealMicroGrams}>2mg</span>
                   </li>
                 </ul>
               </li>
