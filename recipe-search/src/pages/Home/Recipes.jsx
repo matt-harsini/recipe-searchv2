@@ -5,6 +5,8 @@ import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
+import { recipe_data } from "../../data";
+
 function Recipes() {
   const { ref: c1, controls: c1Control } = useAnimateOnView();
   const { ref: c2, controls: c2Control } = useAnimateOnView({
@@ -64,8 +66,19 @@ function Recipes() {
       <div
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
-        <Card innerRef={c1} animate={c1Control} initial={{ opacity: 0 }} />
-        <Card innerRef={c2} animate={c2Control} initial={{ opacity: 0 }} />
+        {recipe_data.hits.map((recipe) => {
+          return (
+            <Card
+              innerRef={c1}
+              animate={c1Control}
+              initial={{ opacity: 0 }}
+              recipe={recipe.recipe}
+              key={recipe.recipe.uri}
+            />
+          );
+        })}
+        {/* <Card innerRef={c1} animate={c1Control} initial={{ opacity: 0 }} />
+        <Card innerRef={c2} animate={c2Control} initial={{ opacity: 0 }} /> */}
         <div className={styles.diet}>
           <h3 className={styles.headingDiet}>Works with any diet:</h3>
           <ul className={styles.list}>
