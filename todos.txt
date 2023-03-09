@@ -1,0 +1,14 @@
+- Recipe Cards
+
+1. Finish mapping out micronutrients from API. Divide each micronutrient by the yield.
+
+2. Try to figure out a way to get higher quality images
+
+- Recipe Page 
+
+1. When user clicks on a card, a new page pops up that has more details about the recipe, including
+ingredients and a link to how to cook it.
+
+2. Add animations and style the recipe page.
+
+3. Have the user filter the results of the recipes by diet restrictions, use state and filter method

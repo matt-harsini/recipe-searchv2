@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Card.module.css";
 import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 
 function Card(props) {
-  console.log(props.recipe.images);
+  console.log(props.recipe);
   return (
     <motion.div
       ref={props.innerRef}
@@ -15,8 +15,8 @@ function Card(props) {
     >
       <img
         className={styles.mealImg}
-        src={props.recipe.image}
-        alt="Japanese Gyozas"
+        src={props.recipe.images.REGULAR.url}
+        alt={props.recipe.label}
         loading="lazy"
       />
       <div className={styles.mealContent}>
@@ -36,7 +36,7 @@ function Card(props) {
         <div className={styles.mealCalories}>
           <AiFillFire className={styles.mealIcon} />
           <span className={styles.calories}>
-            <strong>650 </strong>
+            <strong>{Math.floor(props.recipe.calories)} </strong>
             calories
           </span>
         </div>
@@ -49,9 +49,14 @@ function Card(props) {
                     className={styles.mealProtein}
                     viewBox="2.75 2.5 10 10"
                   />
-                  <span className={styles.macroLabel}>Protein</span>
+                  <span className={styles.macroLabel}>
+                    {props.recipe.digest[2].label}
+                  </span>
                 </div>
-                <span className={styles.mealGrams}>42g</span>
+                <span className={styles.mealGrams}>
+                  {Math.floor(props.recipe.digest[2].total)}
+                  {props.recipe.digest[2].unit}
+                </span>
               </li>
               <li className={styles.mealAttribute}>
                 <div className={styles.label}>
@@ -59,9 +64,14 @@ function Card(props) {
                     className={styles.mealFat}
                     viewBox="2.75 2.5 10 10"
                   />
-                  <span className={styles.macroLabel}>Fat</span>
+                  <span className={styles.macroLabel}>
+                    {props.recipe.digest[0].label}
+                  </span>
                 </div>
-                <span className={styles.mealGrams}>42g</span>
+                <span className={styles.mealGrams}>
+                  {Math.floor(props.recipe.digest[0].total)}
+                  {props.recipe.digest[0].unit}
+                </span>
               </li>
               <li className={styles.mealAttribute}>
                 <div className={styles.label}>
@@ -69,9 +79,14 @@ function Card(props) {
                     className={styles.mealCarbs}
                     viewBox="2.75 2.5 10 10"
                   />
-                  <span className={styles.macroLabel}>Carbs</span>
+                  <span className={styles.macroLabel}>
+                    {props.recipe.digest[1].label}
+                  </span>
                 </div>
-                <span className={styles.mealGrams}>42g</span>
+                <span className={styles.mealGrams}>
+                  {Math.floor(props.recipe.digest[1].total)}
+                  {props.recipe.digest[1].unit}
+                </span>
               </li>
             </ul>
           </li>
