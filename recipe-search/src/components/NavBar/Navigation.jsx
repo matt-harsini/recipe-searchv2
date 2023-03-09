@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styles from "./Navbar.module.scss";
-import { links } from "../../data/data";
+import { links } from "../../data";
+
 const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Home.module.css";
 import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
+
 function Features() {
   const { ref: s1Heading, controls: s1Control } = useAnimateOnView(
     {

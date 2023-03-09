@@ -1,19 +1,9 @@
-import React, {
-  useState,
-  useRef,
-  useLayoutEffect,
-  useEffect,
-  createContext,
-} from "react";
-import { NavLink } from "react-router-dom";
-import { GiMeatCleaver } from "react-icons/gi";
-import { links } from "../../data/data";
+import React, { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import styles from "./Navbar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const NavbarContext = React.createContext();
 

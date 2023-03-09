@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
 import { motion } from "framer-motion";
-import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 
 function Header() {
   return (

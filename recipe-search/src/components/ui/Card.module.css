@@ -10,3 +10,153 @@
   transform: translateY(-12px);
   cursor: pointer;
 }
+
+.mealImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.mealContent {
+  padding: 32px 48px 48px 48px;
+}
+
+.mealTag {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 4px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: var(--step-0);
+  text-transform: uppercase;
+  color: #212529;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tagVegetarian {
+  background-color: #51cf66;
+}
+
+.mealTitle {
+  font-size: var(--step-3);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.servings {
+  display: block;
+  font-size: var(--step-1);
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.mealAttributes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+}
+
+.mealCalories {
+  align-self: center;
+  font-size: var(--step-2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mealIcon {
+  width: 24px;
+  height: 24px;
+  color: #f03e3e;
+}
+
+.calories {
+  font-size: var(--step-2);
+}
+
+.newGridRow {
+  align-self: center;
+  grid-row: 2 / 3;
+}
+
+.mealMacros {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column-start: 2;
+}
+
+.mealAttribute {
+  font-size: var(--step-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mealProtein {
+  width: 24px;
+  height: 24px;
+  color: #f03e3e;
+}
+
+.macroLabel {
+  align-self: center;
+  text-transform: uppercase;
+  font-size: var(--step-1);
+}
+
+.mealGrams {
+  font-size: var(--step-1);
+  font-weight: 500;
+}
+
+.mealFat {
+  width: 24px;
+  height: 24px;
+  color: #fab005;
+}
+
+.mealCarbs {
+  width: 24px;
+  height: 24px;
+  color: #74b816;
+}
+
+.newGridRow2 {
+  align-self: end;
+  grid-row: 1 / 3;
+}
+
+.mealMicros {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.justifyContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mealMicrograms {
+  font-size: var(--step-0);
+  font-weight: 500;
+}
+
+.mealMicros li {
+  list-style-type: none;
+  font-size: var(--step-0);
+}

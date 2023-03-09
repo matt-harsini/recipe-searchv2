@@ -2,9 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Card.module.css";
 import { AiFillFire } from "react-icons/ai";
+import { RxDotFilled } from "react-icons/rx";
+
 function Card(props) {
+  console.log(props);
   return (
-    <motion.div ref={props.innerRef} className={styles.meals}>
+    <motion.div
+      ref={props.innerRef}
+      className={styles.meals}
+      animate={props.animate}
+      initial={props.initial}
+    >
       <img
         className={styles.mealImg}
         src="../../../src/assets/meal-1.jpg"
@@ -67,27 +75,27 @@ function Card(props) {
             <ul className={styles.mealMicros}>
               <li className={styles.justifyContent}>
                 <span>Cholesterol</span>
-                <span className={styles.mealMicroGrams}>25mg</span>
+                <span className={styles.mealMicrograms}>25mg</span>
               </li>
               <li className={styles.justifyContent}>
                 <span>Sodium</span>
-                <span className={styles.mealMicroGrams}>625mg</span>
+                <span className={styles.mealMicrograms}>625mg</span>
               </li>
               <li className={styles.justifyContent}>
                 <span>Calcium</span>
-                <span className={styles.mealMicroGrams}>44mg</span>
+                <span className={styles.mealMicrograms}>44mg</span>
               </li>
               <li className={styles.justifyContent}>
                 <span>Magnesium</span>
-                <span className={styles.mealMicroGrams}>34mg</span>
+                <span className={styles.mealMicrograms}>34mg</span>
               </li>
               <li className={styles.justifyContent}>
                 <span>Potassium</span>
-                <span className={styles.mealMicroGrams}>172mg</span>
+                <span className={styles.mealMicrograms}>172mg</span>
               </li>
               <li className={styles.justifyContent}>
                 <span>Iron</span>
-                <span className={styles.mealMicroGrams}>2mg</span>
+                <span className={styles.mealMicrograms}>2mg</span>
               </li>
             </ul>
           </li>

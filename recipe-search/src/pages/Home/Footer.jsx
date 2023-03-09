@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { socials } from "../../data/socials_data";
+
 function Footer() {
   return (
     <footer className={styles.footer}>

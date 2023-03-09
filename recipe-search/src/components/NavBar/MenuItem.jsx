@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 import { NavbarContext } from "../Navbar/Navbar";
+
 const variants = {
   open: {
     y: 0,
