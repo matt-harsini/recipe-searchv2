@@ -29,15 +29,15 @@ function Card(props) {
           Japanese Gyozas
           <span className={styles.servings}>14 servings</span>
         </p>
+        <div className={styles.mealCalories}>
+          <AiFillFire className={styles.mealIcon} />
+          <span className={styles.calories}>
+            <strong>650 </strong>
+            calories
+          </span>
+        </div>
         <ul className={styles.mealAttributes}>
-          <li className={styles.mealCalories}>
-            <AiFillFire className={styles.mealIcon} />
-            <span className={styles.calories}>
-              <strong>650 </strong>
-              calories
-            </span>
-          </li>
-          <li className={styles.newGridRow}>
+          <li>
             <ul className={styles.mealMacros}>
               <li className={styles.mealAttribute}>
                 <div className={styles.label}>

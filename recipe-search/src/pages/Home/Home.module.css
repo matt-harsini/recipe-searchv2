@@ -124,7 +124,7 @@
 
 .cardContainer {
   display: grid;
-  column-gap: 64px;
+  column-gap: 48px;
   row-gap: 96px;
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 48px;
@@ -357,7 +357,7 @@
   }
 }
 
-@media screen and (900px <= width <= 1300px) {
+@media screen and (900px <= width <= 1400px) {
   .infoRecipes {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -383,10 +383,6 @@
   .infoRecipes {
     grid-template-columns: 1fr;
     justify-items: center;
-  }
-
-  .mealsImg {
-    width: 100%;
   }
 
   .stepImg:nth-child(2) {

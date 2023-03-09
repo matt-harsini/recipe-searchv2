@@ -14,6 +14,7 @@
   --step-8: clamp(4.84rem, 4.31rem + 2.61vw, 7.45rem);
   --step-9: clamp(5.81rem, 5.1rem + 3.51vw, 9.31rem);
   --step-10: clamp(6.97rem, 6.03rem + 4.68vw, 11.64rem);
+  --test: 50rem;
 }
 
 *,
