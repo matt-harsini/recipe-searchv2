@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { default_data } from "../data/";
 
 export function useFetchRecipe(query) {
   const API_ID = "9c96dddd";
   const API_KEY = "5ed5da612fdc934ee0dbfb39d541b822";
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(default_data);
 
   useEffect(() => {
     const fetchData = async () => {

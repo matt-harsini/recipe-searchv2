@@ -5,14 +5,6 @@ import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 
 function Card(props) {
-  const LABELS = [
-    "Cholesterol",
-    "Sodium",
-    "Calcium",
-    "Magnesium",
-    "Potassium",
-    "Iron",
-  ];
   return (
     <motion.div
       ref={props.innerRef}
@@ -22,7 +14,11 @@ function Card(props) {
     >
       <img
         className={styles.mealImg}
-        src={props.recipe.images.REGULAR.url}
+        src={
+          props.recipe.images.LARGE?.url
+            ? props.recipe.images.LARGE.url
+            : props.recipe.images.REGULAR.url
+        }
         alt={props.recipe.label}
         loading="lazy"
       />
@@ -63,7 +59,9 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.round(props.recipe.digest[2].total)}
+                  {Math.round(
+                    props.recipe.digest[2].total / props.recipe.yield
+                  )}
                   {props.recipe.digest[2].unit}
                 </span>
               </li>
@@ -78,7 +76,9 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.round(props.recipe.digest[0].total)}
+                  {Math.round(
+                    props.recipe.digest[0].total / props.recipe.yield
+                  )}
                   {props.recipe.digest[0].unit}
                 </span>
               </li>
@@ -93,7 +93,9 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.round(props.recipe.digest[1].total)}
+                  {Math.round(
+                    props.recipe.digest[1].total / props.recipe.yield
+                  )}
                   {props.recipe.digest[1].unit}
                 </span>
               </li>
@@ -102,28 +104,53 @@ function Card(props) {
           <li className={styles.newGridRow2}>
             <ul className={styles.mealMicros}>
               <li className={styles.justifyContent}>
+                <span>{props.recipe.totalNutrients.CHOLE.label}</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.CHOLE.quantity /
+                      props.recipe.yield
+                  ) + "mg"}
+                </span>
+              </li>
+              <li className={styles.justifyContent}>
+                <span>{props.recipe.totalNutrients.NA.label}</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.NA.quantity / props.recipe.yield
+                  ) + "mg"}
+                </span>
+              </li>
+              <li className={styles.justifyContent}>
                 <span>{props.recipe.totalNutrients.CA.label}</span>
-                <span className={styles.mealMicrograms}>25mg</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.CA.quantity / props.recipe.yield
+                  ) + "mg"}
+                </span>
               </li>
               <li className={styles.justifyContent}>
-                <span>Sodium</span>
-                <span className={styles.mealMicrograms}>625mg</span>
+                <span>{props.recipe.totalNutrients.MG.label}</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.MG.quantity / props.recipe.yield
+                  ) + "mg"}
+                </span>
               </li>
               <li className={styles.justifyContent}>
-                <span>Calcium</span>
-                <span className={styles.mealMicrograms}>44mg</span>
+                <span>{props.recipe.totalNutrients.K.label}</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.K.quantity / props.recipe.yield
+                  ) + "mg"}
+                </span>
               </li>
               <li className={styles.justifyContent}>
-                <span>Magnesium</span>
-                <span className={styles.mealMicrograms}>34mg</span>
-              </li>
-              <li className={styles.justifyContent}>
-                <span>Potassium</span>
-                <span className={styles.mealMicrograms}>172mg</span>
-              </li>
-              <li className={styles.justifyContent}>
-                <span>Iron</span>
-                <span className={styles.mealMicrograms}>2mg</span>
+                <span>{props.recipe.totalNutrients.FE.label}</span>
+                <span className={styles.mealMicrograms}>
+                  {Math.round(
+                    props.recipe.totalNutrients.FE.quantity / props.recipe.yield
+                  ) + "mg"}
+                </span>
               </li>
             </ul>
           </li>

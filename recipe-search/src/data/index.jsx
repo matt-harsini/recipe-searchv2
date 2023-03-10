@@ -1,2 +1,2 @@
 export { links, socials } from "./socials_data";
-export { recipe_data } from "./recipe_data";
+export { default_data } from "./default_data";

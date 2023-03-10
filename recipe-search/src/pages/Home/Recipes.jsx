@@ -5,7 +5,6 @@ import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
-import { recipe_data } from "../../data";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
   const { ref: c1, controls: c1Control } = useAnimateOnView();
@@ -40,7 +39,7 @@ function Recipes() {
     { x: -300 },
     { threshold: 0.3, triggerOnce: true }
   );
-  const { data: data } = useFetchRecipe("chicken");
+  const { data: data } = useFetchRecipe("galbi");
   console.log(data);
   return (
     <section className={`${styles.recipes}`}>
@@ -67,17 +66,18 @@ function Recipes() {
       <div
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
-        {data.hits.slice(0, 2).map((recipe) => {
-          return (
-            <Card
-              innerRef={c1}
-              animate={c1Control}
-              initial={{ opacity: 0 }}
-              recipe={recipe.recipe}
-              key={recipe.recipe.uri}
-            />
-          );
-        })}
+        {data.hits.length &&
+          data.hits.slice(0, 2).map((recipe) => {
+            return (
+              <Card
+                innerRef={c1}
+                animate={c1Control}
+                initial={{ opacity: 0 }}
+                recipe={recipe.recipe}
+                key={recipe.recipe.uri}
+              />
+            );
+          })}
         {/* <Card innerRef={c1} animate={c1Control} initial={{ opacity: 0 }} />
         <Card innerRef={c2} animate={c2Control} initial={{ opacity: 0 }} /> */}
         <div className={styles.diet}>
