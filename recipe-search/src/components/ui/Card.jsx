@@ -5,7 +5,14 @@ import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 
 function Card(props) {
-  console.log(props.recipe);
+  const LABELS = [
+    "Cholesterol",
+    "Sodium",
+    "Calcium",
+    "Magnesium",
+    "Potassium",
+    "Iron",
+  ];
   return (
     <motion.div
       ref={props.innerRef}
@@ -36,7 +43,9 @@ function Card(props) {
         <div className={styles.mealCalories}>
           <AiFillFire className={styles.mealIcon} />
           <span className={styles.calories}>
-            <strong>{Math.floor(props.recipe.calories)} </strong>
+            <strong>
+              {Math.round(props.recipe.calories / props.recipe.yield) + " "}
+            </strong>
             calories
           </span>
         </div>
@@ -54,7 +63,7 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.floor(props.recipe.digest[2].total)}
+                  {Math.round(props.recipe.digest[2].total)}
                   {props.recipe.digest[2].unit}
                 </span>
               </li>
@@ -69,7 +78,7 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.floor(props.recipe.digest[0].total)}
+                  {Math.round(props.recipe.digest[0].total)}
                   {props.recipe.digest[0].unit}
                 </span>
               </li>
@@ -84,7 +93,7 @@ function Card(props) {
                   </span>
                 </div>
                 <span className={styles.mealGrams}>
-                  {Math.floor(props.recipe.digest[1].total)}
+                  {Math.round(props.recipe.digest[1].total)}
                   {props.recipe.digest[1].unit}
                 </span>
               </li>
@@ -93,7 +102,7 @@ function Card(props) {
           <li className={styles.newGridRow2}>
             <ul className={styles.mealMicros}>
               <li className={styles.justifyContent}>
-                <span>Cholesterol</span>
+                <span>{props.recipe.totalNutrients.CA.label}</span>
                 <span className={styles.mealMicrograms}>25mg</span>
               </li>
               <li className={styles.justifyContent}>

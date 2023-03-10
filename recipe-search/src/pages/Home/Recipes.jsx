@@ -6,7 +6,7 @@ import { IoCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
 import { recipe_data } from "../../data";
-
+import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
   const { ref: c1, controls: c1Control } = useAnimateOnView();
   const { ref: c2, controls: c2Control } = useAnimateOnView({
@@ -40,7 +40,8 @@ function Recipes() {
     { x: -300 },
     { threshold: 0.3, triggerOnce: true }
   );
-
+  const { data: data } = useFetchRecipe("chicken");
+  console.log(data);
   return (
     <section className={`${styles.recipes}`}>
       <div
@@ -66,7 +67,7 @@ function Recipes() {
       <div
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
-        {recipe_data.hits.map((recipe) => {
+        {data.hits.slice(0, 2).map((recipe) => {
           return (
             <Card
               innerRef={c1}

@@ -89,6 +89,7 @@
 }
 
 .calories {
+  align-self: flex-end;
   font-size: var(--step-2);
 }
 
