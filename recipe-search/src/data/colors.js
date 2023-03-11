@@ -1,15 +1,15 @@
 export const color_tags = new Map();
 
-color_tags.set("Alcohol-Cocktail", "#e03131");
-color_tags.set("Alcohol-Free", "#f03e3e");
-color_tags.set("Celery-Free", "#fa5252");
-color_tags.set("Crustacean-Free", "#1c7ed6");
-color_tags.set("Dairy-Free", "#339af0");
-color_tags.set("DASH", "#4dabf7");
-color_tags.set("Egg-Free", "#15aabf");
-color_tags.set("Fish-Free", "#22b8cf");
-color_tags.set("FODMAP-Free", "#3bc9db");
-color_tags.set("Gluten-Free", "#66d9e8");
+color_tags.set("Alcohol-Cocktail", "#e74c3c");
+color_tags.set("Alcohol-Free", "#e74c3c");
+color_tags.set("Celery-Free", "#d35400");
+color_tags.set("Crustacean-Free", "#e67e22");
+color_tags.set("Dairy-Free", "#f39c12");
+color_tags.set("DASH", "#f1c40f");
+color_tags.set("Egg-Free", "#27ae60");
+color_tags.set("Fish-Free", "#2ecc71");
+color_tags.set("FODMAP-Free", "#16a085");
+color_tags.set("Gluten-Free", "#1abc9c");
 color_tags.set("Immuno-Supportive", "#20c997");
 color_tags.set("Kidney-Friendly", "#38d9a9");
 color_tags.set("Kosher", "#63e6be");

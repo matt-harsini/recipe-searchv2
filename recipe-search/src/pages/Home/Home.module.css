@@ -1,7 +1,7 @@
 @import "../../index.css";
 
 .clipPathBackground {
-  aspect-ratio: 960/250;
+  aspect-ratio: 960 / 300;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -136,7 +136,7 @@
 .recipes {
   position: relative;
   padding: 152px 0;
-  margin-top: 24px;
+  margin-top: 92px;
   background-color: #f1f3f5;
 }
 
