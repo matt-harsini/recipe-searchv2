@@ -3,8 +3,21 @@ import { motion } from "framer-motion";
 import styles from "./Card.module.css";
 import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
-
+import { IoOpenOutline } from "react-icons/io5";
+import { color_tags } from "../../data";
 function Card(props) {
+  console.log(props.recipe);
+
+  const getImg = (img) => {
+    if (img.LARGE)
+      return {
+        url: img.REGULAR.url,
+      };
+    return {
+      url: img.REGULAR.url,
+    };
+  };
+  const img = getImg(props.recipe.images);
   return (
     <motion.div
       ref={props.innerRef}
@@ -12,23 +25,34 @@ function Card(props) {
       animate={props.animate}
       initial={props.initial}
     >
-      <img
-        className={styles.mealImg}
-        src={
-          props.recipe.images.LARGE?.url
-            ? props.recipe.images.LARGE.url
-            : props.recipe.images.REGULAR.url
-        }
-        alt={props.recipe.label}
-        loading="lazy"
-      />
+      <div className={styles.mealAttributes}>
+        <img
+          className={styles.mealImg}
+          src={img.url}
+          alt={props.recipe.label}
+          width={300}
+          height={300}
+          loading="lazy"
+        />
+        <aside></aside>
+      </div>
+      <IoOpenOutline className={styles.open} />
+      <div className={styles.tagContainer}>
+        {props.recipe.healthLabels.map((label) => {
+          return (
+            <div className={styles.mealTag}>
+              <span
+                style={{ backgroundColor: color_tags.get(label) }}
+                className={`${styles.tag} ${styles.tagVegetarian}`}
+              >
+                <nobr>{label}</nobr>
+              </span>
+            </div>
+          );
+        })}
+      </div>
       <div className={styles.mealContent}>
-        <div className={styles.tagLabels}>
-          <div className={styles.mealTag}>
-            <span className={`${styles.tag} ${styles.tagVegetarian}`}>
-              Vegetarian
-            </span>
-          </div>
+        <div className={styles.labels}>
           <p className={styles.mealTitle}>
             <span className={styles.servings}>
               {props.recipe.yield} servings

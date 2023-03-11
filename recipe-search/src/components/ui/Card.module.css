@@ -1,10 +1,25 @@
 @import "../../index.css";
 
+.open {
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: var(--step-3);
+}
+
+.nutrition {
+  display: flex;
+}
+
 .meals {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 24px 48px rgba(0 0 0 / 8%);
+  background-color: #212529;
+  color: white;
   border-radius: 7px;
   overflow: hidden;
   transition: all 0.4s;
@@ -17,8 +32,6 @@
 }
 
 .mealImg {
-  width: 100%;
-  height: 300px;
   object-fit: cover;
 }
 
@@ -27,13 +40,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 48px 48px 48px;
+  padding: 0 48px 48px 48px;
 }
 
 .mealTag {
   margin-bottom: 12px;
-  display: flex;
-  gap: 4px;
 }
 
 .tag {
@@ -46,6 +57,14 @@
   font-weight: 600;
 }
 
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 12px;
+  padding: 32px 24px 0 24px;
+}
+
 .tagVegetarian {
   background-color: #51cf66;
 }
@@ -53,7 +72,7 @@
 .mealTitle {
   font-size: var(--step-3);
   font-weight: 600;
-  margin-bottom: 24px;
+  margin: 24px 0;
   text-transform: capitalize;
 }
 
@@ -69,7 +88,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 24px;
+  column-gap: 64px;
   row-gap: 16px;
 }
 
@@ -168,6 +187,6 @@
   font-size: var(--step-0);
 }
 
-.tagLabels {
+.labels {
   flex-basis: 100%;
 }

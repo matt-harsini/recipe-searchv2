@@ -34,7 +34,15 @@
 }
 
 .layer {
+  position: absolute;
+  bottom: 0;
   background-image: url("../../assets/layered-waves-haikei.svg");
+}
+
+.layer2 {
+  position: absolute;
+  top: 0;
+  background-image: url("../../assets/layered-waves-haikei2.svg");
 }
 
 .clipPath {

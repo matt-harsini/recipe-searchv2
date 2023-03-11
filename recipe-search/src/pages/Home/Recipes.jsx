@@ -7,7 +7,14 @@ import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
-  const { ref: c1, controls: c1Control } = useAnimateOnView();
+  const { ref: c1, controls: c1Control } = useAnimateOnView(
+    { opacity: 1 },
+    { opacity: 0 },
+    {
+      triggerOnce: true,
+      threshold: 0.2,
+    }
+  );
   const { ref: c2, controls: c2Control } = useAnimateOnView({
     transition: {
       type: "spring",
@@ -39,10 +46,12 @@ function Recipes() {
     { x: -300 },
     { threshold: 0.3, triggerOnce: true }
   );
-  const { data: data } = useFetchRecipe("galbi");
+  const { data: data } = useFetchRecipe("fish");
   console.log(data);
   return (
     <section className={`${styles.recipes}`}>
+      <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
+      <div className={`${styles.layer2} ${styles.clipPathBackground}`}></div>
       <div
         className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText} ${styles.overflowAuto}`}
         ref={s2Heading}
@@ -67,7 +76,7 @@ function Recipes() {
         className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
       >
         {data.hits.length &&
-          data.hits.slice(0, 2).map((recipe) => {
+          data.hits.slice(0, 3).map((recipe) => {
             return (
               <Card
                 innerRef={c1}
