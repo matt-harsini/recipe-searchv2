@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
+import { motion } from "framer-motion";
 import styles from "./Recipes.module.css";
 import Card from "../../components/ui/Card";
 import RecipeContainer from "./RecipeContainer";
 import { useOutletContext } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
 function Recipes() {
   const [query, setQuery] = useState("");
   const [input, setInput] = useState("");
@@ -32,12 +34,18 @@ function Recipes() {
               className={styles.inputField}
               required
             />
-            <button>Search</button>
+            <motion.button
+              className={styles.searchBtn}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <AiOutlineSearch className={styles.searchIcon} />
+            </motion.button>
           </form>
         </div>
       </div>
       <RecipeContainer isLoading={isLoading} isError={isError} query={query}>
-        {data.hits.length &&
+        {!!data.hits.length &&
           data.hits.map((recipe) => {
             return <Card recipe={recipe.recipe} key={recipe.recipe.uri} />;
           })}

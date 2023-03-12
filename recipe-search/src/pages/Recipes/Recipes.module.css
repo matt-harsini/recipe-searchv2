@@ -1,9 +1,25 @@
+@import "../../index.css";
+
 .recipes {
   display: flex;
   flex-direction: column;
   background: #f1f3f5;
+  padding-top: 128px;
   min-height: 100vh;
   min-height: 100svh;
+}
+
+.searchBtn {
+  display: flex;
+  cursor: pointer;
+  background-color: #f1f3f5;
+  justify-items: center;
+  align-items: center;
+  border: none;
+}
+
+.searchIcon {
+  font-size: var(--step-3);
 }
 
 .cardContainer {
@@ -38,7 +54,17 @@
 
 .form {
   display: flex;
+  min-width: 50%;
   gap: 30px;
+}
+
+.inputField {
+  font-size: var(--step-2);
+  flex-basis: 100%;
+  border: none;
+  border-bottom: 1px solid #212529;
+  background-color: #f1f3f5;
+  padding: 12px;
 }
 
 @media screen and (max-width: 1450px) {
