@@ -7,7 +7,6 @@ export function useFetchRecipe(query) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(default_data);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,7 +25,8 @@ export function useFetchRecipe(query) {
       }
       setIsLoading(false);
     };
+    if (query === "") return;
     fetchData();
-  }, []);
+  }, [query]);
   return { data, isLoading, isError };
 }

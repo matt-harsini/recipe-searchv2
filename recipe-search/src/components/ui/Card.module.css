@@ -60,8 +60,8 @@
 .tagContainer {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 12px;
-  column-gap: 12px;
+  row-gap: 6px;
+  column-gap: 10px;
   padding: 32px 24px 0 24px;
 }
 

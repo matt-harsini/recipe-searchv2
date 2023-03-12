@@ -24,6 +24,7 @@ function NavbarOutlet() {
     navbar.current.style.background = "#212529";
     return;
   }, [inView]);
+
   return (
     <div>
       <Navbar innerRef={navbar} />

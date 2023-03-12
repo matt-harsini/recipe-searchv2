@@ -4,10 +4,7 @@ import styles from "./Card.module.css";
 import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 import { IoOpenOutline } from "react-icons/io5";
-import { color_tags } from "../../data";
 function Card(props) {
-  console.log(props.recipe);
-
   const getImg = (img) => {
     if (img.LARGE)
       return {
@@ -38,13 +35,10 @@ function Card(props) {
       </div>
       <IoOpenOutline className={styles.open} />
       <div className={styles.tagContainer}>
-        {props.recipe.healthLabels.map((label) => {
+        {props.recipe.healthLabels.slice(0, 9).map((label) => {
           return (
-            <div className={styles.mealTag}>
-              <span
-                style={{ backgroundColor: color_tags.get(label) }}
-                className={`${styles.tag} ${styles.tagVegetarian}`}
-              >
+            <div className={styles.mealTag} key={label}>
+              <span className={`${styles.tag} ${styles.tagVegetarian}`}>
                 <nobr>{label}</nobr>
               </span>
             </div>

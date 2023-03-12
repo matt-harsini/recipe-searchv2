@@ -47,7 +47,6 @@ function Recipes() {
     { threshold: 0.3, triggerOnce: true }
   );
   const { data: data } = useFetchRecipe("fish");
-  console.log(data);
   return (
     <section className={`${styles.recipes}`}>
       <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
@@ -72,9 +71,7 @@ function Recipes() {
           Find your next favorite recipe in seconds
         </motion.h2>
       </div>
-      <div
-        className={`${styles.container} ${styles.infoRecipes} ${styles.cardContainer}`}
-      >
+      <div className={`${styles.container}  ${styles.cardContainer}`}>
         {data.hits.length &&
           data.hits.slice(0, 3).map((recipe) => {
             return (
@@ -87,8 +84,6 @@ function Recipes() {
               />
             );
           })}
-        {/* <Card innerRef={c1} animate={c1Control} initial={{ opacity: 0 }} />
-        <Card innerRef={c2} animate={c2Control} initial={{ opacity: 0 }} /> */}
         <div className={styles.diet}>
           <h3 className={styles.headingDiet}>Works with any diet:</h3>
           <ul className={styles.list}>
