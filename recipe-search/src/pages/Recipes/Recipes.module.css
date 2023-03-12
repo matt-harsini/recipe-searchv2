@@ -30,9 +30,8 @@
   display: grid;
   column-gap: 48px;
   row-gap: 96px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding-bottom: 48px;
-  align-items: center;
 }
 
 .formContainer {
@@ -69,6 +68,6 @@
 
 @media screen and (max-width: 1450px) {
   .cardContainer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Card.module.css";
-import { AiFillFire } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
-import { IoOpenOutline } from "react-icons/io5";
+import { useAnimateOnView } from "../../hooks/useAnimateOnView";
+import { BiTachometer } from "react-icons/bi";
 function Card(props) {
   const getImg = (img) => {
     if (img.LARGE)
@@ -15,20 +15,12 @@ function Card(props) {
     };
   };
   const img = getImg(props.recipe.images);
+  const { ref: card, controls: card_control } = useAnimateOnView();
   return (
-    <motion.div className={styles.meals}>
-      <div className={styles.imageContainer}>
-        <img
-          className={styles.mealImg}
-          src={img.url}
-          alt={props.recipe.label}
-          loading="lazy"
-        />
-        <aside></aside>
-      </div>
-      <IoOpenOutline className={styles.open} />
+    <motion.div className={styles.meals} ref={card} animate={card_control}>
+      <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
       <div className={styles.tagContainer}>
-        {props.recipe.healthLabels.slice(0, 9).map((label) => {
+        {props.recipe.healthLabels.slice(0, 2).map((label) => {
           return (
             <div className={styles.mealTag} key={label}>
               <span className={`${styles.tag} ${styles.tagVegetarian}`}>
@@ -48,7 +40,7 @@ function Card(props) {
           </p>
         </div>
         <div className={styles.mealCalories}>
-          <AiFillFire className={styles.mealIcon} />
+          <BiTachometer className={styles.mealIcon} />
           <span className={styles.calories}>
             <strong>
               {Math.round(props.recipe.calories / props.recipe.yield) + " "}

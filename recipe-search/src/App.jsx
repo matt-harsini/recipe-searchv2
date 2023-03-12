@@ -5,6 +5,7 @@ import { MotionConfig } from "framer-motion";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Recipes = lazy(() => import("./pages/Recipes/Recipes"));
+const RecipeInfo = lazy(() => import("./pages/Recipes/RecipeInfo"));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<NavbarOutlet />}>
             <Route index element={<Home />} />
             <Route path="/search-recipes" element={<Recipes />} />
+            <Route path="/search-recipes/:recipeID" element={<RecipeInfo />} />
           </Route>
         </Routes>
       </BrowserRouter>
