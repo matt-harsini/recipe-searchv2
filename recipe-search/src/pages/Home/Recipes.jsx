@@ -7,52 +7,15 @@ import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
-  const { ref: c1, controls: c1Control } = useAnimateOnView(
-    { opacity: 1 },
-    { opacity: 0 },
-    {
-      triggerOnce: true,
-      threshold: 0.2,
-    }
-  );
-  const { ref: c2, controls: c2Control } = useAnimateOnView({
-    transition: {
-      type: "spring",
-      delay: 0.3,
-    },
-    opacity: 1,
-  });
-  const { ref: s2Heading, controls: s2Control } = useAnimateOnView(
-    {
-      x: 0,
-      transition: {
-        delay: 1,
-        type: "spring",
-      },
-      opacity: 1,
-    },
-    { x: 200 },
-    { threshold: 0.3, triggerOnce: true }
-  );
-  const { ref: h2Heading, controls: h2Control } = useAnimateOnView(
-    {
-      x: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.3,
-      },
-      opacity: 1,
-    },
-    { x: -300 },
-    { threshold: 0.3, triggerOnce: true }
-  );
-  const { data: data } = useFetchRecipe("fish");
+  const { ref: s2Heading, controls: s2Control } = useAnimateOnView();
+  const { ref: h2Heading, controls: h2Control } = useAnimateOnView();
+  const { data: data } = useFetchRecipe("steak taco picadillo");
   return (
     <section className={`${styles.recipes}`}>
       <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
       <div className={`${styles.layer2} ${styles.clipPathBackground}`}></div>
       <div
-        className={`${styles.container} ${styles.recipes} ${styles.paddingTop} ${styles.centerText} ${styles.overflowAuto}`}
+        className={`${styles.container} ${styles.headingRecipes} ${styles.paddingTop} ${styles.centerText} ${styles.overflowAuto}`}
         ref={s2Heading}
       >
         <motion.span
@@ -76,8 +39,6 @@ function Recipes() {
           data.hits.slice(0, 3).map((recipe) => {
             return (
               <Card
-                innerRef={c1}
-                animate={c1Control}
                 initial={{ opacity: 0 }}
                 recipe={recipe.recipe}
                 key={recipe.recipe.uri}
@@ -126,7 +87,7 @@ function Recipes() {
           </ul>
         </div>
       </div>
-      <div className={styles.center}>
+      <div className={`${styles.center} ${styles.relative}`}>
         <Link to="/search-recipes" className={styles.startSearchingBtn}>
           See all recipes →
         </Link>

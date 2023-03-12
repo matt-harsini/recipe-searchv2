@@ -8,7 +8,7 @@ import Footer from "./Footer";
 function Main() {
   const ref = useOutletContext();
   return (
-    <div ref={ref}>
+    <div ref={ref[0]}>
       <main className={styles.main}>
         <Features />
         <Recipes />

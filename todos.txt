@@ -13,3 +13,5 @@ ingredients and a link to how to cook it.
 2. Add animations and style the recipe page.
 
 3. Have the user filter the results of the recipes by diet restrictions, use state and filter method
+
+- Have navbar change color to black when user clicks on recipe search

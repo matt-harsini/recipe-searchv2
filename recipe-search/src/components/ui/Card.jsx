@@ -16,19 +16,12 @@ function Card(props) {
   };
   const img = getImg(props.recipe.images);
   return (
-    <motion.div
-      ref={props.innerRef}
-      className={styles.meals}
-      animate={props.animate}
-      initial={props.initial}
-    >
-      <div className={styles.mealAttributes}>
+    <motion.div className={styles.meals}>
+      <div className={styles.imageContainer}>
         <img
           className={styles.mealImg}
           src={img.url}
           alt={props.recipe.label}
-          width={300}
-          height={300}
           loading="lazy"
         />
         <aside></aside>

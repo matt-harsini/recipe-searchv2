@@ -33,6 +33,7 @@
 
 .mealImg {
   object-fit: cover;
+  max-width: 300px;
 }
 
 .mealContent {
@@ -40,7 +41,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 48px 48px 48px;
+  padding: 0 24px 24px 24px;
 }
 
 .mealTag {
@@ -88,7 +89,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 64px;
+  column-gap: 48px;
   row-gap: 16px;
 }
 
@@ -192,4 +193,27 @@
   flex-direction: column;
   justify-content: flex-end;
   flex-basis: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .mealImg {
+    max-width: 100%;
+    width:
+     100%;
+  }
+  .mealAttributes {
+    grid-template-columns: 1fr;
+  }
+
+  
+
+  .mealMacros {
+    gap: 6px;
+  }
+
+  .mealCalories {
+    margin-bottom: 16px;
+  }
+  
+  
 }

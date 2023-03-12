@@ -5,10 +5,10 @@ import { useInView } from "react-intersection-observer";
 import styles from "./Navbar.module.scss";
 
 function NavbarOutlet() {
+  const navbar = useRef(null);
   const [ref, inView] = useInView({
     threshold: 0.05,
   });
-  const navbar = useRef(null);
   useEffect(() => {
     const navigationHeight = navbar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
@@ -21,7 +21,10 @@ function NavbarOutlet() {
       navbar.current.style.background = "";
       return;
     }
-    navbar.current.style.background = "#212529";
+    if (inView) {
+      navbar.current.style.background = "#212529";
+      return;
+    }
     return;
   }, [inView]);
 
@@ -29,7 +32,7 @@ function NavbarOutlet() {
     <div>
       <Navbar innerRef={navbar} />
       <Suspense fallback={<h1>Loading...</h1>}>
-        <Outlet context={ref} />
+        <Outlet context={[ref, navbar]} />
       </Suspense>
     </div>
   );
