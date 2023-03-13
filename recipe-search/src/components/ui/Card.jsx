@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Card.module.css";
 import { RxDotFilled } from "react-icons/rx";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { BiTachometer } from "react-icons/bi";
+import { Link } from "react-router-dom";
 function Card(props) {
   const getImg = (img) => {
     if (img.LARGE)
@@ -16,9 +17,16 @@ function Card(props) {
   };
   const img = getImg(props.recipe.images);
   const { ref: card, controls: card_control } = useAnimateOnView();
+  console.log(props.recipe.yield);
   return (
     <motion.div className={styles.meals} ref={card} animate={card_control}>
-      <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
+      <Link
+        to={`/search-recipes/${props.recipe.label
+          .replace("/\s+/g", "-")
+          .toLowerCase()}`}
+      >
+        <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
+      </Link>
       <div className={styles.tagContainer}>
         {props.recipe.healthLabels.slice(0, 2).map((label) => {
           return (
@@ -34,7 +42,9 @@ function Card(props) {
         <div className={styles.labels}>
           <p className={styles.mealTitle}>
             <span className={styles.servings}>
-              {props.recipe.yield} servings
+              {props.recipe.yield > 1
+                ? `${props.recipe.yield} servings`
+                : `${props.recipe.yield} serving`}
             </span>
             {props.recipe.label}
           </p>

@@ -95,6 +95,7 @@
 
 .mealCalories {
   align-self: flex-start;
+  flex-basis: 100%;
   font-size: var(--test);
   display: flex;
   align-items: center;
@@ -103,6 +104,8 @@
 }
 
 .mealIcon {
+  align-self: flex-end;
+  margin-top: 5px;
   width: 24px;
   height: 24px;
   color: #f03e3e;
