@@ -1,7 +1,25 @@
 import React from "react";
+import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import styles from "./Home.module.css";
-
+import { motion } from "framer-motion";
 function Testimonials() {
+  const { ref: t1, controls: t1Control } = useAnimateOnView();
+  const { ref: t2, controls: t2Control } = useAnimateOnView();
+  const { ref: t3, controls: t3Control } = useAnimateOnView();
+  const { ref: t4, controls: t4Control } = useAnimateOnView();
+  const { ref: img, controls: imgControl } = useAnimateOnView(
+    {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+    { opacity: 0 },
+    {
+      triggerOnce: true,
+      threshold: 0.3,
+    }
+  );
   return (
     <section>
       <div className={styles.testimonials}>
@@ -9,7 +27,12 @@ function Testimonials() {
           <span className={styles.subheading}>Testimonials</span>
           <h2 className={styles.heading}>Hear from our users</h2>
           <div className={styles.quotes}>
-            <figure className={styles.figure}>
+            <motion.figure
+              className={styles.figure}
+              ref={t1}
+              animate={t1Control}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Dave Bryson"
@@ -21,8 +44,13 @@ function Testimonials() {
                 and energetic thanks to Recipe Search.
               </blockquote>
               <p className={styles.testimonialName}>— Dave Bryson</p>
-            </figure>
-            <figure className={styles.figure}>
+            </motion.figure>
+            <motion.figure
+              className={styles.figure}
+              ref={t2}
+              animate={t2Control}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Ben Hadley"
@@ -34,8 +62,13 @@ function Testimonials() {
                 are already impressed with my cooking repertoire.
               </blockquote>
               <p className={styles.testimonialName}>— Ben Hadley</p>
-            </figure>
-            <figure className={styles.figure}>
+            </motion.figure>
+            <motion.figure
+              className={styles.figure}
+              ref={t3}
+              animate={t3Control}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Steve Miller"
@@ -47,8 +80,13 @@ function Testimonials() {
                 Gluten-Free options.
               </blockquote>
               <p className={styles.testimonialName}>— Steve Miller</p>
-            </figure>
-            <figure className={styles.figure}>
+            </motion.figure>
+            <motion.figure
+              className={styles.figure}
+              ref={t4}
+              animate={t4Control}
+              initial={{ opacity: 0 }}
+            >
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Hannah Smith"
@@ -60,10 +98,15 @@ function Testimonials() {
                 fitness goals!
               </blockquote>
               <p className={styles.testimonialName}>— Hannah Smith</p>
-            </figure>
+            </motion.figure>
           </div>
         </div>
-        <div className={styles.imgGallery}>
+        <motion.div
+          className={styles.imgGallery}
+          ref={img}
+          animate={imgControl}
+          initial={{ opacity: 0 }}
+        >
           <figure className={styles.imgItem}>
             <img
               src="../../../src/assets/gallery-1.jpg"
@@ -148,7 +191,7 @@ function Testimonials() {
               loading="lazy"
             />
           </figure>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

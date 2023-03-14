@@ -17,13 +17,13 @@ function Card(props) {
   };
   const img = getImg(props.recipe.images);
   const { ref: card, controls: card_control } = useAnimateOnView();
-  console.log(props.recipe.yield);
   return (
     <motion.div className={styles.meals} ref={card} animate={card_control}>
       <Link
         to={`/search-recipes/${props.recipe.label
-          .replace("/\s+/g", "-")
+          .replace("/s+/g", "-")
           .toLowerCase()}`}
+        state={props.recipe}
       >
         <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
       </Link>
@@ -46,7 +46,7 @@ function Card(props) {
                 ? `${props.recipe.yield} servings`
                 : `${props.recipe.yield} serving`}
             </span>
-            {props.recipe.label}
+            <span className={styles.name}>{props.recipe.label}</span>
           </p>
         </div>
         <div className={styles.mealCalories}>

@@ -136,6 +136,13 @@
   gap: 16px;
 }
 
+.name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
 .mealProtein {
   width: 24px;
   height: 24px;

@@ -10,7 +10,6 @@ function Features() {
       opacity: 1,
       transition: {
         type: "spring",
-        delay: 0.5,
         bounce: 0.1,
       },
     },
