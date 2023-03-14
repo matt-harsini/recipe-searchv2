@@ -204,6 +204,10 @@
   justify-content: flex-end;
 }
 
+.link {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 500px) {
   .mealAttributes {
     grid-template-columns: 1fr;

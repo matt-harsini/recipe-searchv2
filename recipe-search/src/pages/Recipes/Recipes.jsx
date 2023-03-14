@@ -6,6 +6,7 @@ import Card from "../../components/ui/Card";
 import RecipeContainer from "./RecipeContainer";
 import { useOutletContext } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+
 function Recipes() {
   const [query, setQuery] = useState("");
   const [input, setInput] = useState("");
