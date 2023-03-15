@@ -8,6 +8,7 @@ export function useFetchRecipe(query) {
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(default_data);
   useEffect(() => {
+    if (query != "") localStorage.setItem("Query", query);
     const fetchData = async () => {
       try {
         const response = await fetch(

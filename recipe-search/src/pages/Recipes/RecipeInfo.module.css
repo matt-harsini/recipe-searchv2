@@ -3,5 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 152px;
+  min-height: 100vh;
+}
+
+.menuFontSize {
+  font-size: var(--step-5);
 }

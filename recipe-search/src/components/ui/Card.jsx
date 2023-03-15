@@ -6,7 +6,14 @@ import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { BiTachometer } from "react-icons/bi";
 import { Link } from "react-router-dom";
 function Card(props) {
-  const { ref: card, controls: card_control } = useAnimateOnView();
+  const { ref: card, controls: card_control } = useAnimateOnView(
+    { opacity: 1 },
+    { opacity: 0 },
+    {
+      triggerOnce: true,
+      threshold: 0.4,
+    }
+  );
   return (
     <Link
       to={`/search-recipes/${props.recipe.label
@@ -165,7 +172,7 @@ function Card(props) {
             </li>
           </ul>
         </div>
-      </motion.div>{" "}
+      </motion.div>
     </Link>
   );
 }

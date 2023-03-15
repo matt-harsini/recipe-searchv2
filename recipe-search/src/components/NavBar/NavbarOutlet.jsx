@@ -2,6 +2,7 @@ import React, { useEffect, useRef, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
+import Loading from "../loading/Loading";
 import styles from "./Navbar.module.scss";
 
 function NavbarOutlet() {
@@ -31,7 +32,7 @@ function NavbarOutlet() {
   return (
     <div>
       <Navbar innerRef={navbar} />
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<Loading />}>
         <Outlet context={[ref, navbar]} />
       </Suspense>
     </div>

@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
-import { motion } from "framer-motion";
 import styles from "./Recipes.module.css";
 import Card from "../../components/ui/Card";
 import RecipeContainer from "./RecipeContainer";
 import { useOutletContext } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
+import {
+  Button,
+  Input,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
 
 function Recipes() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(
+    localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
+  );
   const [input, setInput] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,21 +40,47 @@ function Recipes() {
       <div className={styles.searchbar}>
         <div className={styles.formContainer}>
           <form className={styles.form} onSubmit={handleSubmit}>
-            <input
+            <Menu>
+              <MenuButton as={Button} rightIcon={<BsChevronDown />} w="100px">
+                Sort by
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Calories: Low to High</MenuItem>
+                <MenuItem>Calories: High to Low</MenuItem>
+                <MenuItem>Protein: Low to High</MenuItem>
+                <MenuItem>Protein: High to Low</MenuItem>
+                <MenuItem>Carbs: Low to High</MenuItem>
+                <MenuItem>Carbs: High to Low</MenuItem>
+                <MenuItem>Fat: Low to High</MenuItem>
+                <MenuItem>Fat: High to Low</MenuItem>
+              </MenuList>
+            </Menu>
+            <Input
               type="text"
               placeholder="Enter recipe"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              variant="flushed"
+              size="lg"
               className={styles.inputField}
               required
             />
-            <motion.button
-              className={styles.searchBtn}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+            <Button
+              size="lg"
+              variant="solid"
+              className={styles.btn}
+              type="submit"
+              bg="#212529"
+              color="white"
+              _hover={{
+                background: "#495057",
+              }}
+              _active={{
+                background: "#f03e3e",
+              }}
             >
-              <AiOutlineSearch className={styles.searchIcon} />
-            </motion.button>
+              <span className={styles.btnLabel}>Search</span>
+            </Button>
           </form>
         </div>
       </div>
@@ -50,6 +89,7 @@ function Recipes() {
           data.hits.map((recipe) => {
             return <Card recipe={recipe.recipe} key={recipe.recipe.uri} />;
           })}
+        {!!data.hits.length || <h1>No results found</h1>}
       </RecipeContainer>
     </div>
   );
