@@ -23,12 +23,7 @@ function Recipes() {
     localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
   );
   const [input, setInput] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setQuery(input);
-  };
   const { data, isLoading, isError } = useFetchRecipe(query);
-  console.log(isLoading);
   const ref = useOutletContext();
   useEffect(() => {
     ref[1].current.style.background = "#212529";
@@ -36,6 +31,10 @@ function Recipes() {
       ref[1].current.style.background = "";
     };
   }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setQuery(input);
+  };
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>

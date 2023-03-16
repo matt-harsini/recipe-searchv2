@@ -2,21 +2,13 @@ import React from "react";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import styles from "./Home.module.css";
 import { motion } from "framer-motion";
+import { img_gallery } from "../../data";
 function Testimonials() {
   const { ref: t1, controls: t1Control } = useAnimateOnView();
   const { ref: t2, controls: t2Control } = useAnimateOnView();
   const { ref: t3, controls: t3Control } = useAnimateOnView();
   const { ref: t4, controls: t4Control } = useAnimateOnView();
-  const { ref: img, controls: imgControl } = useAnimateOnView(
-    {
-      opacity: 1,
-    },
-    { opacity: 0 },
-    {
-      triggerOnce: true,
-      threshold: 0.3,
-    }
-  );
+
   return (
     <section>
       <div className={styles.testimonials}>
@@ -98,96 +90,36 @@ function Testimonials() {
             </motion.figure>
           </div>
         </div>
-        <motion.div
-          className={styles.imgGallery}
-          ref={img}
-          animate={imgControl}
-          initial={{ opacity: 0 }}
-        >
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-1.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-2.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-3.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-4.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-6.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-7.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-8.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/gallery-12.jpg"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/pexels-lina-kivaka-1813504.webp"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/pexels-alisha-mishra-1346345.webp"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/pexels-bp-2739250.webp"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
-          <figure className={styles.imgItem}>
-            <img
-              src="../../../src/assets/pexels-mario-k-12755998.webp"
-              alt="Photo of beautifully arranged food"
-              loading="lazy"
-            />
-          </figure>
+        <motion.div className={styles.imgGallery}>
+          {img_gallery.map((img, i) => {
+            return (
+              <motion.figure
+                key={i}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                  },
+                  visible: (i) => ({
+                    opacity: 1,
+                    transition: {
+                      delay: i * 0.05,
+                    },
+                  }),
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                className={styles.imgItem}
+              >
+                <img
+                  src={img}
+                  alt="Photo of beautifully arranged food"
+                  loading="lazy"
+                />
+              </motion.figure>
+            );
+          })}
         </motion.div>
       </div>
     </section>
