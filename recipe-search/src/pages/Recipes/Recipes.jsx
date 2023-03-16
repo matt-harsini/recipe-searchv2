@@ -28,6 +28,7 @@ function Recipes() {
     setQuery(input);
   };
   const { data, isLoading, isError } = useFetchRecipe(query);
+  console.log(isLoading);
   const ref = useOutletContext();
   useEffect(() => {
     ref[1].current.style.background = "#212529";
@@ -40,21 +41,6 @@ function Recipes() {
       <div className={styles.searchbar}>
         <div className={styles.formContainer}>
           <form className={styles.form} onSubmit={handleSubmit}>
-            <Menu>
-              <MenuButton as={Button} rightIcon={<BsChevronDown />} w="100px">
-                Sort by
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Calories: Low to High</MenuItem>
-                <MenuItem>Calories: High to Low</MenuItem>
-                <MenuItem>Protein: Low to High</MenuItem>
-                <MenuItem>Protein: High to Low</MenuItem>
-                <MenuItem>Carbs: Low to High</MenuItem>
-                <MenuItem>Carbs: High to Low</MenuItem>
-                <MenuItem>Fat: Low to High</MenuItem>
-                <MenuItem>Fat: High to Low</MenuItem>
-              </MenuList>
-            </Menu>
             <Input
               type="text"
               placeholder="Enter recipe"

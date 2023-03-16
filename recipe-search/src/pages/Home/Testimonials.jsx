@@ -10,9 +10,6 @@ function Testimonials() {
   const { ref: img, controls: imgControl } = useAnimateOnView(
     {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-      },
     },
     { opacity: 0 },
     {

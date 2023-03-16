@@ -1,11 +1,20 @@
+@import "../../index.css";
+
 .recipeInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-height: 100svh;
+  background: #f1f3f5;
 }
 
-.menuFontSize {
-  font-size: var(--step-5);
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ingredients {
+  font-size: var(--step-1);
 }

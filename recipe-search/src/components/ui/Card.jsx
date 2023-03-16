@@ -4,6 +4,7 @@ import styles from "./Card.module.css";
 import { RxDotFilled } from "react-icons/rx";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { BiTachometer } from "react-icons/bi";
+import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
 function Card(props) {
   const { ref: card, controls: card_control } = useAnimateOnView(
@@ -115,7 +116,10 @@ function Card(props) {
             <li className={styles.newGridRow2}>
               <ul className={styles.mealMicros}>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.CHOLE.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.CHOLE.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.CHOLE.quantity /
@@ -124,7 +128,10 @@ function Card(props) {
                   </span>
                 </li>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.NA.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.NA.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.NA.quantity /
@@ -133,7 +140,10 @@ function Card(props) {
                   </span>
                 </li>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.CA.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.CA.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.CA.quantity /
@@ -142,7 +152,10 @@ function Card(props) {
                   </span>
                 </li>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.MG.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.MG.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.MG.quantity /
@@ -151,7 +164,10 @@ function Card(props) {
                   </span>
                 </li>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.K.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.K.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.K.quantity /
@@ -160,7 +176,10 @@ function Card(props) {
                   </span>
                 </li>
                 <li className={styles.justifyContent}>
-                  <span>{props.recipe.totalNutrients.FE.label}</span>
+                  <div className={styles.label}>
+                    <BsDot viewBox="-1 4 10 10" />
+                    <span>{props.recipe.totalNutrients.FE.label}</span>
+                  </div>
                   <span className={styles.mealMicrograms}>
                     {Math.round(
                       props.recipe.totalNutrients.FE.quantity /
