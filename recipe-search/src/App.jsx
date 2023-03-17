@@ -17,7 +17,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/search-recipes" element={<Recipes />} />
             <Route path="/search-recipes/:recipeID" element={<RecipeInfo />} />
-            <Route path="/loading" element={<Loading />} />
           </Route>
         </Routes>
       </BrowserRouter>

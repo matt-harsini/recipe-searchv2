@@ -4,17 +4,7 @@ import { motion } from "framer-motion";
 import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 
 function Features() {
-  const { ref: s1Heading, controls: s1Control } = useAnimateOnView(
-    {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.1,
-      },
-    },
-    { y: -25 }
-  );
+  const { ref: s1Heading, controls: s1Control } = useAnimateOnView();
   const { ref: h1Heading, controls: h1Control } = useAnimateOnView({
     opacity: 1,
     transition: { delay: 0.1 },
