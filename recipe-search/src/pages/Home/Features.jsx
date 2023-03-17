@@ -13,7 +13,7 @@ function Features() {
         bounce: 0.1,
       },
     },
-    { y: -50 }
+    { y: -25 }
   );
   const { ref: h1Heading, controls: h1Control } = useAnimateOnView({
     opacity: 1,

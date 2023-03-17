@@ -7,14 +7,6 @@ import { BiTachometer } from "react-icons/bi";
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
 function Card(props) {
-  const { ref: card, controls: card_control } = useAnimateOnView(
-    { opacity: 1 },
-    { opacity: 0 },
-    {
-      triggerOnce: true,
-      threshold: 0.4,
-    }
-  );
   return (
     <Link
       to={`/search-recipes/${props.recipe.label
@@ -23,7 +15,23 @@ function Card(props) {
       state={props.recipe}
       className={styles.link}
     >
-      <motion.div className={styles.meals} ref={card} animate={card_control}>
+      <motion.div
+        className={styles.meals}
+        variants={{
+          hidden: {
+            opacity: 0,
+          },
+          visible: {
+            opacity: 1,
+          },
+          transition: {
+            duration: 0.5,
+          },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
 
         <div className={styles.tagContainer}>

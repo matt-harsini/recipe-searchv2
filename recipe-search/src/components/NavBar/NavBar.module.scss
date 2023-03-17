@@ -144,3 +144,40 @@
   padding: 0;
   width: 100%;
 }
+
+.navContainerLg {
+  display: none;
+}
+
+@media screen and (min-width: 1150px) {
+  .btn,
+  .button {
+    display: none;
+  }
+
+  .navContainerLg {
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .icon {
+    color: white;
+    font-size: var(--step-5);
+  }
+
+  .btnText {
+    font-size: var(--step-1);
+    text-transform: uppercase;
+    font-weight: 40;
+    letter-spacing: 1.1px;
+  }
+}

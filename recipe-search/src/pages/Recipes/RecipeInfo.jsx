@@ -4,8 +4,9 @@ import { UnorderedList } from "@chakra-ui/react";
 import styles from "./RecipeInfo.module.css";
 import { useOutletContext } from "react-router-dom";
 import { motion } from "framer-motion";
-import { PieChart } from "react-minimal-pie-chart";
-
+import { useAnimateOnView } from "../../hooks/useAnimateOnView";
+import { MdOpenInNew } from "react-icons/md";
+import { Button } from "@chakra-ui/react";
 function RecipeInfo() {
   const { recipeID } = useParams();
   const location = useLocation();
@@ -18,12 +19,42 @@ function RecipeInfo() {
       ref[1].current.style.background = "";
     };
   }, []);
-  console.log(data);
   return (
-    <article className={styles.recipeInfo}>
-      <section className={styles.container}>
-        <img src={data.image} alt={data.label} />
-        <UnorderedList className={styles.ingredients}>
+    <main className={styles.main}>
+      <section>
+        <Button
+          size="lg"
+          bg="#212529"
+          color="white"
+          _hover={{
+            background: "#111827",
+          }}
+          _active={{
+            background: "#f03e3e",
+          }}
+          className={styles.btn}
+        >
+          <a href={data.url} className={styles.links}>
+            <span>Instructions</span>
+            <MdOpenInNew className={styles.openIcon} />
+          </a>
+        </Button>
+        <Button
+          bg="#212529"
+          color="white"
+          _hover={{
+            background: "#111827",
+          }}
+          _active={{
+            background: "#f03e3e",
+          }}
+          className={styles.btn}
+        >
+          <Link to="/search-recipes" className={styles.links}>
+            Back to search
+          </Link>
+        </Button>
+        <UnorderedList className={styles.ingredients} spacing={5}>
           {data.ingredientLines.map((ingredient, i) => {
             console.log(ingredient);
             return (
@@ -31,7 +62,7 @@ function RecipeInfo() {
                 key={ingredient}
                 variants={{
                   hidden: (i) => ({
-                    y: -25 * i,
+                    y: 25 * i,
                     opacity: 0,
                   }),
                   visible: (i) => ({
@@ -39,6 +70,7 @@ function RecipeInfo() {
                     opacity: 1,
                     transition: {
                       type: "spring",
+                      bounce: 0.1,
                       delay: i * 0.025,
                     },
                   }),
@@ -46,16 +78,21 @@ function RecipeInfo() {
                 initial="hidden"
                 animate="visible"
                 custom={i}
+                className={styles.liItem}
               >
-                {ingredient}
+                {ingredient.replace("*", "")}
               </motion.li>
             );
           })}
         </UnorderedList>
-        <a href={data.url}>Instructions</a>
-        <Link to="/search-recipes">Back to search</Link>
+        <img
+          src={data.images.SMALL.url}
+          alt={data.label}
+          width={data.images.SMALL.width}
+          height={data.images.SMALL.height}
+        />
       </section>
-    </article>
+    </main>
   );
 }
 

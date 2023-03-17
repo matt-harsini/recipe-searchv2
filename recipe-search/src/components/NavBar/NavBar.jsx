@@ -4,6 +4,9 @@ import styles from "./Navbar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
+import { Button } from "@chakra-ui/react";
+import { GiMeatCleaver } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 export const NavbarContext = React.createContext();
 
@@ -57,6 +60,35 @@ function Navbar({ innerRef }) {
           </NavbarContext.Provider>
         </motion.div>
         <MenuToggle btn={btn} toggle={() => toggleOpen()} />
+        <div className={styles.navContainerLg}>
+          <GiMeatCleaver className={styles.icon} />
+          <div className={styles.btnContainer}>
+            <Button
+              size="lg"
+              bg="#f1f3f5"
+              color="#212529"
+              _active={{
+                background: "#f03e3e",
+              }}
+            >
+              <Link to="/">
+                <span className={styles.btnText}>Home</span>
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              bg="#f1f3f5"
+              color="#212529"
+              _active={{
+                background: "#f03e3e",
+              }}
+            >
+              <Link to="/search-recipes">
+                <span className={styles.btnText}>Recipes</span>
+              </Link>
+            </Button>
+          </div>
+        </div>
       </motion.nav>
     </div>
   );

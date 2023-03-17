@@ -58,7 +58,7 @@ function Recipes() {
               bg="#212529"
               color="white"
               _hover={{
-                background: "#495057",
+                background: "#111827",
               }}
               _active={{
                 background: "#f03e3e",
@@ -79,4 +79,5 @@ function Recipes() {
     </div>
   );
 }
+
 export default Recipes;
