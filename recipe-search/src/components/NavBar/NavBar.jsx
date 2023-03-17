@@ -63,30 +63,30 @@ function Navbar({ innerRef }) {
         <div className={styles.navContainerLg}>
           <GiMeatCleaver className={styles.icon} />
           <div className={styles.btnContainer}>
-            <Button
-              size="lg"
-              bg="#f1f3f5"
-              color="#212529"
-              _active={{
-                background: "#f03e3e",
-              }}
-            >
-              <Link to="/">
+            <Link to="/">
+              <Button
+                size="lg"
+                bg="#f1f3f5"
+                color="#212529"
+                _active={{
+                  background: "#f03e3e",
+                }}
+              >
                 <span className={styles.btnText}>Home</span>
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              bg="#f1f3f5"
-              color="#212529"
-              _active={{
-                background: "#f03e3e",
-              }}
-            >
-              <Link to="/search-recipes">
+              </Button>
+            </Link>
+            <Link to="/search-recipes">
+              <Button
+                size="lg"
+                bg="#f1f3f5"
+                color="#212529"
+                _active={{
+                  background: "#f03e3e",
+                }}
+              >
                 <span className={styles.btnText}>Recipes</span>
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </motion.nav>

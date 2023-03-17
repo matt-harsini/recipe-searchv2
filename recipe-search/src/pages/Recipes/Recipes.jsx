@@ -7,14 +7,14 @@ import { useOutletContext } from "react-router-dom";
 import {
   Button,
   Input,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -25,12 +25,15 @@ function Recipes() {
   const [input, setInput] = useState("");
   const { data, isLoading, isError } = useFetchRecipe(query);
   const ref = useOutletContext();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   useEffect(() => {
     ref[1].current.style.background = "#212529";
     return () => {
       ref[1].current.style.background = "";
     };
   }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(input);
@@ -66,6 +69,48 @@ function Recipes() {
             >
               <span className={styles.btnLabel}>Search</span>
             </Button>
+            <Button
+              ref={btnRef}
+              size="lg"
+              variant="solid"
+              className={styles.btn}
+              bg="#212529"
+              color="white"
+              _hover={{
+                background: "#111827",
+              }}
+              _active={{
+                background: "#f03e3e",
+              }}
+              onClick={onOpen}
+            >
+              <span className={styles.btnLabel}>Filter</span>
+            </Button>
+            <Drawer
+              isOpen={isOpen}
+              placement="left"
+              size="md"
+              onClose={onClose}
+              finalFocusRef={btnRef}
+              preserveScrollBarGap={true}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Create your account</DrawerHeader>
+
+                <DrawerBody>
+                  <Input placeholder="Type here..." />
+                </DrawerBody>
+
+                <DrawerFooter>
+                  <Button variant="outline" mr={3} onClick={onClose}>
+                    Cancel
+                  </Button>
+                  <Button colorScheme="blue">Save</Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
           </form>
         </div>
       </div>
