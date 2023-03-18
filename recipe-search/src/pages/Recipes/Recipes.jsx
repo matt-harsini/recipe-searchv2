@@ -19,7 +19,7 @@ import {
   Flex,
   Center,
   Grid,
-  Checkbox,
+  Radio,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -109,34 +109,34 @@ function Recipes() {
                     gap={15}
                     alignItems="center"
                   >
-                    <Checkbox size="lg">
-                      <span className={styles.checkBox}>
-                        Protein: Low to High
-                      </span>
-                    </Checkbox>
-                    <Checkbox size="lg">
+                    <Radio size="lg" value="1" onChange={() => {}}>
                       <span className={styles.checkBox}>
                         Protein: High to Low
                       </span>
-                    </Checkbox>
-                    <Checkbox size="lg">
+                    </Radio>
+                    <Radio size="lg" value="2" onChange={() => {}}>
+                      <span className={styles.checkBox}>
+                        Protein: Low to High
+                      </span>
+                    </Radio>
+                    <Radio size="lg" value="3" onChange={() => {}}>
                       <span className={styles.checkBox}>Test</span>
-                    </Checkbox>
-                    <Checkbox size="lg">
-                      <span className={styles.checkBox}>Checkbox</span>
-                    </Checkbox>
-                    <Checkbox size="lg">
+                    </Radio>
+                    <Radio size="lg" value="4" onChange={() => {}}>
+                      <span className={styles.checkBox}>Radio</span>
+                    </Radio>
+                    <Radio size="lg" value="5" onChange={() => {}}>
                       <span className={styles.checkBox}>Test</span>
-                    </Checkbox>
-                    <Checkbox size="lg">
-                      <span className={styles.checkBox}>Checkbox</span>
-                    </Checkbox>
-                    <Checkbox size="lg">
+                    </Radio>
+                    <Radio size="lg" value="6" onChange={() => {}}>
+                      <span className={styles.checkBox}>Radio</span>
+                    </Radio>
+                    <Radio size="lg" value="7" onChange={() => {}}>
                       <span className={styles.checkBox}>Test</span>
-                    </Checkbox>
-                    <Checkbox size="lg">
-                      <span className={styles.checkBox}>Checkbox</span>
-                    </Checkbox>
+                    </Radio>
+                    <Radio size="lg" value="8" onChange={() => {}}>
+                      <span className={styles.checkBox}>Radio</span>
+                    </Radio>
                   </Grid>
                 </DrawerBody>
                 <DrawerFooter>

@@ -99,7 +99,7 @@
 }
 
 .btnTextIcon {
-  color: white !important;
+  color: #fff !important;
   font-size: var(--step-2);
   text-transform: uppercase;
   font-weight: 40;
@@ -123,7 +123,7 @@
 
 .error {
   margin-top: 128px;
-  font-size: var(--step-4);
+  font-size: var(--step-3);
 }
 
 @media screen and (max-width: 1450px) {

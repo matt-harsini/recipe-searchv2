@@ -134,6 +134,9 @@ function RecipeInfo() {
           </div>
         </div>
       </section>
+      <section className={styles.nutritionalInfo}>
+        
+      </section>
     </main>
   );
 }
