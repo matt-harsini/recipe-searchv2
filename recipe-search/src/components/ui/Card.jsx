@@ -32,7 +32,11 @@ function Card(props) {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <img className={styles.open} src={props.recipe.images.THUMBNAIL.url} />
+        <img
+          className={styles.open}
+          src={props.recipe.images.THUMBNAIL.url}
+          width="75"
+        />
 
         <div className={styles.tagContainer}>
           {props.recipe.healthLabels.slice(0, 2).map((label) => {
@@ -72,7 +76,7 @@ function Card(props) {
                   <div className={styles.label}>
                     <RxDotFilled
                       className={styles.mealProtein}
-                      viewBox="2.75 2.5 10 10"
+                      viewBox="2 2.5 10 10"
                     />
                     <span className={styles.macroLabel}>
                       {props.recipe.digest[2].label}
@@ -88,8 +92,8 @@ function Card(props) {
                 <li className={styles.mealAttribute}>
                   <div className={styles.label}>
                     <RxDotFilled
+                      viewBox="2 2.5 10 10"
                       className={styles.mealFat}
-                      viewBox="2.75 2.5 10 10"
                     />
                     <span className={styles.macroLabel}>
                       {props.recipe.digest[0].label}
@@ -106,7 +110,7 @@ function Card(props) {
                   <div className={styles.label}>
                     <RxDotFilled
                       className={styles.mealCarbs}
-                      viewBox="2.75 2.5 10 10"
+                      viewBox="2 2.5 10 10"
                     />
                     <span className={styles.macroLabel}>
                       {props.recipe.digest[1].label}

@@ -19,7 +19,7 @@
   box-shadow: 0 24px 48px rgba(0 0 0 / 8%);
   background-color: #212529;
   color: white;
-  border-radius: 7px;
+  border-radius: 6px;
   overflow: hidden;
   transition: all 0.4s;
   padding-top: 24px;
@@ -49,7 +49,7 @@
 
 .tag {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 5px 8px;
   font-size: var(--step-0);
   text-transform: uppercase;
   color: #212529;
@@ -164,7 +164,7 @@
 .mealFat {
   width: 24px;
   height: 24px;
-  color: #fab005;
+  color: #ffe066;
 }
 
 .mealCarbs {

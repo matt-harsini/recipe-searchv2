@@ -85,6 +85,47 @@
   font-size: var(--step-1);
 }
 
+.searchIcon,
+.settingsIcon {
+  font-size: var(--step-1);
+  margin-left: 4px;
+}
+
+.btnText {
+  font-size: var(--step-1);
+  text-transform: uppercase;
+  font-weight: 40;
+  letter-spacing: 0.5px;
+}
+
+.btnTextIcon {
+  color: white !important;
+  font-size: var(--step-2);
+  text-transform: uppercase;
+  font-weight: 40;
+  letter-spacing: 0.5px;
+  border-radius: 25px;
+}
+
+.filterHeader {
+  font-size: var(--step-2);
+  margin-bottom: 12px;
+}
+
+.checkBox {
+  font-size: var(--step-1);
+}
+
+.drawer {
+  background: #f1f3f5;
+  padding: 16px 8px;
+}
+
+.error {
+  margin-top: 128px;
+  font-size: var(--step-4);
+}
+
 @media screen and (max-width: 1450px) {
   .cardContainer {
     grid-template-columns: 1fr 1fr;

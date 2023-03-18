@@ -15,8 +15,14 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  IconButton,
+  Flex,
+  Center,
+  Grid,
+  Checkbox,
 } from "@chakra-ui/react";
-import { BsChevronDown } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import { FiSettings } from "react-icons/fi";
 
 function Recipes() {
   const [query, setQuery] = useState(
@@ -53,61 +59,103 @@ function Recipes() {
               className={styles.inputField}
               required
             />
-            <Button
-              size="lg"
-              variant="solid"
-              className={styles.btn}
-              type="submit"
-              bg="#212529"
-              color="white"
-              _hover={{
-                background: "#111827",
-              }}
-              _active={{
-                background: "#f03e3e",
-              }}
-            >
-              <span className={styles.btnLabel}>Search</span>
-            </Button>
-            <Button
-              ref={btnRef}
-              size="lg"
-              variant="solid"
-              className={styles.btn}
-              bg="#212529"
-              color="white"
-              _hover={{
-                background: "#111827",
-              }}
-              _active={{
-                background: "#f03e3e",
-              }}
-              onClick={onOpen}
-            >
-              <span className={styles.btnLabel}>Filter</span>
-            </Button>
+            <Center>
+              <Flex gap={15}>
+                <IconButton
+                  bg="#212529"
+                  _hover={{
+                    background: "#111827",
+                  }}
+                  _active={{
+                    background: "#f03e3e",
+                  }}
+                  aria-label="Search recipes"
+                  className={`${styles.btn} ${styles.btnTextIcon}`}
+                  icon={<BsSearch />}
+                ></IconButton>
+                <IconButton
+                  ref={btnRef}
+                  onClick={onOpen}
+                  bg="#212529"
+                  _hover={{
+                    background: "#111827",
+                  }}
+                  _active={{
+                    background: "#f03e3e",
+                  }}
+                  aria-label="Filter and sort recipes"
+                  className={`${styles.btn} ${styles.btnTextIcon}`}
+                  icon={<FiSettings />}
+                ></IconButton>
+              </Flex>
+            </Center>
             <Drawer
               isOpen={isOpen}
               placement="left"
-              size="md"
+              size="lg"
               onClose={onClose}
               finalFocusRef={btnRef}
               preserveScrollBarGap={true}
             >
               <DrawerOverlay />
-              <DrawerContent>
+              <DrawerContent className={styles.drawer}>
                 <DrawerCloseButton />
-                <DrawerHeader>Create your account</DrawerHeader>
-
+                <DrawerHeader className={styles.filterHeader}>
+                  Sort by
+                </DrawerHeader>
                 <DrawerBody>
-                  <Input placeholder="Type here..." />
+                  <Grid
+                    gridTemplateColumns="1fr 1fr"
+                    gap={15}
+                    alignItems="center"
+                  >
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>
+                        Protein: Low to High
+                      </span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>
+                        Protein: High to Low
+                      </span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Test</span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Checkbox</span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Test</span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Checkbox</span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Test</span>
+                    </Checkbox>
+                    <Checkbox size="lg">
+                      <span className={styles.checkBox}>Checkbox</span>
+                    </Checkbox>
+                  </Grid>
                 </DrawerBody>
-
                 <DrawerFooter>
-                  <Button variant="outline" mr={3} onClick={onClose}>
-                    Cancel
+                  <Button
+                    size="lg"
+                    variant="solid"
+                    className={`${styles.btn} ${styles.btnText}`}
+                    bg="#212529"
+                    color="white"
+                    _hover={{
+                      background: "#111827",
+                    }}
+                    _active={{
+                      background: "#f03e3e",
+                    }}
+                    onClick={onClose}
+                  >
+                    Reset
                   </Button>
-                  <Button colorScheme="blue">Save</Button>
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>

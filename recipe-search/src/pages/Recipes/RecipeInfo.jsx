@@ -21,7 +21,7 @@ function RecipeInfo() {
   }, []);
   return (
     <main className={styles.main}>
-      <section>
+      <section className={styles.section}>
         <Button
           size="lg"
           bg="#212529"

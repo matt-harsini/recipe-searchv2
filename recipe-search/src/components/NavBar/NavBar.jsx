@@ -61,7 +61,6 @@ function Navbar({ innerRef }) {
         </motion.div>
         <MenuToggle btn={btn} toggle={() => toggleOpen()} />
         <div className={styles.navContainerLg}>
-          <GiMeatCleaver className={styles.icon} />
           <div className={styles.btnContainer}>
             <Link to="/">
               <Button
@@ -71,6 +70,7 @@ function Navbar({ innerRef }) {
                 _active={{
                   background: "#f03e3e",
                 }}
+                className={styles.navBtn}
               >
                 <span className={styles.btnText}>Home</span>
               </Button>
@@ -79,6 +79,7 @@ function Navbar({ innerRef }) {
               <Button
                 size="lg"
                 bg="#f1f3f5"
+                className={styles.navBtn}
                 color="#212529"
                 _active={{
                   background: "#f03e3e",
