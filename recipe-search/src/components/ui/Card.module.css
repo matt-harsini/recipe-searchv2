@@ -2,8 +2,8 @@
 
 .open {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 10px;
+  top: 10px;
   font-size: var(--step-3);
 }
 
