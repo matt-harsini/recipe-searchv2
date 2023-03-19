@@ -3,10 +3,7 @@ import { useParams, useLocation, Link } from "react-router-dom";
 import { UnorderedList } from "@chakra-ui/react";
 import styles from "./RecipeInfo.module.css";
 import { useOutletContext } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useAnimateOnView } from "../../hooks/useAnimateOnView";
-import { MdOpenInNew } from "react-icons/md";
-import { Button } from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
   AccordionItem,
@@ -16,8 +13,9 @@ import {
   Box,
 } from "@chakra-ui/react";
 function RecipeInfo() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const { recipeID } = useParams();
+  console.log(recipeID);
   const location = useLocation();
   const data = location.state;
   console.log(data.ingredientLines);
@@ -30,9 +28,107 @@ function RecipeInfo() {
   }, []);
   return (
     <main className={styles.main}>
-      <section className={styles.section}>
-        <div className={styles.ingredients}>
-          <Accordion allowToggle className={styles.accordion}>
+      <div>
+        <section className={styles.sectionLinks}>
+          <Box className={styles.btnContainer}>
+            <Link to="/search-recipes" className={styles.links}>
+              <span className={styles.btnText}>Back to search</span>
+            </Link>
+            <a href={data.url} className={styles.links}>
+              <span className={styles.btnText}>Instructions</span>
+            </a>
+          </Box>
+        </section>
+        <section className={styles.section}>
+          <div className={styles.ingredients}>
+            <Accordion
+              allowToggle
+              className={styles.accordion}
+              defaultIndex={[0]}
+            >
+              <AccordionItem>
+                <h2>
+                  <AccordionButton
+                    _expanded={{ bg: "#212529", color: "white" }}
+                    onClick={() => {
+                      setIsOpen((prevState) => !prevState);
+                    }}
+                  >
+                    <Box
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                      className={styles.ingredients}
+                    >
+                      Ingredients
+                    </Box>
+                    <AccordionIcon className={styles.accordionIcon} />
+                  </AccordionButton>
+                </h2>
+
+                <AccordionPanel pb={4} className={styles.accordionPanel}>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div>
+                        <UnorderedList
+                          className={styles.ingredients}
+                          spacing={5}
+                        >
+                          {data.ingredientLines.map((ingredient, i) => {
+                            console.log(ingredient);
+                            return (
+                              <motion.li
+                                key={ingredient}
+                                variants={{
+                                  hidden: (i) => ({
+                                    y: 5 * i,
+                                    opacity: 0,
+                                  }),
+                                  visible: (i) => ({
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                      type: "spring",
+                                      bounce: 0,
+                                      delay: i * 0.015,
+                                    },
+                                  }),
+                                  removed: (i) => ({
+                                    opacity: 0,
+                                  }),
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                exit="removed"
+                                custom={i}
+                                className={styles.liItem}
+                              >
+                                {ingredient.replace("*", "")}
+                              </motion.li>
+                            );
+                          })}
+                        </UnorderedList>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </div>
+          <div className={styles.imgContainer}>
+            <img
+              src={data.images.THUMBNAIL.url}
+              alt={data.label}
+              width={data.images.THUMBNAIL.width}
+              height={data.images.THUMBNAIL.height}
+              className={styles.img}
+            />
+          </div>
+          <Accordion
+            allowToggle
+            className={styles.accordion}
+            defaultIndex={[0]}
+          >
             <AccordionItem>
               <h2>
                 <AccordionButton
@@ -53,90 +149,53 @@ function RecipeInfo() {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4} className={styles.accordionPanel}>
-                {isOpen && (
-                  <UnorderedList className={styles.ingredients} spacing={5}>
-                    {data.ingredientLines.map((ingredient, i) => {
-                      console.log(ingredient);
-                      return (
-                        <motion.li
-                          key={ingredient}
-                          variants={{
-                            hidden: (i) => ({
-                              y: 25 * i,
-                              opacity: 0,
-                            }),
-                            visible: (i) => ({
-                              y: 0,
-                              opacity: 1,
-                              transition: {
-                                type: "spring",
-                                bounce: 0.1,
-                                delay: i * 0.025,
-                              },
-                            }),
-                          }}
-                          initial="hidden"
-                          animate="visible"
-                          custom={i}
-                          className={styles.liItem}
-                        >
-                          {ingredient.replace("*", "")}
-                        </motion.li>
-                      );
-                    })}
-                  </UnorderedList>
-                )}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div>
+                      <UnorderedList className={styles.ingredients} spacing={5}>
+                        {data.ingredientLines.map((ingredient, i) => {
+                          console.log(ingredient);
+                          return (
+                            <motion.li
+                              key={ingredient}
+                              variants={{
+                                hidden: (i) => ({
+                                  y: 5 * i,
+                                  opacity: 0,
+                                }),
+                                visible: (i) => ({
+                                  y: 0,
+                                  opacity: 1,
+                                  transition: {
+                                    type: "spring",
+                                    bounce: 0,
+                                    delay: i * 0.015,
+                                  },
+                                }),
+                                removed: (i) => ({
+                                  opacity: 0,
+                                }),
+                              }}
+                              initial="hidden"
+                              animate="visible"
+                              exit="removed"
+                              custom={i}
+                              className={styles.liItem}
+                            >
+                              {ingredient.replace("*", "")}
+                            </motion.li>
+                          );
+                        })}
+                      </UnorderedList>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-        </div>
-        <div className={styles.imgContainer}>
-          <img
-            src={data.images.SMALL.url}
-            alt={data.label}
-            width={data.images.SMALL.width}
-            height={data.images.SMALL.height}
-            className={styles.img}
-          />
-          <div className={styles.btnContainer}>
-            <Button
-              bg="#212529"
-              color="white"
-              _hover={{
-                background: "#111827",
-              }}
-              _active={{
-                background: "#f03e3e",
-              }}
-              className={styles.btn}
-            >
-              <Link to="/search-recipes" className={styles.links}>
-                <span className={styles.btnText}>Back to search</span>
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              bg="#212529"
-              color="white"
-              _hover={{
-                background: "#111827",
-              }}
-              _active={{
-                background: "#f03e3e",
-              }}
-              className={styles.btn}
-              rightIcon={<MdOpenInNew className={styles.openIcon} />}
-            >
-              <a href={data.url} className={styles.links}>
-                <span className={styles.btnText}>Instructions</span>
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className={styles.nutritionalInfo}>
-        
-      </section>
+        </section>
+      </div>
+      <section className={styles.nutritionalInfo}></section>
     </main>
   );
 }

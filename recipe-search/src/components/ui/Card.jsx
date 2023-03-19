@@ -6,6 +6,7 @@ import { useAnimateOnView } from "../../hooks/useAnimateOnView";
 import { BiTachometer } from "react-icons/bi";
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { Accordion } from "@chakra-ui/react";
 function Card(props) {
   return (
     <Link

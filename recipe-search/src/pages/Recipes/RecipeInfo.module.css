@@ -4,10 +4,12 @@
   background: #f1f3f5;
   min-height: 100vh;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .liItem {
@@ -15,14 +17,25 @@
   text-transform: capitalize;
 }
 
+.sectionLinks {
+  margin-top: 176px;
+  height: 80px;
+  align-self: self-end;
+}
+
 .section {
-  display: flex;
-  margin-top: 92px;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  justify-self: center;
+  max-width: 1500px;
+  column-gap: 92px;
+  margin: 0 auto;
 }
 
 .imgContainer {
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
   order: -1;
 }
 
@@ -33,17 +46,20 @@
 }
 
 .btn {
-  padding: 18px 24px;
+  min-height: 35px;
+  padding: 20px 20px;
 }
 
 .btnContainer {
   margin-bottom: 64px;
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 64px;
 }
 
 .btnText {
+  font-weight: 400;
   font-size: var(--step-1);
 }
 
@@ -56,17 +72,16 @@
 }
 
 .img {
-  margin: 0 auto;
   margin-bottom: 64px;
+  align-self: flex-end;
 }
 
-.accordion {
-  width: 500px;
-}
+/* .accordion {
+} */
 
 .accordionPanel {
-  max-width: 500px;
   position: absolute;
+  max-width: 420px;
 }
 
 .accordionIcon {

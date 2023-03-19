@@ -9,7 +9,7 @@ import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 function Recipes() {
   const { ref: s2Heading, controls: s2Control } = useAnimateOnView();
   const { ref: h2Heading, controls: h2Control } = useAnimateOnView();
-  const { data: data } = useFetchRecipe("Picadillo Tacos");
+  const { data: data } = useFetchRecipe("Macaroons");
   return (
     <section className={`${styles.recipes}`}>
       <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
