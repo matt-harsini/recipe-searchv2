@@ -161,7 +161,7 @@ function Recipes() {
                 <DrawerHeader className={styles.filterHeader}>
                   Filter by
                 </DrawerHeader>
-                <DrawerBody>
+                <DrawerBody className={styles.drawerFilter}>
                   <Grid gridTemplateColumns="1fr 1fr" gap={15}>
                     <Stack spacing={10}>
                       <Checkbox value="vegetarian">
@@ -272,7 +272,7 @@ function Recipes() {
                     </Stack>
                   </Grid>
                 </DrawerBody>
-                <DrawerFooter>
+                <DrawerFooter className={styles.justifyContent}>
                   <Button
                     size="lg"
                     variant="solid"
