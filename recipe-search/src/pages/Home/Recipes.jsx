@@ -12,8 +12,8 @@ function Recipes() {
   const { data: data } = useFetchRecipe("Macaroons");
   return (
     <section className={`${styles.recipes}`}>
-      <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
-      <div className={`${styles.layer2} ${styles.clipPathBackground}`}></div>
+      {/* <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
+      <div className={`${styles.layer2} ${styles.clipPathBackground}`}></div> */}
       <div
         className={`${styles.container} ${styles.headingRecipes} ${styles.paddingTop} ${styles.centerText} ${styles.overflowAuto}`}
         ref={s2Heading}

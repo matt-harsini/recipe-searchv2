@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation, Link as ReachLink } from "react-router-dom";
 import { UnorderedList } from "@chakra-ui/react";
 import styles from "./RecipeInfo.module.css";
 import { useOutletContext } from "react-router-dom";
@@ -12,6 +12,9 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import { RxOpenInNewWindow } from "react-icons/rx";
+import { Link } from "@chakra-ui/react";
+
 function RecipeInfo() {
   const [isOpen, setIsOpen] = useState(true);
   const { recipeID } = useParams();
@@ -31,11 +34,13 @@ function RecipeInfo() {
       <div>
         <section className={styles.sectionLinks}>
           <Box className={styles.btnContainer}>
-            <Link to="/search-recipes" className={styles.links}>
+            <Link to="/search-recipes" className={styles.links} as={ReachLink}>
               <span className={styles.btnText}>Back to search</span>
             </Link>
             <a href={data.url} className={styles.links}>
-              <span className={styles.btnText}>Instructions</span>
+              <span className={styles.btnText}>
+                Instructions <RxOpenInNewWindow />
+              </span>
             </a>
           </Box>
         </section>
