@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 import styles from "./Recipes.module.css";
 import Card from "../../components/ui/Card";
@@ -20,6 +20,8 @@ import {
   Center,
   Grid,
   Radio,
+  Stack,
+  Checkbox,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -39,11 +41,11 @@ function Recipes() {
       ref[1].current.style.background = "";
     };
   }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(input);
   };
+  console.log(data);
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
@@ -99,7 +101,8 @@ function Recipes() {
             >
               <DrawerOverlay />
               <DrawerContent className={styles.drawer}>
-                <DrawerCloseButton />
+                <DrawerCloseButton className={styles.closeBtn} />
+
                 <DrawerHeader className={styles.filterHeader}>
                   Sort by
                 </DrawerHeader>
@@ -109,34 +112,164 @@ function Recipes() {
                     gap={15}
                     alignItems="center"
                   >
-                    <Radio size="lg" value="1" onChange={() => {}}>
-                      <span className={styles.checkBox}>
-                        Protein: High to Low
-                      </span>
-                    </Radio>
-                    <Radio size="lg" value="2" onChange={() => {}}>
-                      <span className={styles.checkBox}>
-                        Protein: Low to High
-                      </span>
-                    </Radio>
-                    <Radio size="lg" value="3" onChange={() => {}}>
-                      <span className={styles.checkBox}>Test</span>
-                    </Radio>
-                    <Radio size="lg" value="4" onChange={() => {}}>
-                      <span className={styles.checkBox}>Radio</span>
-                    </Radio>
-                    <Radio size="lg" value="5" onChange={() => {}}>
-                      <span className={styles.checkBox}>Test</span>
-                    </Radio>
-                    <Radio size="lg" value="6" onChange={() => {}}>
-                      <span className={styles.checkBox}>Radio</span>
-                    </Radio>
-                    <Radio size="lg" value="7" onChange={() => {}}>
-                      <span className={styles.checkBox}>Test</span>
-                    </Radio>
-                    <Radio size="lg" value="8" onChange={() => {}}>
-                      <span className={styles.checkBox}>Radio</span>
-                    </Radio>
+                    <Stack spacing={10}>
+                      <Radio size="lg" value="1" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Calories: High to Low
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="2" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Calories: Low to High
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="3" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Protein: High to Low
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="3" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Protein: Low to High
+                        </span>
+                      </Radio>
+                    </Stack>
+                    <Stack spacing={10}>
+                      <Radio size="lg" value="4" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Fat: High to Low
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="4" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Fat: Low to High
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="5" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Carbs: High to Low
+                        </span>
+                      </Radio>
+                      <Radio size="lg" value="5" onChange={() => {}}>
+                        <span className={styles.checkBox}>
+                          Carbs: Low to High
+                        </span>
+                      </Radio>
+                    </Stack>
+                  </Grid>
+                </DrawerBody>
+                <DrawerHeader className={styles.filterHeader}>
+                  Filter by
+                </DrawerHeader>
+                <DrawerBody>
+                  <Grid gridTemplateColumns="1fr 1fr" gap={15}>
+                    <Stack spacing={10}>
+                      <Checkbox value="vegetarian">
+                        <span className={styles.checkBox}>Vegetarian</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>
+                          Alcohol-Cocktail
+                        </span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Alcohol-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Celery-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Crustcean-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Dairy-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>DASH</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Egg-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Fish-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>FODMAP-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Gluten-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>
+                          Immuno-Supportive
+                        </span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Keto-Friendly</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Kosher</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Low Potassium</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Low Sugar</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Wheat-Free</span>
+                      </Checkbox>
+                    </Stack>
+                    <Stack spacing={10}>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Vegan</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Lupine-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Mediterranean</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Mollusk-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>No oil added</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Paleo</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Peanut-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Pescatarian</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Pork-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Red-Meat-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Sesame-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Shellfish-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Soy-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Sugar-Conscious</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Sulfite-Free</span>
+                      </Checkbox>
+                      <Checkbox>
+                        <span className={styles.checkBox}>Tree-Nut-Free</span>
+                      </Checkbox>
+                    </Stack>
                   </Grid>
                 </DrawerBody>
                 <DrawerFooter>
