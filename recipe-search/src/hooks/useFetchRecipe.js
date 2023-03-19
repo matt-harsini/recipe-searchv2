@@ -29,6 +29,9 @@ export function useFetchRecipe(query) {
     setIsLoading(true);
     localStorage.setItem("Query", query);
     fetchData();
+    return () => {
+      localStorage.clear();
+    };
   }, [query]);
-  return { data, isLoading, isError };
+  return { data, setData, isLoading, isError };
 }

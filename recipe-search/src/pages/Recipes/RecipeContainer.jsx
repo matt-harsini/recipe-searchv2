@@ -14,6 +14,13 @@ function RecipeContainer(props) {
     );
   }
   if (props.query != "" && props.isLoading) return <Loading />;
+  if (!props.data.hits.length) {
+    return (
+      <Center>
+        <h1 className={styles.error}>No results found</h1>
+      </Center>
+    );
+  }
   return <section className={styles.cardContainer}>{props.children}</section>;
 }
 

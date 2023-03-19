@@ -22,6 +22,7 @@ import {
   Radio,
   Stack,
   Checkbox,
+  RadioGroup,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -31,7 +32,7 @@ function Recipes() {
     localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
   );
   const [input, setInput] = useState("");
-  const { data, isLoading, isError } = useFetchRecipe(query);
+  const { data, setData, isLoading, isError } = useFetchRecipe(query);
   const ref = useOutletContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -43,7 +44,101 @@ function Recipes() {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(123);
     setQuery(input);
+  };
+  const handleSort = (e) => {
+    const sortByValue = e.target.value;
+    switch (sortByValue) {
+      case "1":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            a.recipe.calories / a.recipe.yield >
+            b.recipe.calories / b.recipe.yield
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "2":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            a.recipe.calories / a.recipe.yield <
+            b.recipe.calories / b.recipe.yield
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "3":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[2].total / a.recipe.yield) >
+            Math.round(b.recipe.digest[2].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "4":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[2].total / a.recipe.yield) <
+            Math.round(b.recipe.digest[2].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "5":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[0].total / a.recipe.yield) >
+            Math.round(b.recipe.digest[0].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "6":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[0].total / a.recipe.yield) <
+            Math.round(b.recipe.digest[0].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "7":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[1].total / a.recipe.yield) >
+            Math.round(b.recipe.digest[1].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+      case "8":
+        setData({
+          _links: {},
+          hits: data.hits.sort((a, b) =>
+            Math.round(a.recipe.digest[1].total / a.recipe.yield) <
+            Math.round(b.recipe.digest[1].total / b.recipe.yield)
+              ? -1
+              : 1
+          ),
+        });
+        break;
+    }
   };
   console.log(data);
   return (
@@ -74,6 +169,7 @@ function Recipes() {
                   aria-label="Search recipes"
                   className={`${styles.btn} ${styles.btnTextIcon}`}
                   icon={<BsSearch />}
+                  type="submit"
                 ></IconButton>
                 <IconButton
                   ref={btnRef}
@@ -102,69 +198,77 @@ function Recipes() {
               <DrawerOverlay />
               <DrawerContent className={styles.drawer}>
                 <DrawerCloseButton className={styles.closeBtn} />
-
                 <DrawerHeader className={styles.filterHeader}>
                   Sort by
                 </DrawerHeader>
                 <DrawerBody>
-                  <Grid
-                    gridTemplateColumns="1fr 1fr"
-                    gap={15}
-                    alignItems="center"
-                  >
-                    <Stack spacing={10}>
-                      <Radio size="lg" value="1" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Calories: High to Low
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="2" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Calories: Low to High
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="3" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Protein: High to Low
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="3" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Protein: Low to High
-                        </span>
-                      </Radio>
-                    </Stack>
-                    <Stack spacing={10}>
-                      <Radio size="lg" value="4" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Fat: High to Low
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="4" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Fat: Low to High
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="5" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Carbs: High to Low
-                        </span>
-                      </Radio>
-                      <Radio size="lg" value="5" onChange={() => {}}>
-                        <span className={styles.checkBox}>
-                          Carbs: Low to High
-                        </span>
-                      </Radio>
-                    </Stack>
-                  </Grid>
+                  <RadioGroup>
+                    <Grid
+                      gridTemplateColumns="1fr 1fr"
+                      gap={15}
+                      alignItems="center"
+                      onChange={handleSort}
+                    >
+                      <Stack spacing={10}>
+                        <Radio size="lg" value="1" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Calories: High to Low
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="2" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Calories: Low to High
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="3" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Protein: High to Low
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="4" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Protein: Low to High
+                          </span>
+                        </Radio>
+                      </Stack>
+                      <Stack spacing={10}>
+                        <Radio size="lg" value="5" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Fat: High to Low
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="6" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Fat: Low to High
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="7" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Carbs: High to Low
+                          </span>
+                        </Radio>
+                        <Radio size="lg" value="8" onChange={() => {}}>
+                          <span className={styles.checkBox}>
+                            Carbs: Low to High
+                          </span>
+                        </Radio>
+                      </Stack>
+                    </Grid>
+                  </RadioGroup>
                 </DrawerBody>
                 <DrawerHeader className={styles.filterHeader}>
                   Filter by
                 </DrawerHeader>
                 <DrawerBody className={styles.drawerFilter}>
-                  <Grid gridTemplateColumns="1fr 1fr" gap={15}>
+                  <Grid
+                    gridTemplateColumns="1fr 1fr"
+                    gap={15}
+                    onChange={() => {
+                      console.log(123);
+                    }}
+                  >
                     <Stack spacing={10}>
-                      <Checkbox value="vegetarian">
+                      <Checkbox>
                         <span className={styles.checkBox}>Vegetarian</span>
                       </Checkbox>
                       <Checkbox>
@@ -295,12 +399,16 @@ function Recipes() {
           </form>
         </div>
       </div>
-      <RecipeContainer isLoading={isLoading} isError={isError} query={query}>
+      <RecipeContainer
+        data={data}
+        isLoading={isLoading}
+        isError={isError}
+        query={query}
+      >
         {!!data.hits.length &&
           data.hits.map((recipe) => {
             return <Card recipe={recipe.recipe} key={recipe.recipe.uri} />;
           })}
-        {!!data.hits.length || <h1>No results found</h1>}
       </RecipeContainer>
     </div>
   );
