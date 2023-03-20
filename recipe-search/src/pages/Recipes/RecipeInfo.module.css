@@ -15,7 +15,7 @@
 .container {
   display: flex;
   justify-content: center;
-  margin: 64px auto 0 auto;
+  margin: 48px auto 0 auto;
   gap: 128px;
 }
 
@@ -23,7 +23,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 400px;
+  align-items: stretch;
+  max-width: 446px;
 }
 
 .ingredients {
@@ -31,18 +32,28 @@
   text-transform: capitalize;
 }
 
+.healthLabels {
+  display: grid;
+  list-style-type: none;
+  font-size: var(--step-1);
+  text-transform: capitalize;
+}
+
 .header {
+  margin-bottom: 8px;
   font-size: var(--step-3);
   font-weight: 500;
 }
 
 .headerOne {
+  margin-bottom: 8px;
   font-size: var(--step-4);
   font-weight: 500;
 }
 
 .accordionContainer {
-  max-width: 500px;
+  display: flex;
+  gap: 30px;
 }
 
 .instructions {

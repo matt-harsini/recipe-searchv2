@@ -5,12 +5,11 @@ import styles from "./RecipeInfo.module.css";
 import { useOutletContext } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
   Center,
 } from "@chakra-ui/react";
 import { MdOpenInNew } from "react-icons/md";
@@ -57,24 +56,14 @@ function RecipeInfo() {
             </Center>
           </div>
           <div className={styles.accordionContainer}>
-            <Accordion>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton>
-                    <Box as="span" flex="1" textAlign="left">
-                      <motion.h2
-                        className={styles.header}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Ingredients
-                      </motion.h2>
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
+            <Tabs>
+              <TabList>
+                <Tab>Ingredients</Tab>
+                <Tab>Health Labels</Tab>
+                <Tab>Three</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
                   <UnorderedList className={styles.ingredients} spacing={5}>
                     {data.ingredientLines.map((ingredient, i) => {
                       console.log(ingredient);
@@ -110,30 +99,13 @@ function RecipeInfo() {
                       );
                     })}
                   </UnorderedList>
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton>
-                    <Box as="span" flex="1" textAlign="left">
-                      <motion.h2
-                        className={styles.header}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Health Labels
-                      </motion.h2>
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <UnorderedList className={styles.ingredients} spacing={5}>
+                </TabPanel>
+                <TabPanel>
+                  <div className={styles.healthLabels}>
                     {data.healthLabels.map((ingredient, i) => {
                       console.log(ingredient);
                       return (
-                        <motion.li
+                        <motion.span
                           key={ingredient}
                           variants={{
                             hidden: (i) => ({
@@ -157,16 +129,19 @@ function RecipeInfo() {
                           animate="visible"
                           exit="removed"
                           custom={i}
-                          className={styles.liItem}
+                          className={styles.liLabel}
                         >
                           {ingredient.replace("*", "")}
-                        </motion.li>
+                        </motion.span>
                       );
                     })}
-                  </UnorderedList>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <p>three!</p>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </div>
         </div>
       </section>
