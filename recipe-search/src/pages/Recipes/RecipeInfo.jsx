@@ -20,7 +20,6 @@ function RecipeInfo() {
   const { recipeID } = useParams();
   const location = useLocation();
   const data = location.state;
-  console.log(data.ingredientLines);
   const ref = useOutletContext();
   useEffect(() => {
     ref[1].current.style.background = "#212529";
@@ -28,7 +27,7 @@ function RecipeInfo() {
       ref[1].current.style.background = "";
     };
   }, []);
-  console.log(data.url);
+  console.log(data);
   return (
     <main className={styles.main}>
       <Link to="/search-recipes">
@@ -56,17 +55,16 @@ function RecipeInfo() {
             </Center>
           </div>
           <div className={styles.accordionContainer}>
-            <Tabs>
+            <Tabs className={styles.positionRelative} isFitted>
               <TabList>
-                <Tab>Ingredients</Tab>
-                <Tab>Health Labels</Tab>
-                <Tab>Three</Tab>
+                <Tab className={styles.header}>Ingredients</Tab>
+                <Tab className={styles.header}>Labels</Tab>
+                <Tab className={styles.header}>Nutrition</Tab>
               </TabList>
-              <TabPanels>
+              <TabPanels className={styles.positionAbsolute}>
                 <TabPanel>
                   <UnorderedList className={styles.ingredients} spacing={5}>
                     {data.ingredientLines.map((ingredient, i) => {
-                      console.log(ingredient);
                       return (
                         <motion.li
                           key={ingredient}
@@ -103,7 +101,6 @@ function RecipeInfo() {
                 <TabPanel>
                   <div className={styles.healthLabels}>
                     {data.healthLabels.map((ingredient, i) => {
-                      console.log(ingredient);
                       return (
                         <motion.span
                           key={ingredient}
@@ -129,7 +126,7 @@ function RecipeInfo() {
                           animate="visible"
                           exit="removed"
                           custom={i}
-                          className={styles.liLabel}
+                          className={styles.tag}
                         >
                           {ingredient.replace("*", "")}
                         </motion.span>
@@ -138,7 +135,41 @@ function RecipeInfo() {
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <p>three!</p>
+                  <UnorderedList className={styles.nutrition} spacing={5}>
+                    {Object.values(data.totalNutrients).map((nutrient, i) => {
+                      console.log(nutrient);
+                      return (
+                        <motion.li
+                          key={nutrient.label}
+                          variants={{
+                            hidden: (i) => ({
+                              y: 5 * i,
+                              opacity: 0,
+                            }),
+                            visible: (i) => ({
+                              y: 0,
+                              opacity: 1,
+                              transition: {
+                                type: "spring",
+                                bounce: 0,
+                                delay: i * 0.015,
+                              },
+                            }),
+                            removed: (i) => ({
+                              opacity: 0,
+                            }),
+                          }}
+                          initial="hidden"
+                          animate="visible"
+                          exit="removed"
+                          custom={i}
+                          className={styles.liItem}
+                        >{`${nutrient.label}: ${Math.round(nutrient.quantity)}${
+                          nutrient.unit
+                        }`}</motion.li>
+                      );
+                    })}
+                  </UnorderedList>
                 </TabPanel>
               </TabPanels>
             </Tabs>

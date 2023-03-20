@@ -34,19 +34,19 @@
 
 .healthLabels {
   display: grid;
+  justify-items: start;
+  grid-template-columns: 1fr 1fr;
   list-style-type: none;
   font-size: var(--step-1);
   text-transform: capitalize;
 }
 
 .header {
-  margin-bottom: 8px;
   font-size: var(--step-3);
   font-weight: 500;
 }
 
 .headerOne {
-  margin-bottom: 8px;
   font-size: var(--step-4);
   font-weight: 500;
 }
@@ -75,4 +75,27 @@
   left: 75px;
   font-size: var(--step-4);
   color: #212529;
+}
+
+.tag {
+  font-size: var(--step-1);
+  color: #212529;
+}
+
+.positionRelative {
+  position: relative;
+}
+
+.positionAbsolute {
+  position: absolute;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.nutrition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  align-items: baseline;
+  font-size: var(--step-1);
 }
