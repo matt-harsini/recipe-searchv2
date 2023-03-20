@@ -2,93 +2,66 @@
 
 .main {
   background: #f1f3f5;
-  min-height: 100vh;
-  min-height: 100svh;
-  /* display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center; */
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
-.liItem {
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 64px auto 0 auto;
+  gap: 128px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.ingredients {
   font-size: var(--step-1);
   text-transform: capitalize;
 }
 
-.sectionLinks {
-  margin-top: 176px;
-  height: 80px;
-  align-self: self-end;
+.header {
+  font-size: var(--step-3);
+  font-weight: 500;
 }
 
-.section {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  justify-self: center;
-  max-width: 1500px;
-  column-gap: 92px;
-  margin: 0 auto;
+.headerOne {
+  font-size: var(--step-4);
+  font-weight: 500;
 }
 
-.imgContainer {
-  align-self: flex-start;
+.accordionContainer {
+  max-width: 500px;
+}
+
+.instructions {
   display: flex;
-  flex-direction: column;
-  order: -1;
-}
-
-.ingredients {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.btn {
-  min-height: 35px;
-  padding: 20px 20px;
-}
-
-.btnContainer {
-  margin-bottom: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 64px;
-}
-
-.btnText {
-  font-weight: 400;
-  font-size: var(--step-1);
-}
-
-.openIcon {
-  font-size: var(--step-1);
-}
-
-.ingredients {
-  font-size: var(--step-1);
-}
-
-.img {
-  margin-bottom: 64px;
-  align-self: flex-end;
-}
-
-/* .accordion {
-} */
-
-.accordionPanel {
-  position: absolute;
-  max-width: 420px;
-}
-
-.accordionIcon {
+  align-items: center;
   font-size: var(--step-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.links {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.icon {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.exit {
+  position: absolute;
+  top: 50%;
+  left: 75px;
+  font-size: var(--step-4);
+  color: #212529;
 }

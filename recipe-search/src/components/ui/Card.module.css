@@ -17,9 +17,9 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 24px 48px rgba(0 0 0 / 8%);
-  background-color: #212529;
+  background-color: #1c1917;
   color: white;
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
   transition: all 0.4s;
   padding-top: 24px;
@@ -187,6 +187,7 @@
 .justifyContent {
   display: flex;
   justify-content: space-between;
+  gap: 36px;
 }
 
 .mealMicrograms {

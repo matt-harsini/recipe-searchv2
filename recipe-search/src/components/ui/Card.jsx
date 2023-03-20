@@ -36,20 +36,9 @@ function Card(props) {
         <img
           className={styles.open}
           src={props.recipe.images.THUMBNAIL.url}
-          width="50"
+          width="75"
         />
 
-        {/* <div className={styles.tagContainer}>
-          {props.recipe.healthLabels.slice(0, 2).map((label) => {
-            return (
-              <div className={styles.mealTag} key={label}>
-                <span className={`${styles.tag} ${styles.tagVegetarian}`}>
-                  <nobr>{label}</nobr>
-                </span>
-              </div>
-            );
-          })}
-        </div> */}
         <div className={styles.mealContent}>
           <div className={styles.labels}>
             <p className={styles.mealTitle}>
@@ -70,6 +59,7 @@ function Card(props) {
               calories
             </span>
           </div>
+
           <ul className={styles.mealAttributes}>
             <li>
               <ul className={styles.mealMacros}>

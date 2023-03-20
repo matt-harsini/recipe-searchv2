@@ -26,7 +26,7 @@ import {
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
-
+import { motion } from "framer-motion";
 function Recipes() {
   const [query, setQuery] = useState(
     localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
@@ -167,19 +167,24 @@ function Recipes() {
             />
             <Center>
               <Flex gap={15}>
-                <IconButton
-                  bg="#212529"
-                  _hover={{
-                    background: "#111827",
-                  }}
-                  _active={{
-                    background: "#f03e3e",
-                  }}
-                  aria-label="Search recipes"
-                  className={`${styles.btn} ${styles.btnTextIcon}`}
-                  icon={<BsSearch />}
-                  type="submit"
-                ></IconButton>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <IconButton
+                    bg="#212529"
+                    _hover={{
+                      background: "#ffa94d",
+                    }}
+                    _active={{
+                      background: "#f03e3e",
+                    }}
+                    aria-label="Search recipes"
+                    className={`${styles.btn} ${styles.btnTextIcon} ${styles.motionButton}`}
+                    icon={<BsSearch />}
+                    type="submit"
+                  ></IconButton>
+                </motion.button>
                 <IconButton
                   ref={btnRef}
                   onClick={onOpen}
