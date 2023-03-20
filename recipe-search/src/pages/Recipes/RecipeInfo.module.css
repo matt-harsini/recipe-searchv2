@@ -10,6 +10,7 @@
   justify-content: center;
   min-height: 100vh;
   min-height: 100svh;
+  padding-top: 152px;
 }
 
 .container {
@@ -21,8 +22,10 @@
 
 .cardContainer {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
+  align-self: flex-start;
   align-items: stretch;
   max-width: 446px;
 }
@@ -85,18 +88,19 @@
 
 .positionRelative {
   position: relative;
+  height: 700px;
 }
 
 .positionAbsolute {
   position: absolute;
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: scroll;
 }
 
 .nutrition {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 64px;
+  column-gap: 32px;
   align-items: baseline;
   font-size: var(--step-1);
 }
@@ -104,8 +108,18 @@
 @media screen and (max-width: 1000px) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
   .accordionContainer {
     align-self: center;
+  }
+  .headerOne {
+    text-align: center;
+  }
+  .exit {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto 16px auto;
   }
 }

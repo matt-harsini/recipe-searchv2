@@ -183,6 +183,7 @@ function Recipes() {
                     className={`${styles.btn} ${styles.btnTextIcon} ${styles.motionButton}`}
                     icon={<BsSearch />}
                     type="submit"
+                    title="Search"
                   ></IconButton>
                 </motion.button>
                 <IconButton
@@ -198,6 +199,7 @@ function Recipes() {
                   aria-label="Filter and sort recipes"
                   className={`${styles.btn} ${styles.btnTextIcon}`}
                   icon={<FiSettings />}
+                  title="Filter and sort recipes"
                 ></IconButton>
               </Flex>
             </Center>

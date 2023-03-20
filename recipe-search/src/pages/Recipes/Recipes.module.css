@@ -28,8 +28,9 @@
   max-width: 1500px;
   padding: 128px 32px;
   display: grid;
+  justify-items: stretch;
   column-gap: 48px;
-  row-gap: 96px;
+  row-gap: 64px;
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 48px;
 }
@@ -148,5 +149,26 @@
 @media screen and (max-width: 800px) {
   .cardContainer {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cardContainer {
+    column-gap: 12px;
+    justify-items: stretch;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cardContainer {
+    padding: 128px 16px;
   }
 }

@@ -23,6 +23,8 @@
   overflow: hidden;
   transition: all 0.4s;
   padding-top: 24px;
+  max-width: 430px;
+  margin: 0 auto;
 }
 
 .meals:hover {
@@ -210,13 +212,17 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .mealAttributes {
     grid-template-columns: 1fr;
   }
 
   .mealMacros {
     gap: 6px;
+  }
+
+  .mealMicros {
+    margin-left: 2.5px;
   }
 
   .mealCalories {
