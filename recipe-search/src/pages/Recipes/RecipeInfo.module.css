@@ -79,6 +79,7 @@
 
 .tag {
   font-size: var(--step-1);
+  margin-top: 12px;
   color: #212529;
 }
 
@@ -98,4 +99,13 @@
   column-gap: 64px;
   align-items: baseline;
   font-size: var(--step-1);
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+  .accordionContainer {
+    align-self: center;
+  }
 }

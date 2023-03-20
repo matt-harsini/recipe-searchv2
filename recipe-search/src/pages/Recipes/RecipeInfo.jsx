@@ -11,6 +11,7 @@ import {
   Tab,
   TabPanel,
   Center,
+  Grid,
 } from "@chakra-ui/react";
 import { MdOpenInNew } from "react-icons/md";
 import { BsChevronLeft } from "react-icons/bs";
