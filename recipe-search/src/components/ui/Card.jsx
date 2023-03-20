@@ -36,10 +36,10 @@ function Card(props) {
         <img
           className={styles.open}
           src={props.recipe.images.THUMBNAIL.url}
-          width="75"
+          width="50"
         />
 
-        <div className={styles.tagContainer}>
+        {/* <div className={styles.tagContainer}>
           {props.recipe.healthLabels.slice(0, 2).map((label) => {
             return (
               <div className={styles.mealTag} key={label}>
@@ -49,7 +49,7 @@ function Card(props) {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <div className={styles.mealContent}>
           <div className={styles.labels}>
             <p className={styles.mealTitle}>

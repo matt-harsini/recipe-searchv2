@@ -69,7 +69,7 @@
 }
 
 .btn {
-  padding: 16px 24px;
+  padding: 20px 24px;
 }
 
 .btnLabel {
@@ -131,7 +131,7 @@
 }
 
 .closeBtn {
-  transform: scale(1.4);
+  transform: scale(2);
 }
 
 .error {
@@ -145,7 +145,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .cardContainer {
     grid-template-columns: 1fr;
   }

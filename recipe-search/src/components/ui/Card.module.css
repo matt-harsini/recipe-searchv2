@@ -209,7 +209,7 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 350px) {
   .mealAttributes {
     grid-template-columns: 1fr;
   }
@@ -222,3 +222,7 @@
     margin-bottom: 16px;
   }
 }
+
+/* @media screen and (max-width: 850px) {
+ 
+} */

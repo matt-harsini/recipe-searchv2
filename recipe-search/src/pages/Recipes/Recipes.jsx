@@ -37,11 +37,13 @@ function Recipes() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   useEffect(() => {
+    window.scrollTo(0, 0);
     ref[1].current.style.background = "#212529";
     return () => {
       ref[1].current.style.background = "";
     };
   }, []);
+  useEffect(() => {}, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(123);
@@ -140,7 +142,14 @@ function Recipes() {
         break;
     }
   };
-  console.log(data);
+  const handleFilter = (e) => {
+    setData({
+      _links: {},
+      hits: data.hits.filter(({ recipe }) => {
+        return recipe.healthLabels.includes(e.target.value);
+      }),
+    });
+  };
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
@@ -263,114 +272,112 @@ function Recipes() {
                   <Grid
                     gridTemplateColumns="1fr 1fr"
                     gap={15}
-                    onChange={() => {
-                      console.log(123);
-                    }}
+                    onChange={handleFilter}
                   >
                     <Stack spacing={10}>
-                      <Checkbox>
+                      <Checkbox value="Vegetarian">
                         <span className={styles.checkBox}>Vegetarian</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Alcohol-Cocktail">
                         <span className={styles.checkBox}>
                           Alcohol-Cocktail
                         </span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Alcohol-Free">
                         <span className={styles.checkBox}>Alcohol-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Celery-Free">
                         <span className={styles.checkBox}>Celery-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Crustcean-Free">
                         <span className={styles.checkBox}>Crustcean-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Dairy-Free">
                         <span className={styles.checkBox}>Dairy-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="DASH">
                         <span className={styles.checkBox}>DASH</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Egg-Free">
                         <span className={styles.checkBox}>Egg-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Fish-Free">
                         <span className={styles.checkBox}>Fish-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="FODMAP-Free">
                         <span className={styles.checkBox}>FODMAP-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Gluten-Free">
                         <span className={styles.checkBox}>Gluten-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="   Immuno-Supportive">
                         <span className={styles.checkBox}>
                           Immuno-Supportive
                         </span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Keto-Friendly">
                         <span className={styles.checkBox}>Keto-Friendly</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Kosher">
                         <span className={styles.checkBox}>Kosher</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Low Potassium">
                         <span className={styles.checkBox}>Low Potassium</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Low Sugar">
                         <span className={styles.checkBox}>Low Sugar</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Wheat-Free">
                         <span className={styles.checkBox}>Wheat-Free</span>
                       </Checkbox>
                     </Stack>
                     <Stack spacing={10}>
-                      <Checkbox>
+                      <Checkbox value="Vegan">
                         <span className={styles.checkBox}>Vegan</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Lupine-Free">
                         <span className={styles.checkBox}>Lupine-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Mediterranean">
                         <span className={styles.checkBox}>Mediterranean</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Mollusk-Free">
                         <span className={styles.checkBox}>Mollusk-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="No oil added">
                         <span className={styles.checkBox}>No oil added</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Paleo">
                         <span className={styles.checkBox}>Paleo</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Peanut-Free">
                         <span className={styles.checkBox}>Peanut-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Pescatarian">
                         <span className={styles.checkBox}>Pescatarian</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Pork-Free">
                         <span className={styles.checkBox}>Pork-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Red-Meat-Free">
                         <span className={styles.checkBox}>Red-Meat-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Sesame-Free">
                         <span className={styles.checkBox}>Sesame-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Shellfish-Free">
                         <span className={styles.checkBox}>Shellfish-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Soy-Free">
                         <span className={styles.checkBox}>Soy-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Sugar-Conscious">
                         <span className={styles.checkBox}>Sugar-Conscious</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Sulfite-Free">
                         <span className={styles.checkBox}>Sulfite-Free</span>
                       </Checkbox>
-                      <Checkbox>
+                      <Checkbox value="Tree-Nut-Free">
                         <span className={styles.checkBox}>Tree-Nut-Free</span>
                       </Checkbox>
                     </Stack>
