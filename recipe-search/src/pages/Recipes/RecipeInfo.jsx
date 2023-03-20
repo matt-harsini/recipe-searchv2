@@ -28,6 +28,7 @@ function RecipeInfo() {
     nutrition: false,
   });
   useEffect(() => {
+    window.scrollTo(0, 0);
     ref[1].current.style.background = "#212529";
     return () => {
       ref[1].current.style.background = "";
