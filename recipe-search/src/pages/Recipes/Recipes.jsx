@@ -27,12 +27,16 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { motion } from "framer-motion";
+
+const filterSet = new Set();
+
 function Recipes() {
   const [query, setQuery] = useState(
     localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
   );
   const [input, setInput] = useState("");
   const { data, setData, isLoading, isError } = useFetchRecipe(query);
+  const [originalData, setOriginalData] = useState(data);
   const ref = useOutletContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -43,12 +47,14 @@ function Recipes() {
       ref[1].current.style.background = "";
     };
   }, []);
-  useEffect(() => {}, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(123);
     setQuery(input);
   };
+  useEffect(() => {
+    setOriginalData(data);
+  }, [query]);
   const handleSort = (e) => {
     const sortByValue = e.target.value;
     switch (sortByValue) {
@@ -143,13 +149,39 @@ function Recipes() {
     }
   };
   const handleFilter = (e) => {
+    if (e.target.checked) {
+      filterSet.add(e.target.value);
+      setData({
+        _links: {},
+        hits: originalData.hits.filter(({ recipe }) => {
+          const current_labels = Array.from(filterSet);
+          return current_labels.every((label) =>
+            recipe.healthLabels.includes(label)
+          );
+        }),
+      });
+      return;
+    }
+    filterSet.delete(e.target.value);
+    if (filterSet.size === 0) {
+      console.log(originalData.hits);
+      setData({
+        _links: {},
+        hits: originalData.hits,
+      });
+      return;
+    }
     setData({
       _links: {},
-      hits: data.hits.filter(({ recipe }) => {
-        return recipe.healthLabels.includes(e.target.value);
+      hits: originalData.hits.filter(({ recipe }) => {
+        const current_labels = Array.from(filterSet);
+        return current_labels.every((label) =>
+          recipe.healthLabels.includes(label)
+        );
       }),
     });
   };
+
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
@@ -184,6 +216,7 @@ function Recipes() {
                     icon={<BsSearch />}
                     type="submit"
                     title="Search"
+                    as="span"
                   ></IconButton>
                 </motion.button>
                 <IconButton
@@ -226,44 +259,44 @@ function Recipes() {
                       onChange={handleSort}
                     >
                       <Stack spacing={10}>
-                        <Radio size="lg" value="1" onChange={() => {}}>
+                        <Radio size="lg" value="1">
                           <span className={styles.checkBox}>
                             Calories: High to Low
                           </span>
                         </Radio>
-                        <Radio size="lg" value="2" onChange={() => {}}>
+                        <Radio size="lg" value="2">
                           <span className={styles.checkBox}>
                             Calories: Low to High
                           </span>
                         </Radio>
-                        <Radio size="lg" value="3" onChange={() => {}}>
+                        <Radio size="lg" value="3">
                           <span className={styles.checkBox}>
                             Protein: High to Low
                           </span>
                         </Radio>
-                        <Radio size="lg" value="4" onChange={() => {}}>
+                        <Radio size="lg" value="4">
                           <span className={styles.checkBox}>
                             Protein: Low to High
                           </span>
                         </Radio>
                       </Stack>
                       <Stack spacing={10}>
-                        <Radio size="lg" value="5" onChange={() => {}}>
+                        <Radio size="lg" value="5">
                           <span className={styles.checkBox}>
                             Fat: High to Low
                           </span>
                         </Radio>
-                        <Radio size="lg" value="6" onChange={() => {}}>
+                        <Radio size="lg" value="6">
                           <span className={styles.checkBox}>
                             Fat: Low to High
                           </span>
                         </Radio>
-                        <Radio size="lg" value="7" onChange={() => {}}>
+                        <Radio size="lg" value="7">
                           <span className={styles.checkBox}>
                             Carbs: High to Low
                           </span>
                         </Radio>
-                        <Radio size="lg" value="8" onChange={() => {}}>
+                        <Radio size="lg" value="8">
                           <span className={styles.checkBox}>
                             Carbs: Low to High
                           </span>
