@@ -41,14 +41,7 @@ function RecipeInfo() {
           <BsChevronLeft className={styles.exit} />
         </Link>
         <Center>
-          <motion.h1
-            className={styles.headerOne}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            {data.label}
-          </motion.h1>
+          <motion.h1 className={styles.headerOne}>{data.label}</motion.h1>
         </Center>
         <div className={styles.container}>
           <div className={styles.cardContainer}>
@@ -126,9 +119,9 @@ function RecipeInfo() {
                                   y: 0,
                                   opacity: 1,
                                   transition: {
-                                    type: "spring",
+                                    type: "tween",
                                     bounce: 0,
-                                    delay: i * 0.015,
+                                    delay: i * 0.0015,
                                   },
                                 }),
                                 removed: (i) => ({
@@ -165,9 +158,8 @@ function RecipeInfo() {
                                   y: 0,
                                   opacity: 1,
                                   transition: {
-                                    type: "spring",
-                                    bounce: 0,
-                                    delay: i * 0.015,
+                                    type: "tween",
+                                    delay: i * 0.0015,
                                   },
                                 }),
                                 removed: {
@@ -206,9 +198,9 @@ function RecipeInfo() {
                                     y: 0,
                                     opacity: 1,
                                     transition: {
-                                      type: "spring",
+                                      type: "tween",
                                       bounce: 0,
-                                      delay: i * 0.015,
+                                      delay: i * 0.0015,
                                     },
                                   }),
                                   removed: (i) => ({

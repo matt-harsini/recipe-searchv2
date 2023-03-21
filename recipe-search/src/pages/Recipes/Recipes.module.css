@@ -149,7 +149,7 @@
 @media screen and (max-width: 800px) {
   .cardContainer {
     grid-template-columns: 1fr;
-    justify-items: center;
+    justify-items: stretch;
   }
 }
 

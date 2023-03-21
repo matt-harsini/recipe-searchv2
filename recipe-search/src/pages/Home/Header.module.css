@@ -24,7 +24,7 @@
 /* 35.15rem max width
  11.71rem min width*/
 .h1 {
-  font-size: var(--step-5);
+  font-size: var(--step-6);
   transition: font-size 0.15s ease-out;
 }
 
