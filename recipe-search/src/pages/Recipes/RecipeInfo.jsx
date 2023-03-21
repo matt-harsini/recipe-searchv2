@@ -61,7 +61,12 @@ function RecipeInfo() {
             </Center>
           </div>
           <div className={styles.accordionContainer}>
-            <Tabs className={styles.positionRelative} isFitted id="tag-panels">
+            <Tabs
+              className={styles.positionRelative}
+              isFitted
+              id="tag-panels"
+              size="sm"
+            >
               <TabList>
                 <Tab
                   className={styles.header}
@@ -85,7 +90,7 @@ function RecipeInfo() {
                       nutrition: false,
                     });
                   }}
-                  _selected={{ color: "white", bg: "green.400" }}
+                  _selected={{ color: "white", bg: "green.500" }}
                 >
                   Labels
                 </Tab>
@@ -98,7 +103,7 @@ function RecipeInfo() {
                       nutrition: true,
                     });
                   }}
-                  _selected={{ color: "white", bg: "red.300" }}
+                  _selected={{ color: "white", bg: "red.500" }}
                 >
                   Nutrition
                 </Tab>
@@ -106,114 +111,122 @@ function RecipeInfo() {
               <TabPanels className={styles.positionAbsolute}>
                 <TabPanel>
                   <UnorderedList className={styles.ingredients} spacing={5}>
-                    {showInfo.ingredients &&
-                      data.ingredientLines.map((ingredient, i) => {
-                        return (
-                          <motion.li
-                            key={ingredient}
-                            variants={{
-                              hidden: (i) => ({
-                                y: 5 * i,
-                                opacity: 0,
-                              }),
-                              visible: (i) => ({
-                                y: 0,
-                                opacity: 1,
-                                transition: {
-                                  type: "spring",
-                                  bounce: 0,
-                                  delay: i * 0.015,
-                                },
-                              }),
-                              removed: (i) => ({
-                                opacity: 0,
-                              }),
-                            }}
-                            initial="hidden"
-                            animate="visible"
-                            exit="removed"
-                            custom={i}
-                            className={styles.liItem}
-                          >
-                            {ingredient.replace("*", "")}
-                          </motion.li>
-                        );
-                      })}
+                    <AnimatePresence>
+                      {showInfo.ingredients &&
+                        data.ingredientLines.map((ingredient, i) => {
+                          return (
+                            <motion.li
+                              key={ingredient}
+                              variants={{
+                                hidden: (i) => ({
+                                  y: 5 * i,
+                                  opacity: 0,
+                                }),
+                                visible: (i) => ({
+                                  y: 0,
+                                  opacity: 1,
+                                  transition: {
+                                    type: "spring",
+                                    bounce: 0,
+                                    delay: i * 0.015,
+                                  },
+                                }),
+                                removed: (i) => ({
+                                  opacity: 0,
+                                }),
+                              }}
+                              initial="hidden"
+                              animate="visible"
+                              exit="removed"
+                              custom={i}
+                              className={styles.liItem}
+                            >
+                              {ingredient.replace("*", "")}
+                            </motion.li>
+                          );
+                        })}
+                    </AnimatePresence>
                   </UnorderedList>
                 </TabPanel>
                 <TabPanel>
                   <UnorderedList className={styles.healthLabels}>
-                    {showInfo.labels &&
-                      data.healthLabels.map((ingredient, i) => {
-                        return (
-                          <motion.li
-                            key={ingredient}
-                            variants={{
-                              hidden: (i) => ({
-                                y: 5 * i,
-                                opacity: 0,
-                              }),
-                              visible: (i) => ({
-                                y: 0,
-                                opacity: 1,
-                                transition: {
-                                  type: "spring",
-                                  bounce: 0,
-                                  delay: i * 0.015,
+                    <AnimatePresence>
+                      {showInfo.labels &&
+                        data.healthLabels.map((ingredient, i) => {
+                          return (
+                            <motion.li
+                              key={ingredient}
+                              variants={{
+                                hidden: (i) => ({
+                                  y: 5 * i,
+                                  opacity: 0,
+                                }),
+                                visible: (i) => ({
+                                  y: 0,
+                                  opacity: 1,
+                                  transition: {
+                                    type: "spring",
+                                    bounce: 0,
+                                    delay: i * 0.015,
+                                  },
+                                }),
+                                removed: {
+                                  opacity: 0,
                                 },
-                              }),
-                              removed: (i) => ({
-                                opacity: 0,
-                              }),
-                            }}
-                            initial="hidden"
-                            animate="visible"
-                            exit="removed"
-                            custom={i}
-                            className={styles.tag}
-                          >
-                            {ingredient.replace("*", "")}
-                          </motion.li>
-                        );
-                      })}
+                              }}
+                              initial="hidden"
+                              animate="visible"
+                              exit="removed"
+                              custom={i}
+                              className={styles.tag}
+                            >
+                              {ingredient.replace("*", "")}
+                            </motion.li>
+                          );
+                        })}
+                    </AnimatePresence>
                   </UnorderedList>
                 </TabPanel>
                 <TabPanel>
                   <UnorderedList className={styles.nutrition} spacing={5}>
-                    {showInfo.nutrition &&
-                      Object.values(data.totalNutrients).map((nutrient, i) => {
-                        console.log(nutrient);
-                        return (
-                          <motion.li
-                            key={nutrient.label}
-                            variants={{
-                              hidden: (i) => ({
-                                y: 5 * i,
-                                opacity: 0,
-                              }),
-                              visible: (i) => ({
-                                y: 0,
-                                opacity: 1,
-                                transition: {
-                                  type: "spring",
-                                  bounce: 0,
-                                  delay: i * 0.015,
-                                },
-                              }),
-                              removed: (i) => ({
-                                opacity: 0,
-                              }),
-                            }}
-                            initial="hidden"
-                            animate="visible"
-                            exit="removed"
-                            custom={i}
-                            className={styles.liItem}
-                          >{`${nutrient.label}: ${Math.round(
-                            nutrient.quantity
-                          )}${nutrient.unit}`}</motion.li>
-                        );
-                      })}
+                    <AnimatePresence>
+                      {showInfo.nutrition &&
+                        Object.values(data.totalNutrients).map(
+                          (nutrient, i) => {
+                            console.log(nutrient);
+                            return (
+                              <motion.li
+                                key={nutrient.label}
+                                variants={{
+                                  hidden: (i) => ({
+                                    y: 5 * i,
+                                    opacity: 0,
+                                  }),
+                                  visible: (i) => ({
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                      type: "spring",
+                                      bounce: 0,
+                                      delay: i * 0.015,
+                                    },
+                                  }),
+                                  removed: (i) => ({
+                                    opacity: 0,
+                                  }),
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                exit="removed"
+                                custom={i}
+                                className={styles.liItem}
+                              >{`${nutrient.label}: ${Math.round(
+                                nutrient.quantity
+                              )}${nutrient.unit}`}</motion.li>
+                            );
+                          }
+                        )}
+                    </AnimatePresence>
                   </UnorderedList>
                 </TabPanel>
               </TabPanels>

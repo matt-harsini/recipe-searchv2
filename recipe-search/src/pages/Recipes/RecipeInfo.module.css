@@ -110,12 +110,19 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .cardContainer {
+    padding: 0 12px;
+  }
+
   .accordionContainer {
     align-self: center;
   }
+
   .headerOne {
     text-align: center;
   }
+  
   .exit {
     position: relative;
     top: 0;

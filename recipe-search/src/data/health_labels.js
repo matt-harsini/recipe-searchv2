@@ -35,3 +35,14 @@ export const healthLabels = [
   "Tree-Nut-Free",
   "Wheat-Free",
 ];
+
+export const categories = [
+  "Calories: Low to High",
+  "Calories: High to Low",
+  "Protein: Low to High",
+  "Protein: High to Low",
+  "Fat: Low to High",
+  "Fat: High to Low",
+  "Carbs: Low to High",
+  "Carbs: High to Low",
+];

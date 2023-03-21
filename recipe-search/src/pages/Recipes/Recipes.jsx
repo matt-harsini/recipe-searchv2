@@ -27,9 +27,9 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { healthLabels } from "../../data/health_labels";
+import { healthLabels, categories } from "../../data/health_labels";
 
-const filterSet = new Set();
+const filter = new Set();
 
 function Recipes() {
   const [query, setQuery] = useState(
@@ -41,9 +41,8 @@ function Recipes() {
   const ref = useOutletContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const checkboxes = useRef([]);
   const [checkedState, setCheckedState] = useState(
-    new Array(healthLabels.length).fill(false)
+    new Array({ length: healthLabels.length }).fill(false)
   );
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,17 +56,23 @@ function Recipes() {
     setQuery(input);
   };
   const handleChange = (position) => {
-    const updatedCheckedState = checkedState.map((checkbox, index) =>
-      index === position ? !checkbox : checkbox
-    );
+    const updatedCheckedState = checkedState.map((checkbox, index) => {
+      return index === position ? !checkbox : checkbox;
+    });
     setCheckedState(updatedCheckedState);
   };
   const handleClear = (e) => {
     localStorage.setItem("Filters", JSON.stringify([]));
-    setCheckedState(Array.from(healthLabels.length).fill(false));
+    setCheckedState(new Array(healthLabels.length).fill(false));
+    setData({
+      _links: {},
+      hits: originalData.hits,
+    });
+    filter.clear();
   };
   const handleSort = (e) => {
     const sortByValue = e.target.value;
+    localStorage.setItem("Sort", JSON.stringify(sortByValue));
     switch (sortByValue) {
       case "1":
         setData({
@@ -161,12 +166,12 @@ function Recipes() {
   };
   const handleFilter = (e) => {
     if (e.target.checked) {
-      filterSet.add(e.target.value);
-      localStorage.setItem("Filters", JSON.stringify(Array.from(filterSet)));
+      filter.add(e.target.value);
+      localStorage.setItem("Filters", JSON.stringify(Array.from(filter)));
       setData({
         _links: {},
         hits: originalData.hits.filter(({ recipe }) => {
-          const current_labels = Array.from(filterSet);
+          const current_labels = Array.from(filter);
           return current_labels.every((label) =>
             recipe.healthLabels.includes(label)
           );
@@ -174,9 +179,9 @@ function Recipes() {
       });
       return;
     }
-    filterSet.delete(e.target.value);
-    localStorage.setItem("Filters", JSON.stringify(Array.from(filterSet)));
-    if (filterSet.size === 0) {
+    filter.delete(e.target.value);
+    localStorage.setItem("Filters", JSON.stringify(Array.from(filter)));
+    if (filter.size === 0) {
       setData({
         _links: {},
         hits: originalData.hits,
@@ -186,23 +191,13 @@ function Recipes() {
     setData({
       _links: {},
       hits: originalData.hits.filter(({ recipe }) => {
-        const current_labels = Array.from(filterSet);
+        const current_labels = Array.from(filter);
         return current_labels.every((label) =>
           recipe.healthLabels.includes(label)
         );
       }),
     });
   };
-  useEffect(() => {
-    localStorage.setItem("Checkboxes", JSON.stringify(checkedState));
-  }, [checkedState]);
-  useEffect(() => {
-    document
-      .querySelectorAll(".chakra-checkbox__input")
-      .forEach((node, index) => {
-        checkboxes.current[index] = node;
-      });
-  }, []);
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
@@ -337,11 +332,6 @@ function Recipes() {
                     onChange={handleFilter}
                   >
                     {healthLabels.map((label, index) => {
-                      console.log(
-                        JSON.parse(localStorage.getItem("Filters")).includes(
-                          label
-                        )
-                      );
                       return (
                         <Checkbox
                           value={label}
@@ -350,6 +340,7 @@ function Recipes() {
                           defaultChecked={JSON.parse(
                             localStorage.getItem("Filters")
                           ).includes(label)}
+                          isChecked={checkedState[index]}
                           onChange={() => {
                             handleChange(index);
                           }}
