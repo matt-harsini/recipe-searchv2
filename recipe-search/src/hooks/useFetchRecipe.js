@@ -7,6 +7,7 @@ export function useFetchRecipe(query) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(default_data);
+  const [originalData, setOriginalData] = useState(data);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +21,7 @@ export function useFetchRecipe(query) {
         }
         const data = await response.json();
         setData(data);
+        setOriginalData(data);
       } catch (error) {
         setIsError(true);
       }
@@ -30,5 +32,5 @@ export function useFetchRecipe(query) {
     localStorage.setItem("Query", query);
     fetchData();
   }, [query]);
-  return { data, setData, isLoading, isError };
+  return { data, originalData, setData, isLoading, isError };
 }

@@ -35,8 +35,8 @@ function Recipes() {
     localStorage.getItem("Query") != "" ? localStorage.getItem("Query") : ""
   );
   const [input, setInput] = useState("");
-  const { data, setData, isLoading, isError } = useFetchRecipe(query);
-  const [originalData, setOriginalData] = useState(data);
+  const { data, originalData, setData, isLoading, isError } =
+    useFetchRecipe(query);
   const ref = useOutletContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -49,12 +49,8 @@ function Recipes() {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(123);
     setQuery(input);
   };
-  useEffect(() => {
-    setOriginalData(data);
-  }, [query]);
   const handleSort = (e) => {
     const sortByValue = e.target.value;
     switch (sortByValue) {
@@ -181,7 +177,6 @@ function Recipes() {
       }),
     });
   };
-
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
