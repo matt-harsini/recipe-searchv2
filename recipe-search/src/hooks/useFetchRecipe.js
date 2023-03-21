@@ -8,6 +8,8 @@ export function useFetchRecipe(query) {
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(default_data);
   const [originalData, setOriginalData] = useState(data);
+  const filters = JSON.parse(localStorage.getItem("Filters"));
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,5 +34,19 @@ export function useFetchRecipe(query) {
     localStorage.setItem("Query", query);
     fetchData();
   }, [query]);
+  if (filters.length) {
+    return {
+      data: {
+        _links: {},
+        hits: originalData.hits.filter(({ recipe }) => {
+          return filters.every((label) => recipe.healthLabels.includes(label));
+        }),
+      },
+      originalData,
+      setData,
+      isLoading,
+      isError,
+    };
+  }
   return { data, originalData, setData, isLoading, isError };
 }

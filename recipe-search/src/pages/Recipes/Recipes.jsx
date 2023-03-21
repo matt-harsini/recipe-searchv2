@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useFetchRecipe } from "../../hooks/useFetchRecipe";
 import styles from "./Recipes.module.css";
 import Card from "../../components/ui/Card";
@@ -27,6 +27,7 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { healthLabels } from "../../data/health_labels";
 
 const filterSet = new Set();
 
@@ -39,7 +40,11 @@ function Recipes() {
     useFetchRecipe(query);
   const ref = useOutletContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
+  const checkboxes = useRef([]);
+  const [checkedState, setCheckedState] = useState(
+    new Array(healthLabels.length).fill(false)
+  );
   useEffect(() => {
     window.scrollTo(0, 0);
     ref[1].current.style.background = "#212529";
@@ -50,6 +55,16 @@ function Recipes() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(input);
+  };
+  const handleChange = (position) => {
+    const updatedCheckedState = checkedState.map((checkbox, index) =>
+      index === position ? !checkbox : checkbox
+    );
+    setCheckedState(updatedCheckedState);
+  };
+  const handleClear = (e) => {
+    localStorage.setItem("Filters", JSON.stringify([]));
+    setCheckedState(Array.from(healthLabels.length).fill(false));
   };
   const handleSort = (e) => {
     const sortByValue = e.target.value;
@@ -147,6 +162,7 @@ function Recipes() {
   const handleFilter = (e) => {
     if (e.target.checked) {
       filterSet.add(e.target.value);
+      localStorage.setItem("Filters", JSON.stringify(Array.from(filterSet)));
       setData({
         _links: {},
         hits: originalData.hits.filter(({ recipe }) => {
@@ -159,8 +175,8 @@ function Recipes() {
       return;
     }
     filterSet.delete(e.target.value);
+    localStorage.setItem("Filters", JSON.stringify(Array.from(filterSet)));
     if (filterSet.size === 0) {
-      console.log(originalData.hits);
       setData({
         _links: {},
         hits: originalData.hits,
@@ -177,6 +193,16 @@ function Recipes() {
       }),
     });
   };
+  useEffect(() => {
+    localStorage.setItem("Checkboxes", JSON.stringify(checkedState));
+  }, [checkedState]);
+  useEffect(() => {
+    document
+      .querySelectorAll(".chakra-checkbox__input")
+      .forEach((node, index) => {
+        checkboxes.current[index] = node;
+      });
+  }, []);
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
@@ -228,6 +254,7 @@ function Recipes() {
                   className={`${styles.btn} ${styles.btnTextIcon}`}
                   icon={<FiSettings />}
                   title="Filter and sort recipes"
+                  id="settings-btn"
                 ></IconButton>
               </Flex>
             </Center>
@@ -309,113 +336,29 @@ function Recipes() {
                     gap={15}
                     onChange={handleFilter}
                   >
-                    <Stack spacing={10}>
-                      <Checkbox value="Vegetarian">
-                        <span className={styles.checkBox}>Vegetarian</span>
-                      </Checkbox>
-                      <Checkbox value="Alcohol-Cocktail">
-                        <span className={styles.checkBox}>
-                          Alcohol-Cocktail
-                        </span>
-                      </Checkbox>
-                      <Checkbox value="Alcohol-Free">
-                        <span className={styles.checkBox}>Alcohol-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Celery-Free">
-                        <span className={styles.checkBox}>Celery-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Crustcean-Free">
-                        <span className={styles.checkBox}>Crustcean-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Dairy-Free">
-                        <span className={styles.checkBox}>Dairy-Free</span>
-                      </Checkbox>
-                      <Checkbox value="DASH">
-                        <span className={styles.checkBox}>DASH</span>
-                      </Checkbox>
-                      <Checkbox value="Egg-Free">
-                        <span className={styles.checkBox}>Egg-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Fish-Free">
-                        <span className={styles.checkBox}>Fish-Free</span>
-                      </Checkbox>
-                      <Checkbox value="FODMAP-Free">
-                        <span className={styles.checkBox}>FODMAP-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Gluten-Free">
-                        <span className={styles.checkBox}>Gluten-Free</span>
-                      </Checkbox>
-                      <Checkbox value="   Immuno-Supportive">
-                        <span className={styles.checkBox}>
-                          Immuno-Supportive
-                        </span>
-                      </Checkbox>
-                      <Checkbox value="Keto-Friendly">
-                        <span className={styles.checkBox}>Keto-Friendly</span>
-                      </Checkbox>
-                      <Checkbox value="Kosher">
-                        <span className={styles.checkBox}>Kosher</span>
-                      </Checkbox>
-                      <Checkbox value="Low Potassium">
-                        <span className={styles.checkBox}>Low Potassium</span>
-                      </Checkbox>
-                      <Checkbox value="Low Sugar">
-                        <span className={styles.checkBox}>Low Sugar</span>
-                      </Checkbox>
-                      <Checkbox value="Wheat-Free">
-                        <span className={styles.checkBox}>Wheat-Free</span>
-                      </Checkbox>
-                    </Stack>
-                    <Stack spacing={10}>
-                      <Checkbox value="Vegan">
-                        <span className={styles.checkBox}>Vegan</span>
-                      </Checkbox>
-                      <Checkbox value="Lupine-Free">
-                        <span className={styles.checkBox}>Lupine-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Mediterranean">
-                        <span className={styles.checkBox}>Mediterranean</span>
-                      </Checkbox>
-                      <Checkbox value="Mollusk-Free">
-                        <span className={styles.checkBox}>Mollusk-Free</span>
-                      </Checkbox>
-                      <Checkbox value="No oil added">
-                        <span className={styles.checkBox}>No oil added</span>
-                      </Checkbox>
-                      <Checkbox value="Paleo">
-                        <span className={styles.checkBox}>Paleo</span>
-                      </Checkbox>
-                      <Checkbox value="Peanut-Free">
-                        <span className={styles.checkBox}>Peanut-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Pescatarian">
-                        <span className={styles.checkBox}>Pescatarian</span>
-                      </Checkbox>
-                      <Checkbox value="Pork-Free">
-                        <span className={styles.checkBox}>Pork-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Red-Meat-Free">
-                        <span className={styles.checkBox}>Red-Meat-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Sesame-Free">
-                        <span className={styles.checkBox}>Sesame-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Shellfish-Free">
-                        <span className={styles.checkBox}>Shellfish-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Soy-Free">
-                        <span className={styles.checkBox}>Soy-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Sugar-Conscious">
-                        <span className={styles.checkBox}>Sugar-Conscious</span>
-                      </Checkbox>
-                      <Checkbox value="Sulfite-Free">
-                        <span className={styles.checkBox}>Sulfite-Free</span>
-                      </Checkbox>
-                      <Checkbox value="Tree-Nut-Free">
-                        <span className={styles.checkBox}>Tree-Nut-Free</span>
-                      </Checkbox>
-                    </Stack>
+                    {healthLabels.map((label, index) => {
+                      console.log(
+                        JSON.parse(localStorage.getItem("Filters")).includes(
+                          label
+                        )
+                      );
+                      return (
+                        <Checkbox
+                          value={label}
+                          key={label}
+                          id={`checkbox-${index}`}
+                          defaultChecked={JSON.parse(
+                            localStorage.getItem("Filters")
+                          ).includes(label)}
+                          onChange={() => {
+                            handleChange(index);
+                          }}
+                          marginBottom={6}
+                        >
+                          <span className={styles.checkBox}>{label}</span>
+                        </Checkbox>
+                      );
+                    })}
                   </Grid>
                 </DrawerBody>
                 <DrawerFooter className={styles.justifyContent}>
@@ -431,7 +374,7 @@ function Recipes() {
                     _active={{
                       background: "#f03e3e",
                     }}
-                    onClick={onClose}
+                    onClick={handleClear}
                   >
                     Reset
                   </Button>

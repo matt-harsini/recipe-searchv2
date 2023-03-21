@@ -17,7 +17,9 @@ function RecipeContainer(props) {
   if (!props.data.hits.length) {
     return (
       <Center>
-        <h1 className={styles.error}>No results found</h1>
+        <h1 className={styles.error}>
+          No results found, please adjust filters or try a different search.
+        </h1>
       </Center>
     );
   }

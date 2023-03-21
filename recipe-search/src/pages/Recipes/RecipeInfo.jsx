@@ -34,8 +34,6 @@ function RecipeInfo() {
       ref[1].current.style.background = "";
     };
   }, []);
-
-  console.log(data);
   return (
     <main className={styles.main}>
       <section className={styles.section}>
