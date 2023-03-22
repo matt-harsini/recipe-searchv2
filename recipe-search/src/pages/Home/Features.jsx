@@ -28,7 +28,7 @@ function Features() {
           initial={{ opacity: 0 }}
           id="section1"
         >
-          Three key features
+          Features
         </motion.span>
         <motion.h2
           ref={h1Heading}

@@ -5,6 +5,7 @@ import Recipes from "./Recipes";
 import Testimonials from "./Testimonials";
 import { useOutletContext } from "react-router-dom";
 import Footer from "./Footer";
+
 function Main() {
   const ref = useOutletContext();
   return (

@@ -18,7 +18,6 @@ import { BsChevronLeft } from "react-icons/bs";
 import Card from "../../components/ui/Card";
 
 function RecipeInfo() {
-  const { recipeID } = useParams();
   const location = useLocation();
   const data = location.state;
   const ref = useOutletContext();
@@ -132,7 +131,7 @@ function RecipeInfo() {
                               animate="visible"
                               exit="removed"
                               custom={i}
-                              className={styles.liItem}
+                              className={styles.tag}
                             >
                               {ingredient.replace("*", "")}
                             </motion.li>
