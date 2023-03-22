@@ -31,7 +31,6 @@ const filter = new Set();
 function sortHelper(sortByValue, setData, data) {
   switch (sortByValue) {
     case "Calories: High to Low":
-      console.log("in here penis");
       setData({
         _links: {},
         hits: data.hits.sort((a, b) =>
@@ -212,6 +211,11 @@ function Recipes() {
       }),
     });
   };
+  useEffect(() => {
+    return () => {
+      handleClear();
+    };
+  }, []);
   return (
     <div className={styles.recipes}>
       <div className={styles.searchbar}>
