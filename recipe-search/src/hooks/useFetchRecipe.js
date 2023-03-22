@@ -9,7 +9,6 @@ export function useFetchRecipe(query) {
   const [data, setData] = useState(default_data);
   const [originalData, setOriginalData] = useState(data);
   const filters = JSON.parse(localStorage.getItem("Filters"));
-
   useEffect(() => {
     const fetchData = async () => {
       try {

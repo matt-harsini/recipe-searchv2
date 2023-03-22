@@ -28,6 +28,99 @@ import { motion } from "framer-motion";
 import { healthLabels, categories } from "../../data/health_labels";
 
 const filter = new Set();
+function sortHelper(sortByValue, setData, data) {
+  switch (sortByValue) {
+    case "Calories: High to Low":
+      console.log("in here penis");
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          a.recipe.calories / a.recipe.yield >
+          b.recipe.calories / b.recipe.yield
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Calories: Low to High":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          a.recipe.calories / a.recipe.yield <
+          b.recipe.calories / b.recipe.yield
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Protein: High to Low":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[2].total / a.recipe.yield) >
+          Math.round(b.recipe.digest[2].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Protein: Low to High":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[2].total / a.recipe.yield) <
+          Math.round(b.recipe.digest[2].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Fat: High to Low":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[0].total / a.recipe.yield) >
+          Math.round(b.recipe.digest[0].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Fat: Low to High":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[0].total / a.recipe.yield) <
+          Math.round(b.recipe.digest[0].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Carbs: High to Low":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[1].total / a.recipe.yield) >
+          Math.round(b.recipe.digest[1].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+    case "Carbs: Low to High":
+      setData({
+        _links: {},
+        hits: data.hits.sort((a, b) =>
+          Math.round(a.recipe.digest[1].total / a.recipe.yield) <
+          Math.round(b.recipe.digest[1].total / b.recipe.yield)
+            ? -1
+            : 1
+        ),
+      });
+      break;
+  }
+}
 
 function Recipes() {
   const [query, setQuery] = useState(
@@ -64,7 +157,9 @@ function Recipes() {
   };
   const handleClear = (e) => {
     localStorage.setItem("Filters", JSON.stringify([]));
+    localStorage.setItem("Sort", "");
     setCheckedState(new Array(healthLabels.length).fill(false));
+    setRadioState(new Array(categories.length).fill(false));
     setData({
       _links: {},
       hits: originalData.hits,
@@ -81,96 +176,7 @@ function Recipes() {
   const handleSort = (e) => {
     const sortByValue = e.target.value;
     localStorage.setItem("Sort", JSON.stringify(sortByValue));
-    switch (sortByValue) {
-      case "Calories: High to Low":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            a.recipe.calories / a.recipe.yield >
-            b.recipe.calories / b.recipe.yield
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Calories: Low to High":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            a.recipe.calories / a.recipe.yield <
-            b.recipe.calories / b.recipe.yield
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Protein: High to Low":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[2].total / a.recipe.yield) >
-            Math.round(b.recipe.digest[2].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Protein: Low to High":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[2].total / a.recipe.yield) <
-            Math.round(b.recipe.digest[2].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Fat: High to Low":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[0].total / a.recipe.yield) >
-            Math.round(b.recipe.digest[0].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Fat: Low to High":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[0].total / a.recipe.yield) <
-            Math.round(b.recipe.digest[0].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Carbs: High to Low":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[1].total / a.recipe.yield) >
-            Math.round(b.recipe.digest[1].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-      case "Carbs: Low to High":
-        setData({
-          _links: {},
-          hits: data.hits.sort((a, b) =>
-            Math.round(a.recipe.digest[1].total / a.recipe.yield) <
-            Math.round(b.recipe.digest[1].total / b.recipe.yield)
-              ? -1
-              : 1
-          ),
-        });
-        break;
-    }
+    sortHelper(sortByValue, setData, data);
   };
   const handleFilter = (e) => {
     if (e.target.checked) {
