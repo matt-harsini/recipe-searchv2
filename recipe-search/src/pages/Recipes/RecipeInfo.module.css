@@ -52,6 +52,7 @@
 .headerOne {
   font-size: var(--step-4);
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .accordionContainer {
