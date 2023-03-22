@@ -20,9 +20,7 @@ import {
   Center,
   Grid,
   Radio,
-  Stack,
   Checkbox,
-  RadioGroup,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -42,7 +40,10 @@ function Recipes() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const [checkedState, setCheckedState] = useState(
-    new Array({ length: healthLabels.length }).fill(false)
+    new Array(healthLabels.length).fill(false)
+  );
+  const [radioState, setRadioState] = useState(
+    new Array(categories.length).fill(false)
   );
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,11 +71,18 @@ function Recipes() {
     });
     filter.clear();
   };
+  const handleRadioChange = (position) => {
+    const updatedRadioState = radioState.map((_, index) => {
+      if (position === index) return true;
+      return false;
+    });
+    setRadioState(updatedRadioState);
+  };
   const handleSort = (e) => {
     const sortByValue = e.target.value;
     localStorage.setItem("Sort", JSON.stringify(sortByValue));
     switch (sortByValue) {
-      case "1":
+      case "Calories: High to Low":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -85,7 +93,7 @@ function Recipes() {
           ),
         });
         break;
-      case "2":
+      case "Calories: Low to High":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -96,7 +104,7 @@ function Recipes() {
           ),
         });
         break;
-      case "3":
+      case "Protein: High to Low":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -107,7 +115,7 @@ function Recipes() {
           ),
         });
         break;
-      case "4":
+      case "Protein: Low to High":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -118,7 +126,7 @@ function Recipes() {
           ),
         });
         break;
-      case "5":
+      case "Fat: High to Low":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -129,7 +137,7 @@ function Recipes() {
           ),
         });
         break;
-      case "6":
+      case "Fat: Low to High":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -140,7 +148,7 @@ function Recipes() {
           ),
         });
         break;
-      case "7":
+      case "Carbs: High to Low":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -151,7 +159,7 @@ function Recipes() {
           ),
         });
         break;
-      case "8":
+      case "Carbs: Low to High":
         setData({
           _links: {},
           hits: data.hits.sort((a, b) =>
@@ -268,14 +276,29 @@ function Recipes() {
                   Sort by
                 </DrawerHeader>
                 <DrawerBody>
-                  <RadioGroup>
-                    <Grid
-                      gridTemplateColumns="1fr 1fr"
-                      gap={15}
-                      alignItems="center"
-                      onChange={handleSort}
-                    >
-                      <Stack spacing={10}>
+                  <Grid
+                    gridTemplateColumns="1fr 1fr"
+                    gap={15}
+                    alignItems="center"
+                    onChange={handleSort}
+                  >
+                    {categories.map((category, index) => {
+                      return (
+                        <Radio
+                          size="lg"
+                          value={category}
+                          key={category}
+                          isChecked={radioState[index]}
+                          onChange={() => {
+                            handleRadioChange(index);
+                          }}
+                          marginBottom={5}
+                        >
+                          <span className={styles.checkBox}>{category}</span>
+                        </Radio>
+                      );
+                    })}
+                    {/* <Stack spacing={10}>
                         <Radio size="lg" value="1">
                           <span className={styles.checkBox}>
                             Calories: High to Low
@@ -318,9 +341,8 @@ function Recipes() {
                             Carbs: Low to High
                           </span>
                         </Radio>
-                      </Stack>
-                    </Grid>
-                  </RadioGroup>
+                      </Stack> */}
+                  </Grid>
                 </DrawerBody>
                 <DrawerHeader className={styles.filterHeader}>
                   Filter by

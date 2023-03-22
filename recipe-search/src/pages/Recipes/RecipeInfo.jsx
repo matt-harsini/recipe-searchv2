@@ -185,7 +185,6 @@ function RecipeInfo() {
                       {showInfo.nutrition &&
                         Object.values(data.totalNutrients).map(
                           (nutrient, i) => {
-                            console.log(nutrient);
                             return (
                               <motion.li
                                 key={nutrient.label}
