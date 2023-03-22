@@ -148,6 +148,10 @@ function Recipes() {
     e.preventDefault();
     setQuery(input);
   };
+  const handleSearch = (e) => {
+    setRadioState(new Array(categories.length).fill(false));
+    localStorage.setItem("Sort", "");
+  };
   const handleChange = (position) => {
     const updatedCheckedState = checkedState.map((checkbox, index) => {
       return index === position ? !checkbox : checkbox;
@@ -251,6 +255,7 @@ function Recipes() {
                     type="submit"
                     title="Search"
                     as="span"
+                    onClick={handleSearch}
                   ></IconButton>
                 </motion.button>
                 <IconButton
@@ -308,50 +313,6 @@ function Recipes() {
                         </Radio>
                       );
                     })}
-                    {/* <Stack spacing={10}>
-                        <Radio size="lg" value="1">
-                          <span className={styles.checkBox}>
-                            Calories: High to Low
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="2">
-                          <span className={styles.checkBox}>
-                            Calories: Low to High
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="3">
-                          <span className={styles.checkBox}>
-                            Protein: High to Low
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="4">
-                          <span className={styles.checkBox}>
-                            Protein: Low to High
-                          </span>
-                        </Radio>
-                      </Stack>
-                      <Stack spacing={10}>
-                        <Radio size="lg" value="5">
-                          <span className={styles.checkBox}>
-                            Fat: High to Low
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="6">
-                          <span className={styles.checkBox}>
-                            Fat: Low to High
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="7">
-                          <span className={styles.checkBox}>
-                            Carbs: High to Low
-                          </span>
-                        </Radio>
-                        <Radio size="lg" value="8">
-                          <span className={styles.checkBox}>
-                            Carbs: Low to High
-                          </span>
-                        </Radio>
-                      </Stack> */}
                   </Grid>
                 </DrawerBody>
                 <DrawerHeader className={styles.filterHeader}>

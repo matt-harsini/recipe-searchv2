@@ -1,6 +1,74 @@
 import { useState, useEffect } from "react";
 import { default_data } from "../data/";
 
+function sortHelper(payload, sort) {
+  console.log("in here");
+  switch (sort) {
+    case "Calories: High to Low":
+      payload.data.sort((a, b) =>
+        a.recipe.calories / a.recipe.yield > b.recipe.calories / b.recipe.yield
+          ? -1
+          : 1
+      );
+      break;
+    case "Calories: Low to High":
+      payload.data.sort((a, b) =>
+        a.recipe.calories / a.recipe.yield < b.recipe.calories / b.recipe.yield
+          ? -1
+          : 1
+      );
+      break;
+    case "Protein: High to Low":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[2].total / a.recipe.yield) >
+        Math.round(b.recipe.digest[2].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+    case "Protein: Low to High":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[2].total / a.recipe.yield) <
+        Math.round(b.recipe.digest[2].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+    case "Fat: High to Low":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[0].total / a.recipe.yield) >
+        Math.round(b.recipe.digest[0].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+    case "Fat: Low to High":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[0].total / a.recipe.yield) <
+        Math.round(b.recipe.digest[0].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+    case "Carbs: High to Low":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[1].total / a.recipe.yield) >
+        Math.round(b.recipe.digest[1].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+    case "Carbs: Low to High":
+      payload.data.sort((a, b) =>
+        Math.round(a.recipe.digest[1].total / a.recipe.yield) <
+        Math.round(b.recipe.digest[1].total / b.recipe.yield)
+          ? -1
+          : 1
+      );
+      break;
+  }
+}
+
 export function useFetchRecipe(query) {
   const API_ID = "9c96dddd";
   const API_KEY = "5ed5da612fdc934ee0dbfb39d541b822";
@@ -34,6 +102,9 @@ export function useFetchRecipe(query) {
     localStorage.setItem("Query", query);
     fetchData();
   }, [query]);
+  if (filters.length && sort) {
+    console.log("In here");
+  }
   if (filters.length) {
     return {
       data: {
