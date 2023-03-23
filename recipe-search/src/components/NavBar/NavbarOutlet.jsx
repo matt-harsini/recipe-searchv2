@@ -7,16 +7,33 @@ import Loading from "../loading/Loading";
 function NavbarOutlet() {
   const navbar = useRef(null);
   const [ref, inView] = useInView({
+    triggerOnce: false,
     threshold: 0.05,
   });
-  const [recipePage, recipePageInView] = useInView();
-  const [recipeInfoPage, recipeInfoPageInView] = useInView();
+  const [recipePage, recipePageInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.05,
+  });
+  const [recipeInfoPage, recipeInfoPageInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.05,
+  });
   useEffect(() => {
     const navigationHeight = navbar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
       "--scroll-padding",
       navigationHeight + "px"
     );
+  }, []);
+  useEffect(() => {
+    document
+      .getElementById("search-recipes")
+      .addEventListener("click", function () {
+        document.getElementById("nav-container").style.background = "#212529";
+      });
+    document.getElementById("home").addEventListener("click", function () {
+      document.getElementById("nav-container").style.background = "";
+    });
   }, []);
   useEffect(() => {
     if (!inView) {
@@ -28,18 +45,6 @@ function NavbarOutlet() {
       return;
     }
   }, [inView]);
-  useEffect(() => {
-    if (recipePageInView) {
-      navbar.current.style.background = "#212529";
-      return;
-    }
-  }, [recipePageInView]);
-  useEffect(() => {
-    if (recipeInfoPageInView) {
-      navbar.current.style.background = "#212529";
-      return;
-    }
-  }, [recipeInfoPageInView]);
   return (
     <div>
       <Navbar innerRef={navbar} />
