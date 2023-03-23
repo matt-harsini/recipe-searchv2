@@ -1,11 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import styles from "./Navbar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import { Button } from "@chakra-ui/react";
-import { GiMeatCleaver } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 export const NavbarContext = React.createContext();
@@ -37,8 +36,19 @@ function Navbar({ innerRef }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  useEffect(() => {
+    document
+      .getElementById("search-recipes")
+      .addEventListener("click", function (e) {
+        document.getElementById("nav-container").style.background = "#212529";
+        console.log(123);
+      });
+    document.getElementById("home").addEventListener("click", function (e) {
+      document.getElementById("nav-container").style.background = "";
+    });
+  }, []);
   return (
-    <div className={styles.navContainer} ref={innerRef}>
+    <div className={styles.navContainer} ref={innerRef} id="nav-container">
       <motion.nav
         className={styles.nav}
         initial={false}
@@ -67,6 +77,7 @@ function Navbar({ innerRef }) {
                   background: "#f03e3e",
                 }}
                 className={styles.navBtn}
+                id="home"
               >
                 <span className={styles.btnText}>Home</span>
               </Button>
@@ -80,6 +91,7 @@ function Navbar({ innerRef }) {
                 _active={{
                   background: "#f03e3e",
                 }}
+                id="search-recipes"
               >
                 <span className={styles.btnText}>Recipes</span>
               </Button>
