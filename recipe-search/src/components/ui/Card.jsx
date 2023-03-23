@@ -36,7 +36,7 @@ function Card(props) {
         <img
           className={styles.open}
           src={props.recipe.images.THUMBNAIL.url}
-          width="75"
+          width="60"
         />
 
         <div className={styles.mealContent}>
