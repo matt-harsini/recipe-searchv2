@@ -246,7 +246,7 @@ function Recipes() {
                       background: "#f03e3e",
                     }}
                     aria-label="Search recipes"
-                    className={`${styles.btn} ${styles.btnTextIcon} ${styles.motionButton}`}
+                    className={`${styles.btn} ${styles.btnTextIcon}`}
                     icon={<BsSearch />}
                     type="submit"
                     title="Search"

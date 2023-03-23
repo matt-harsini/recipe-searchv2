@@ -19,7 +19,7 @@
 }
 
 .searchIcon {
-  font-size: var(--step-3);
+  font-size: var(--step-3) !important;
 }
 
 .cardContainer {
@@ -61,51 +61,51 @@
 }
 
 .inputField {
-  font-size: var(--step-2);
+  font-size: var(--step-2) !important;
 }
 
 .icon {
   color: #212529;
-  font-size: var(--step-4);
+  font-size: var(--step-4) !important;
 }
 
 .btn {
-  padding: 20px 24px;
+  padding: 20px 24px !important;
 }
 
 .btnLabel {
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
 }
 
 .menuList {
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
 }
 
 .menuBtn {
   padding: 16px 24px;
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
 }
 
 .searchIcon,
 .settingsIcon {
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
   margin-left: 4px;
 }
 
 .btnText {
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
   text-transform: uppercase;
   font-weight: 40;
   letter-spacing: 0.5px;
 }
 
 .btnTextIcon {
-  color: #fff !important;
-  font-size: var(--step-2);
+  color: #fff;
+  font-size: var(--step-2) !important;
   text-transform: uppercase;
   font-weight: 40;
   letter-spacing: 0.5px;
-  border-radius: 25px;
+  border-radius: 25px !important;
 }
 
 .justifyContent {
@@ -114,12 +114,12 @@
 }
 
 .filterHeader {
-  font-size: var(--step-2);
+  font-size: var(--step-2) !important;
   margin-bottom: 12px;
 }
 
 .checkBox {
-  font-size: var(--step-1);
+  font-size: var(--step-1) !important;
 }
 
 .drawer {
@@ -128,7 +128,7 @@
 }
 
 .drawerFilter {
-  flex-grow: 2;
+  flex-grow: 2 !important;
 }
 
 .closeBtn {
@@ -137,7 +137,7 @@
 
 .error {
   margin-top: 128px;
-  font-size: var(--step-3);
+  font-size: var(--step-3) !important;
 }
 
 @media screen and (max-width: 1450px) {
