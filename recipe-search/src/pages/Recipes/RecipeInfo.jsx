@@ -1,5 +1,10 @@
 import React, { useEffect, useState, useLayoutEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import {
+  useParams,
+  useLocation,
+  Link,
+  useOutletContext,
+} from "react-router-dom";
 import { UnorderedList } from "@chakra-ui/react";
 import styles from "./RecipeInfo.module.css";
 import { useOutletContext } from "react-router-dom";
@@ -34,7 +39,7 @@ function RecipeInfo() {
     };
   }, []);
   return (
-    <main className={styles.main}>
+    <main className={styles.main} ref={ref[3]}>
       <section className={styles.section}>
         <Link to="/search-recipes" title="Go back to search">
           <BsChevronLeft className={styles.exit} />

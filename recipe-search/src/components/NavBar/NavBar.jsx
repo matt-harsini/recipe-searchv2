@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import styles from "./Navbar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
@@ -36,17 +36,7 @@ function Navbar({ innerRef }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-  useEffect(() => {
-    document
-      .getElementById("search-recipes")
-      .addEventListener("click", function (e) {
-        document.getElementById("nav-container").style.background = "#212529";
-        console.log(123);
-      });
-    document.getElementById("home").addEventListener("click", function (e) {
-      document.getElementById("nav-container").style.background = "";
-    });
-  }, []);
+
   return (
     <div className={styles.navContainer} ref={innerRef} id="nav-container">
       <motion.nav

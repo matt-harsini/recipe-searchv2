@@ -3,11 +3,16 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
 import Loading from "../loading/Loading";
-import styles from "./Navbar.module.scss";
 
 function NavbarOutlet() {
   const navbar = useRef(null);
   const [ref, inView] = useInView({
+    threshold: 0.05,
+  });
+  const [recipePage, recipePageInView] = useInView({
+    threshold: 0.05,
+  });
+  const [recipeInfoPage, recipeInfoPageInView] = useInView({
     threshold: 0.05,
   });
   useEffect(() => {
@@ -27,12 +32,31 @@ function NavbarOutlet() {
       return;
     }
   }, [inView]);
-
+  useEffect(() => {
+    if (!recipePageInView) {
+      navbar.current.style.background = "";
+      return;
+    }
+    if (recipePageInView) {
+      navbar.current.style.background = "#212529";
+      return;
+    }
+  }, [recipePageInView]);
+  useEffect(() => {
+    if (!recipeInfoPageInView) {
+      navbar.current.style.background = "";
+      return;
+    }
+    if (recipeInfoPageInView) {
+      navbar.current.style.background = "#212529";
+      return;
+    }
+  }, [recipeInfoPageInView]);
   return (
     <div>
       <Navbar innerRef={navbar} />
       <Suspense fallback={<Loading />}>
-        <Outlet context={[ref, navbar]} />
+        <Outlet context={[ref, navbar, recipePage, recipeInfoPageInView]} />
       </Suspense>
     </div>
   );
