@@ -139,7 +139,6 @@ function Recipes() {
   );
   useEffect(() => {
     ref[1].current.style.background = "#212529";
-    console.log(ref[1].current.style.background);
     window.scrollTo(0, 0);
     return () => {
       ref[1].current.style.background = "";
