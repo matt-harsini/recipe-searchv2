@@ -33,12 +33,12 @@ export function useFetchRecipe(query) {
     localStorage.setItem("Query", query);
     fetchData();
   }, [query]);
-  if (filters.length) {
+  if (filters?.length) {
     return {
       data: {
         _links: {},
         hits: originalData.hits.filter(({ recipe }) => {
-          return filters.every((label) => recipe.healthLabels.includes(label));
+          return filters.every((label) => recipe.healthLabels?.includes(label));
         }),
       },
       originalData,

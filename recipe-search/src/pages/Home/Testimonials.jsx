@@ -25,7 +25,7 @@ function Testimonials() {
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Dave Bryson"
-                src="../../../src/assets/dave.jpg"
+                src="/dave.jpg"
                 loading="lazy"
               />
               <blockquote className={styles.testimonialText}>
@@ -43,7 +43,7 @@ function Testimonials() {
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Ben Hadley"
-                src="../../../src/assets/ben.jpg"
+                src="/ben.jpg"
                 loading="lazy"
               />
               <blockquote className={styles.testimonialText}>
@@ -61,7 +61,7 @@ function Testimonials() {
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Steve Miller"
-                src="../../../src/assets/steve.jpg"
+                src="/steve.jpg"
                 loading="lazy"
               />
               <blockquote className={styles.testimonialText}>
@@ -79,7 +79,7 @@ function Testimonials() {
               <img
                 className={styles.testimonialImg}
                 alt="Photo of user Hannah Smith"
-                src="../../../src/assets/hannah.jpg"
+                src="/hannah.jpg"
                 loading="lazy"
               />
               <blockquote className={styles.testimonialText}>
@@ -114,6 +114,7 @@ function Testimonials() {
               >
                 <img
                   src={img}
+                  public
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />

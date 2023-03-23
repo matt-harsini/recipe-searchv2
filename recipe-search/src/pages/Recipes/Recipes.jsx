@@ -190,7 +190,7 @@ function Recipes() {
         hits: originalData.hits.filter(({ recipe }) => {
           const current_labels = Array.from(filter);
           return current_labels.every((label) =>
-            recipe.healthLabels.includes(label)
+            recipe.healthLabels?.includes(label)
           );
         }),
       });
@@ -210,7 +210,7 @@ function Recipes() {
       hits: originalData.hits.filter(({ recipe }) => {
         const current_labels = Array.from(filter);
         return current_labels.every((label) =>
-          recipe.healthLabels.includes(label)
+          recipe.healthLabels?.includes(label)
         );
       }),
     });
@@ -332,7 +332,7 @@ function Recipes() {
                           id={`checkbox-${index}`}
                           defaultChecked={JSON.parse(
                             localStorage.getItem("Filters")
-                          ).includes(label)}
+                          )?.includes(label)}
                           isChecked={checkedState[index]}
                           onChange={() => {
                             handleChange(index);

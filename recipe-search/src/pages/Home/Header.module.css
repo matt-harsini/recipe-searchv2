@@ -3,7 +3,7 @@
 .header {
   height: 100vh;
   height: 100svh;
-  background-image: url("../../assets/home.webp");
+  background-image: url("/header.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -70,17 +70,21 @@
   .landing {
     grid-template-columns: 1fr;
   }
+
   .info {
     justify-content: center;
     align-items: center;
     text-align: center;
   }
+
   .headerBtn {
     align-self: center;
   }
+
   .header {
-    background-image: url("../../assets/mobile.webp");
+    background-image: url("/mobile.webp");
   }
+
   .p {
     max-width: 85%;
   }

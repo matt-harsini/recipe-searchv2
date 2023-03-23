@@ -63,7 +63,7 @@ function Features() {
           <img
             loading="lazy"
             className={styles.img}
-            src="../../../src/assets/pancakes.webp"
+            src="/mushroom_stew.webp"
             alt="Pancakes topped with fruit and coffee on the side"
           />
         </motion.div>
@@ -76,7 +76,7 @@ function Features() {
           <img
             loading="lazy"
             className={styles.img}
-            src="../../../src/assets/fish.webp"
+            src="/fish.webp"
             alt="Fish on a cutting board with salt and lemon"
           />
         </motion.div>
@@ -128,7 +128,7 @@ function Features() {
           <img
             loading="lazy"
             className={styles.img}
-            src="../../../src/assets/mushroom_stew.webp"
+            src="/mushroom_stew.webp"
             alt="Bowl of mushroom curry"
           />
         </motion.div>
