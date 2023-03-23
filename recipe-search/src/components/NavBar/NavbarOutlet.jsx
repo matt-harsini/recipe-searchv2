@@ -29,21 +29,12 @@ function NavbarOutlet() {
     }
   }, [inView]);
   useEffect(() => {
-    if (!recipePageInView) {
-      navbar.current.style.background = "";
-      return;
-    }
     if (recipePageInView) {
       navbar.current.style.background = "#212529";
       return;
     }
   }, [recipePageInView]);
   useEffect(() => {
-    console.log("here");
-    if (!recipeInfoPageInView) {
-      navbar.current.style.background = "";
-      return;
-    }
     if (recipeInfoPageInView) {
       navbar.current.style.background = "#212529";
       return;
