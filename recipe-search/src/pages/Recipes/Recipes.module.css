@@ -115,7 +115,8 @@
 
 .filterHeader {
   font-size: var(--step-2) !important;
-  margin-bottom: 12px;
+  margin-bottom: 12px !important;
+  margin-top: 12px !important;
 }
 
 .checkBox {
