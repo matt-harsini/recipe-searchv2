@@ -8,18 +8,6 @@
   background-size: cover;
 }
 
-.layer {
-  position: absolute;
-  bottom: 0;
-  background-image: url("../../assets/layered-waves-haikei3.svg");
-}
-
-.layer2 {
-  position: absolute;
-  top: 0;
-  background-image: url("../../assets/layered-waves-haikei4.svg");
-}
-
 .main {
   padding: 152px 0;
   height: auto;
@@ -68,6 +56,7 @@
   font-size: var(--step-5);
   line-height: 1.1;
   color: #212529;
+  margin-bottom: 36px;
 }
 
 .container {
@@ -120,7 +109,7 @@
 
 .recipes {
   position: relative;
-  padding: 152px 0 152px 0;
+  padding: 128px 0 128px 0;
   margin-top: 92px;
   margin-bottom: 92px;
   background-color: #f1f3f5;
@@ -426,5 +415,10 @@
 @media screen and (max-width: 600px) {
   .footerGrid {
     grid-template-columns: 1fr;
+  }
+
+  .headingRecipes {
+    padding: 0 12px;
+    margin-bottom: 32px;
   }
 }
