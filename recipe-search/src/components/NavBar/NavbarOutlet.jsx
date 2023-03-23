@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
 import Loading from "../loading/Loading";
@@ -10,6 +10,7 @@ function NavbarOutlet() {
   const [ref, inView] = useInView({
     threshold: 0.015,
   });
+  const location = useLocation();
   useEffect(() => {
     const navigationHeight = navbar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
@@ -24,6 +25,14 @@ function NavbarOutlet() {
       navbar.current.classList.add(`${styles.bgColor}`);
     }
   }, [inView]);
+  useEffect(() => {
+    if (window.location.pathname === "/search-recipes") {
+      navbar.current.classList.add(`${styles.bgColor}`);
+    }
+    if (window.location.pathname === "/") {
+      navbar.current.classList.remove(`${styles.bgColor}`);
+    }
+  }, [location]);
   return (
     <div>
       <Navbar innerRef={navbar} />
