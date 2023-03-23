@@ -28,7 +28,7 @@ function RecipeInfo() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <main className={styles.main} ref={ref[3]}>
+    <main className={styles.main}>
       <section className={styles.section}>
         <Link to="/search-recipes" title="Go back to search">
           <BsChevronLeft className={styles.exit} />

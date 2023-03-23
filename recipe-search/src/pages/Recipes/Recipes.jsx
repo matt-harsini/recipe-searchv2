@@ -217,7 +217,7 @@ function Recipes() {
     };
   }, []);
   return (
-    <div className={styles.recipes} ref={ref[2]}>
+    <div className={styles.recipes}>
       <div className={styles.searchbar}>
         <div className={styles.formContainer}>
           <form className={styles.form} onSubmit={handleSubmit}>

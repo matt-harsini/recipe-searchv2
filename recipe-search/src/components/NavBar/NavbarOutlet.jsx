@@ -10,14 +10,6 @@ function NavbarOutlet() {
     triggerOnce: false,
     threshold: 0.05,
   });
-  const [recipePage, recipePageInView] = useInView({
-    triggerOnce: false,
-    threshold: 0.05,
-  });
-  const [recipeInfoPage, recipeInfoPageInView] = useInView({
-    triggerOnce: false,
-    threshold: 0.05,
-  });
   useEffect(() => {
     const navigationHeight = navbar.current.getBoundingClientRect().height;
     document.documentElement.style.setProperty(
@@ -40,7 +32,7 @@ function NavbarOutlet() {
       navbar.current.style.background = "";
       return;
     }
-    if (inView) {
+    if (inView || recipePageInView || recipePageInView) {
       navbar.current.style.background = "#212529";
       return;
     }
@@ -49,7 +41,7 @@ function NavbarOutlet() {
     <div>
       <Navbar innerRef={navbar} />
       <Suspense fallback={<Loading />}>
-        <Outlet context={[ref, navbar, recipePage, recipeInfoPage]} />
+        <Outlet context={[ref, navbar]} />
       </Suspense>
     </div>
   );
