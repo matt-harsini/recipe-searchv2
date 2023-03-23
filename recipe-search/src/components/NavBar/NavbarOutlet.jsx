@@ -16,14 +16,6 @@ function NavbarOutlet() {
       "--scroll-padding",
       navigationHeight + "px"
     );
-    document.getElementById("home").addEventListener("click", function () {
-      navbar.current.classList.remove(`${styles.bgColor}`);
-    });
-    document
-      .getElementById("search-recipes")
-      .addEventListener("click", function () {
-        navbar.current.classList.add(`${styles.bgColor}`);
-      });
   }, []);
   useEffect(() => {
     if (!inView) {
