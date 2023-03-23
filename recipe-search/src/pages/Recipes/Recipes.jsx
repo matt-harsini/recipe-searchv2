@@ -138,11 +138,7 @@ function Recipes() {
     new Array(categories.length).fill(false)
   );
   useEffect(() => {
-    ref[1].current.style.background = "#212529";
     window.scrollTo(0, 0);
-    return () => {
-      ref[1].current.style.background = "";
-    };
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();

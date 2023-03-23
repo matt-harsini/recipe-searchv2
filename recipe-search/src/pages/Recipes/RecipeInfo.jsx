@@ -1,10 +1,5 @@
-import React, { useEffect, useState, useLayoutEffect } from "react";
-import {
-  useParams,
-  useLocation,
-  Link,
-  useOutletContext,
-} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, Link, useOutletContext } from "react-router-dom";
 import { UnorderedList } from "@chakra-ui/react";
 import styles from "./RecipeInfo.module.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,7 +10,6 @@ import {
   Tab,
   TabPanel,
   Center,
-  Grid,
 } from "@chakra-ui/react";
 import { MdOpenInNew } from "react-icons/md";
 import { BsChevronLeft } from "react-icons/bs";
@@ -32,10 +26,6 @@ function RecipeInfo() {
   });
   useEffect(() => {
     window.scrollTo(0, 0);
-    ref[1].current.style.background = "#212529";
-    return () => {
-      ref[1].current.style.background = "";
-    };
   }, []);
   return (
     <main className={styles.main} ref={ref[3]}>
