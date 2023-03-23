@@ -95,7 +95,7 @@
 .btnText {
   font-size: var(--step-1) !important;
   text-transform: uppercase;
-  font-weight: 40;
+  font-weight: 400 !important;
   letter-spacing: 0.5px;
 }
 
@@ -109,8 +109,8 @@
 }
 
 .justifyContent {
-  margin-top: 12px;
-  justify-content: center;
+  margin-top: 12px !important;
+  justify-content: center !important;
 }
 
 .filterHeader {
