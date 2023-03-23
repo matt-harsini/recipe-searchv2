@@ -114,7 +114,6 @@ function Testimonials() {
               >
                 <img
                   src={img}
-                  public
                   alt="Photo of beautifully arranged food"
                   loading="lazy"
                 />

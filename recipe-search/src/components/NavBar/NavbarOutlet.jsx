@@ -26,7 +26,9 @@ function NavbarOutlet() {
       navbar.current.style.background = "#212529";
       return;
     }
-    return;
+    return () => {
+      navbar.current.style.background = "#212529";
+    };
   }, [inView]);
 
   return (
