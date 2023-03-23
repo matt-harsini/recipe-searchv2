@@ -39,7 +39,7 @@
   display: grid;
   justify-items: start;
   grid-template-columns: 1fr 1fr;
-  list-style-type: none;
+  column-gap: 20px;
   font-size: var(--step-1);
   text-transform: capitalize;
 }
