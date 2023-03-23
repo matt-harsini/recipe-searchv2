@@ -26,11 +26,10 @@ function NavbarOutlet() {
     }
   }, [inView]);
   useEffect(() => {
-    if (window.location.pathname === "/search-recipes") {
-      navbar.current.classList.add(`${styles.bgColor}`);
-    }
     if (window.location.pathname === "/") {
       navbar.current.classList.remove(`${styles.bgColor}`);
+    } else {
+      navbar.current.classList.add(`${styles.bgColor}`);
     }
   }, [location]);
   return (
