@@ -117,6 +117,10 @@
   .nutrition {
     grid-template-columns: 1fr;
   }
+
+  .cardContainer {
+    padding: 0 12px;
+  }
 }
 
 @media screen and (max-width: 1000px) {

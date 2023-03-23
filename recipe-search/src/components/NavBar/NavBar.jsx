@@ -51,10 +51,6 @@ function Navbar({ innerRef }) {
           className={`${styles.background} ${styles.clipPath}`}
           variants={navbar}
         >
-          <div className={`${styles.layer} ${styles.clipPathBackground}`}></div>
-          <div
-            className={`${styles.layer2} ${styles.clipPathBackground}`}
-          ></div>
           <NavbarContext.Provider value={() => toggleOpen()}>
             <Navigation />
           </NavbarContext.Provider>
