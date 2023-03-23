@@ -8,11 +8,7 @@ import Footer from "./Footer";
 
 function Main() {
   const ref = useOutletContext();
-  useEffect(() => {
-    return () => {
-      ref[1].current.style.background = "#212529";
-    };
-  }, []);
+
   return (
     <div ref={ref[0]}>
       <main className={styles.main}>
