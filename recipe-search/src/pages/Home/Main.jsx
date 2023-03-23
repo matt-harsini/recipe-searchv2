@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import Features from "./Features";
 import Recipes from "./Recipes";
@@ -8,6 +8,11 @@ import Footer from "./Footer";
 
 function Main() {
   const ref = useOutletContext();
+  useEffect(() => {
+    return () => {
+      ref[1].current.style.background = "#212529";
+    };
+  }, []);
   return (
     <div ref={ref[0]}>
       <main className={styles.main}>
