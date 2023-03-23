@@ -38,7 +38,11 @@ function Navbar({ innerRef }) {
   const { height } = useDimensions(containerRef);
 
   return (
-    <div className={styles.navContainer} ref={innerRef} id="nav-container">
+    <div
+      className={`${styles.navContainer} ${styles.bgColor}`}
+      ref={innerRef}
+      id="nav-container"
+    >
       <motion.nav
         className={styles.nav}
         initial={false}
@@ -58,7 +62,7 @@ function Navbar({ innerRef }) {
         <MenuToggle btn={btn} toggle={() => toggleOpen()} />
         <div className={styles.navContainerLg}>
           <div className={styles.btnContainer}>
-            <Link to="/">
+            <Link to="/" id="home">
               <Button
                 size="lg"
                 bg="#f1f3f5"
@@ -67,12 +71,11 @@ function Navbar({ innerRef }) {
                   background: "#f03e3e",
                 }}
                 className={styles.navBtn}
-                id="home"
               >
                 <span className={styles.btnText}>Home</span>
               </Button>
             </Link>
-            <Link to="/search-recipes">
+            <Link to="/search-recipes" id="search-recipes">
               <Button
                 size="lg"
                 bg="#f1f3f5"
@@ -81,7 +84,6 @@ function Navbar({ innerRef }) {
                 _active={{
                   background: "#f03e3e",
                 }}
-                id="search-recipes"
               >
                 <span className={styles.btnText}>Recipes</span>
               </Button>

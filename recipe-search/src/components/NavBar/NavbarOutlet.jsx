@@ -3,12 +3,12 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useInView } from "react-intersection-observer";
 import Loading from "../loading/Loading";
+import styles from "./Navbar.module.scss";
 
 function NavbarOutlet() {
   const navbar = useRef(null);
   const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.05,
+    threshold: 0.015,
   });
   useEffect(() => {
     const navigationHeight = navbar.current.getBoundingClientRect().height;
@@ -16,25 +16,20 @@ function NavbarOutlet() {
       "--scroll-padding",
       navigationHeight + "px"
     );
-  }, []);
-  useEffect(() => {
+    document.getElementById("home").addEventListener("click", function () {
+      navbar.current.classList.remove(`${styles.bgColor}`);
+    });
     document
       .getElementById("search-recipes")
       .addEventListener("click", function () {
-        document.getElementById("nav-container").style.background = "#212529";
+        navbar.current.classList.add(`${styles.bgColor}`);
       });
-    document.getElementById("home").addEventListener("click", function () {
-      document.getElementById("nav-container").style.background = "";
-    });
   }, []);
   useEffect(() => {
     if (!inView) {
-      navbar.current.style.background = "";
-      return;
-    }
-    if (inView || recipePageInView || recipePageInView) {
-      navbar.current.style.background = "#212529";
-      return;
+      navbar.current.classList.remove(`${styles.bgColor}`);
+    } else {
+      navbar.current.classList.add(`${styles.bgColor}`);
     }
   }, [inView]);
   return (
