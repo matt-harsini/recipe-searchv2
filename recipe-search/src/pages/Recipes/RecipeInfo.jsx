@@ -141,7 +141,7 @@ function RecipeInfo() {
                   </UnorderedList>
                 </TabPanel>
                 <TabPanel>
-                  <UnorderedList className={styles.healthLabels}>
+                  <UnorderedList className={styles.healthLabels} spacing={5}>
                     <AnimatePresence>
                       {showInfo.labels &&
                         data.healthLabels.map((ingredient, i) => {
@@ -209,7 +209,7 @@ function RecipeInfo() {
                                 animate="visible"
                                 exit="removed"
                                 custom={i}
-                                className={styles.liItem}
+                                className={styles.tag}
                               >{`${nutrient.label}: ${Math.round(
                                 nutrient.quantity
                               )}${nutrient.unit}`}</motion.li>

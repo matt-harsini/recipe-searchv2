@@ -16,23 +16,7 @@ function Card(props) {
       state={props.recipe}
       className={styles.link}
     >
-      <motion.div
-        className={styles.meals}
-        variants={{
-          hidden: {
-            opacity: 0,
-          },
-          visible: {
-            opacity: 1,
-          },
-          transition: {
-            duration: 0.5,
-          },
-        }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      <motion.div className={styles.meals}>
         <img
           className={styles.open}
           src={props.recipe.images.THUMBNAIL.url}
