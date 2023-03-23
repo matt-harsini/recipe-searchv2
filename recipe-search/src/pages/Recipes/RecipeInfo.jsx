@@ -18,7 +18,6 @@ import Card from "../../components/ui/Card";
 function RecipeInfo() {
   const location = useLocation();
   const data = location.state;
-  const ref = useOutletContext();
   const [showInfo, setShowInfo] = useState({
     ingredients: true,
     labels: false,
