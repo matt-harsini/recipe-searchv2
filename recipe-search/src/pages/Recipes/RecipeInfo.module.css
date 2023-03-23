@@ -97,8 +97,7 @@
 
 .positionAbsolute {
   position: absolute;
-  max-height: 500px;
-  overflow-y: scroll !important;
+  padding-bottom: 64px;
 }
 
 .nutrition {
@@ -111,7 +110,7 @@
 
 @media screen and (max-width: 500px) {
   .header {
-    font-size: var(--step-1);
+    font-size: var(--step-2);
   }
 
   .nutrition {
