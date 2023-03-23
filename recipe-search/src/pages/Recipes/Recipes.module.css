@@ -132,7 +132,9 @@
 }
 
 .closeBtn {
-  transform: scale(2);
+  transform: scale(2) !important;
+  margin-top: 12px !important;
+  margin-right: 12px !important;
 }
 
 .error {
@@ -146,7 +148,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 825px) {
   .cardContainer {
     grid-template-columns: 1fr;
     justify-items: stretch;
@@ -169,6 +171,12 @@
   .cardContainer {
     column-gap: 12px;
     justify-items: stretch;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .drawer {
+    width: 100vw !important;
   }
 }
 

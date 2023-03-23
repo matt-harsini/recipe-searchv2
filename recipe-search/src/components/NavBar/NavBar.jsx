@@ -49,6 +49,7 @@ function Navbar({ innerRef }) {
         animate={isOpen ? "open" : "closed"}
         custom={{ height }}
         ref={containerRef}
+        id="nav"
         motion
       >
         <motion.div

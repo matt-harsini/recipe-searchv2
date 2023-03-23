@@ -275,7 +275,7 @@ function Recipes() {
             <Drawer
               isOpen={isOpen}
               placement="left"
-              size="lg"
+              size={{ lg: "lg", md: "md" }}
               onClose={onClose}
               finalFocusRef={btnRef}
               preserveScrollBarGap={true}

@@ -28,8 +28,10 @@ function NavbarOutlet() {
   useEffect(() => {
     if (window.location.pathname === "/") {
       navbar.current.classList.remove(`${styles.bgColor}`);
+      document.getElementById("nav").classList.remove(`${styles.bgColor}`);
     } else {
       navbar.current.classList.add(`${styles.bgColor}`);
+      document.getElementById("nav").classList.add(`${styles.bgColor}`);
     }
   }, [location]);
   return (
