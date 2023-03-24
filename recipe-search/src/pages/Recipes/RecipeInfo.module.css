@@ -25,7 +25,6 @@
   justify-content: center;
   align-self: flex-start;
   align-items: stretch;
-  width: 100%;
 }
 
 .ingredients {
@@ -140,6 +139,9 @@
 
   .cardContainer {
     padding: 0;
+    justify-self: center;
+    width: 100%;
+    align-self: auto;
   }
 
   .accordionContainer {
