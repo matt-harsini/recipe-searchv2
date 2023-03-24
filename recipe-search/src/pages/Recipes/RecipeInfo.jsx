@@ -104,7 +104,7 @@ function RecipeInfo() {
                               key={ingredient}
                               variants={{
                                 hidden: (i) => ({
-                                  y: 5 * i,
+                                  y: -5 * i,
                                   opacity: 0,
                                 }),
                                 visible: (i) => ({
@@ -143,7 +143,7 @@ function RecipeInfo() {
                               key={ingredient}
                               variants={{
                                 hidden: (i) => ({
-                                  y: 5 * i,
+                                  y: -5 * i,
                                   opacity: 0,
                                 }),
                                 visible: (i) => ({
@@ -182,7 +182,7 @@ function RecipeInfo() {
                                 key={nutrient.label}
                                 variants={{
                                   hidden: (i) => ({
-                                    y: 5 * i,
+                                    y: -5 * i,
                                     opacity: 0,
                                   }),
                                   visible: (i) => ({

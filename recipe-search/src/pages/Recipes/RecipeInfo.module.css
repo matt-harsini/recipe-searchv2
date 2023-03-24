@@ -16,18 +16,16 @@
 .container {
   display: flex;
   justify-content: center;
-  margin: 48px auto 0 auto;
-  gap: 128px;
+  gap: 64px;
 }
 
 .cardContainer {
   display: flex;
-  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-self: flex-start;
   align-items: stretch;
-  max-width: 446px;
+  width: 100%;
 }
 
 .ingredients {
@@ -51,6 +49,7 @@
 
 .headerOne {
   font-size: var(--step-4);
+  margin-bottom: 48px;
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -119,10 +118,12 @@
 
   .cardContainer {
     padding: 0 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1150px) {
   .section {
     padding-top: 156px;
   }
@@ -139,9 +140,6 @@
 
   .cardContainer {
     padding: 0;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .accordionContainer {
