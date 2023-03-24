@@ -217,7 +217,6 @@ function RecipeInfo() {
           </div>
         </div>
       </section>
-      <section className={styles.padding}></section>
     </main>
   );
 }
