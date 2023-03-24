@@ -29,7 +29,7 @@
   padding: 128px 32px;
   display: grid;
   justify-items: stretch;
-  column-gap: 48px;
+  column-gap: 24px;
   row-gap: 64px;
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 48px;
