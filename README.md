@@ -1,4 +1,4 @@
-<h1 align="center">recipe-searchv2</h1>
+<h1>recipe-searchv2</h1>
 
 Web application built with React.js that fetches food ingredients from Edamam's Recipe Search API which is then organized into card components. 
 
