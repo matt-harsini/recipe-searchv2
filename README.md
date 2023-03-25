@@ -2,7 +2,7 @@
 
 Web application built with React.js that fetches food ingredients from Edamam's Recipe Search API which is then organized into card components. 
 
-New version: 
+Live site: 
 https://recipe-search-na.netlify.app/
 
 ## 🎈 Features
