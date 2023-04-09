@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Header.module.css";
 import { motion } from "framer-motion";
 
 function Header() {
+  useEffect(() => {
+    const appHeight = () =>
+      document
+        .getElementById("header")
+        .style.setProperty("--app-height", `${window.innerHeight}px`);
+    window.addEventListener("resize", appHeight);
+    appHeight();
+  }, []);
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="header">
       <div className={styles.landing}>
         <div className={styles.info}>
           <h1 className={styles.h1}>Recipe search</h1>

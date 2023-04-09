@@ -1,8 +1,7 @@
 @import "../../index.css";
 
 .header {
-  height: 100vh;
-  height: 100svh;
+  height: var(--app-height);
   background-image: url("/header.webp");
   background-size: cover;
   background-position: center center;
