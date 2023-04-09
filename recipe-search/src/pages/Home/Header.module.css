@@ -1,14 +1,13 @@
 @import "../../index.css";
 
 .header {
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
   background-image: url("/header.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #212529;
-  transition: height 999999s
 }
 
 .landing {
