@@ -3,12 +3,12 @@
 .header {
   min-height: 100vh;
   min-height: 100svh;
-  min-height: -webkit-fill-available;
   background-image: url("/header.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #212529;
+  transition: height 999999s
 }
 
 .landing {
