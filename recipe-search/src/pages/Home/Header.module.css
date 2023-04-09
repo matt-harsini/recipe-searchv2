@@ -1,8 +1,9 @@
 @import "../../index.css";
 
 .header {
-  height: 100vh;
-  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: -webkit-fill-available;
   background-image: url("/header.webp");
   background-size: cover;
   background-position: center center;

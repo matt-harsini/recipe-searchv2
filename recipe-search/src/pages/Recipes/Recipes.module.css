@@ -62,6 +62,7 @@
 
 .inputField {
   font-size: var(--step-2) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.102) !important;
 }
 
 .icon {

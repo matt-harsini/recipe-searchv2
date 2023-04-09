@@ -223,7 +223,8 @@ function Recipes() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <Input
               type="text"
-              placeholder="Enter recipe"
+              placeholder="Search for recipes"
+              _placeholder={{ color: "gray.900" }}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               variant="flushed"
