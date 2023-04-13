@@ -8,6 +8,15 @@ View site: https://recipe-search-na.netlify.app/
 - Get a full breakdown on nutritional information such as calories, macronutrients and micronutrients.
 - Responsive on all screen sizes.
 
+## Getting Started
+To set up and run the project locally, follow these steps:
+
+Clone the repository or download the source code.
+Install the required dependencies by running npm install or yarn in the project's root directory.
+Obtain an API key from the EDAMAM API and add it to your environment variables or application configuration.
+Start the development server by running npm run dev or yarn dev. The server will start on http://localhost:5173 by default.
+Open your browser and navigate to the server's URL (http://localhost:5173) to view and interact with the application.
+
 ## Main Dependencies
 - @chakra-ui/react: A set of accessible and modular UI components for React applications.
 - @emotion/react: A library for CSS-in-JS styling in React applications.
