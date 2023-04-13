@@ -3,9 +3,30 @@ Client-side web application that displays, filters, and sort recipes based on us
 <br/>
 View site: https://recipe-search-na.netlify.app/
 
-## 🎈 Features
+## Features
 - Allows users to retrieve a list of ingredients for any meal/similar meals they search and filter/sort recipes based on dietary restrictions.
 - Get a full breakdown on nutritional information such as calories, macronutrients and micronutrients.
 - Responsive on all screen sizes.
 
+## Main Dependencies
+@chakra-ui/react: A set of accessible and modular UI components for React applications.
+@emotion/react: A library for CSS-in-JS styling in React applications.
+@emotion/styled: A styled-component library for Emotion.
+@fontsource/rubik: The Rubik font for use in web projects.
+framer-motion: A library to create animations and transitions in React applications.
+react: The core React library.
+react-dom: The React library for DOM rendering.
+react-icons: A library containing popular icon sets as React components.
+react-intersection-observer: A React hook for the Intersection Observer API.
+react-router-dom: A library for managing routing in React applications.
+recharts: A charting library built on top of React and D3.js.
+sass: A CSS preprocessor for writing structured and maintainable stylesheets.
+Development Dependencies
+@vitejs/plugin-react: The Vite plugin for React applications.
+vite: A build tool and development server for web applications.
 
+## Development Scripts
+In the package.json file, the following scripts are available for development:
+dev: Runs the Vite development server, which provides hot module replacement and fast development experience.
+build: Builds the production version of the application using Vite.
+preview: Serves the production build for previewing the application locally.
