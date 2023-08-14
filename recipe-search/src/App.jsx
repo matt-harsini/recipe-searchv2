@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavbarOutlet from "./components/Navbar/NavbarOutlet";
+import NavbarOutlet from "./components/NavBar/NavbarOutlet"
 import { MotionConfig } from "framer-motion";
 
 const Home = lazy(() => import("./pages/Home/Home"));

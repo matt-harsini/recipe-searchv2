@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import styles from "./Navbar.module.scss";
+import styles from "./NavBar.module.scss";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";

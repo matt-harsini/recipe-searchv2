@@ -17,7 +17,7 @@ export const links = [
 export const socials = [
   {
     id: 1,
-    url: "https://github.com/mk975025",
+    url: "https://github.com/matt-harsini",
     icon: <BsGithub style={{ width: "25px", height: "25px" }} />,
   },
   {

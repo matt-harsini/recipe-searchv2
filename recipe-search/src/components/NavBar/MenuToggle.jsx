@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import styles from "./Navbar.module.scss";
+import styles from "./NavBar.module.scss";
 
 const Path = (props) => (
   <motion.path

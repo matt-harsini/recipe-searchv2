@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./NavBar";
 import { useInView } from "react-intersection-observer";
 import Loading from "../loading/Loading";
-import styles from "./Navbar.module.scss";
+import styles from "./NavBar.module.scss";
 
 function NavbarOutlet() {
   const navbar = useRef(null);

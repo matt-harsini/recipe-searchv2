@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
-import styles from "./Navbar.module.scss";
+import styles from "./NavBar.module.scss";
 import { links } from "../../data";
 
 const variants = {
